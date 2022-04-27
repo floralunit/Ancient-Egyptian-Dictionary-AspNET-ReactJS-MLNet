@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {Table} from "react-bootstrap";
 
 export function God() {
     const [error, setError] = useState(null);
@@ -31,13 +32,26 @@ export function God() {
         return <div>Загрузка...</div>;
     } else {
         return (
-            <ul>
-                {items.map(item => (
-                    <li key={item.gardinerCode}>
-                        {item.gardinerCode}
-                    </li>
-                ))}
-            </ul>
+            <div className={"gods1"}>
+            <Table className="mt-4" striped bordered hover size="sm">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Код Гардинера</th>
+                    <th>Вид</th>
+                </tr>
+                </thead>
+                <tbody>
+                {items.map(item =>
+                    <tr key={item.name}>
+                        <td>{item.name}</td>
+                        <td>{item.gardinerCode}</td>
+                        <td>{item.view}</td>
+                    </tr>)}
+                </tbody>
+
+            </Table>
+            </div>
         );
     }
 }
