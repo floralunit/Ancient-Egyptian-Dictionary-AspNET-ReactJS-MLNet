@@ -7,28 +7,39 @@
   font-family: "PT Sans", sans-serif;
 }
 
-.home,
-.dictionary ,
-.phonograms {
+.dictionary,
+.phonograms,
+.gods,
+.pharaohs,
+.about,
+.glyphreader {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 92vh;
   font-size: 4rem;
   background-position: center;
   background-size: cover;
   text-shadow: 4px 4px 4px #fff;
 }
-
-.home {
-  background-image: url(./images/cat.png);
-}
-
 .dictionary {
-  background-color: #e8c27b;
+  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }
 
 .phonograms{
-  background-image: url(./images/cat.png);
+  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }
+.gods{
+  background-image: url(https://149458054.v2.pressablecdn.com/wp-content/uploads/2017/12/egyptian-artwork-printable-classroom.jpg);
+}
+.pharaohs{
+  background-image: url(https://bridgetomastery.com/wp-content/uploads/2018/01/Karnak-Temple.jpg);
+}
+.about {
+  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+}
+.glyphreader {
+  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+}
+
 

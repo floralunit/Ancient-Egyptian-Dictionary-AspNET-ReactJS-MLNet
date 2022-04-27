@@ -1,8 +1,8 @@
 export const navItems = [
     {
         id: 1,
-        title: "Главная",
-        path: "./",
+        title: "О сайте",
+        path: "/about",
         cName: "nav-item",
     },
     {
@@ -34,5 +34,19 @@ export const navItems = [
         title: "Фараоны",
         path: "/pharaohs",
         cName: "nav-item",
+    },
+];
+export const pharaohDropdown = [
+    {
+        id: 1,
+        title: "Династия 1",
+        path: "./dynasty1",
+        cName: "submenu-item",
+    },
+    {
+        id: 2,
+        title: "Династия 2",
+        path: "./dynasty2",
+        cName: "submenu-item",
     },
 ];

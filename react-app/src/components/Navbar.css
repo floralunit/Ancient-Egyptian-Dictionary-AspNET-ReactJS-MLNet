@@ -1,6 +1,7 @@
+/* Стиль всего navbar */
 .navbar {
-    height: 10vh;
-    background: #59351F;
+    height: 8vh;
+    background:  #673923;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,37 +10,41 @@
 .navbar-logo {
     color: white;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 10rem;
+    width: 20rem;
+    margin-bottom: 2vh;
 }
 
+/* Стиль всей панели элементов */
 .nav-items {
     display: flex;
     list-style: none;
     text-align: center;
     width: 70vw;
     justify-content: flex-end;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
+/* Стиль всей панели элементов */
 .nav-item {
     display: flex;
     align-items: center;
-    height: 10vh;
+    height: 6vh;
 }
 
+/* Стиль каждого элемента по отдельности */
 .nav-item a {
     text-decoration: none;
-    color: white;
+    color: #FBEEC1;
     font-size: 1.1rem;
-    margin-right: 2rem;
     padding: 6px 16px;
     border-radius: 5px;
 }
 
+/* Стиль при наведении мышкой */
 .nav-item a:hover {
-    background: #e8c27b;
+    text-decoration: underline;
 }

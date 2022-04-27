@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Dictionary() {
     return (
-        <div className="mt-5 d-flex justify-content-left" color={'#e8c27b'}>
+        <div className="dictionary">
             Словарь иероглифов
         </div>
     );

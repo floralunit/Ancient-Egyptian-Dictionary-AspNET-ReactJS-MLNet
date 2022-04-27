@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Phonogram() {
     return (
-        <div className="mt-5 d-flex justify-content-left">
+        <div className="phonograms">
             <a>Фонограммы</a>
         </div>
     );

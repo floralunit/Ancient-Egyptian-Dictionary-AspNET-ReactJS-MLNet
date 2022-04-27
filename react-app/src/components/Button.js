@@ -5,7 +5,7 @@ import "./Button.css";
 export function Button() {
     return (
         <Link to="signup">
-            <button className="btn">Sign Up</button>
+            <button className="btn">Вход</button>
         </Link>
     );
 }
