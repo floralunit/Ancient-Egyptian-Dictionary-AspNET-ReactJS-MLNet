@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+}
+
+.home,
+.dictionary ,
+.phonograms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-size: 4rem;
+  background-position: center;
+  background-size: cover;
+  text-shadow: 4px 4px 4px #fff;
+}
+
+.home {
+  background-image: url(./images/cat.png);
+}
+
+.dictionary {
+  background-color: #e8c27b;
+}
+
+.phonograms{
+  background-image: url(./images/cat.png);
+}
+
