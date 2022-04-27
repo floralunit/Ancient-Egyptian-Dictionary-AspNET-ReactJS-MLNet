@@ -3,8 +3,16 @@ using EgyptianAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      builder =>
+                      {
+                          builder.WithOrigins("*");
+                      });
+});
 
 // Add services to the container.
 
@@ -25,8 +33,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
