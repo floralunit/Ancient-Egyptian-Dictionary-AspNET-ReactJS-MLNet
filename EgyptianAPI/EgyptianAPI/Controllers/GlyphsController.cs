@@ -21,25 +21,45 @@ namespace EgyptianAPI.Controllers
             _context = context;
         }
 
-        // GET: glyphs
-        [HttpGet("all")]
-        public async Task<ActionResult<Glyph>> GetGlyph()
+        // GET: api/glyphs/all
+        /// <summary>
+        /// Вывод всех иероглифов
+        /// </summary>
+        [HttpGet("all"), Tags("Иероглифы")]
+        public async Task<ActionResult<Glyph>> GetGlyphs()
         {
             return Ok(await _context.Glyphs.ToListAsync());
         }
-        // GET: glyphs/find/A15
-        [HttpGet("find/{GardinerCode}")]
+        // GET: api/glyphs/all/A
+        /// <summary>
+        /// Вывод иероглифов по категории
+        /// </summary>
+        [HttpGet("all/{categoria}"), Tags("Иероглифы")]
+        public async Task<ActionResult<Glyph>> GetGlyphsByCategoria(string categoria)
+        {
+            var glyphs = await _context.Glyphs.Where(g => g.Categoria == categoria).ToListAsync();
+            if (glyphs.Count() == 0)
+                return BadRequest($"Categoria {categoria} doesn't exist");
+            return Ok(glyphs);
+        }
+        // GET: api/glyphs/find/A15
+        /// <summary>
+        /// Поиск иероглифа по коду Гардинера
+        /// </summary>
+        [HttpGet("find/{gardinerCode}"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> GetGlyph(string gardinerCode)
         {
             var Glyph = await _context.Glyphs.FindAsync(gardinerCode);
             if (Glyph == null)
-                return BadRequest("Hieroglyph was not found");
+                return BadRequest($"Hieroglyph {gardinerCode} was not found");
             return Ok(Glyph);
         }
 
-        // POST: glyphs/add
-
-        [HttpPost("add")]
+        // POST: api/glyphs/add
+        /// <summary>
+        /// Добавление иероглифа
+        /// </summary>
+        [HttpPost("add"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> AddGlyph(Glyph Glyph)
         {
             await _context.Glyphs.AddAsync(Glyph);
@@ -47,13 +67,16 @@ namespace EgyptianAPI.Controllers
             return Ok(await _context.Glyphs.ToArrayAsync());
         }
 
-        // PUT: glyphs/update/A15
-        [HttpPut("update")]
+        // PUT: api/glyphs/update/A15
+        /// <summary>
+        /// Обновление информации об иероглифе
+        /// </summary>
+        [HttpPut("update"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> UpdateGlyph(Glyph request)
         {
             var dbGlyph = await _context.Glyphs.FindAsync(request.GardinerCode);
             if (dbGlyph == null)
-                return BadRequest("Hieroglyph was not found");
+                return BadRequest($"Hieroglyph {request.GardinerCode} was not found");
             dbGlyph.Notes= request.Notes;
             dbGlyph.Transliteration= request.Transliteration;
             dbGlyph.Categoria= request.Categoria;
@@ -66,13 +89,16 @@ namespace EgyptianAPI.Controllers
             return Ok(await _context.Glyphs.ToArrayAsync());
         }
 
-        // DELETE: glyphs/delete/A15
-        [HttpDelete("delete/{GardinerCode}")]
+        // DELETE: api/glyphs/delete/A15
+        /// <summary>
+        /// Удаление иероглифа
+        /// </summary>
+        [HttpDelete("delete/{gardinerCode}"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> DeleteGlyphs(string gardinerCode)
         {
             var Glyph = await _context.Glyphs.FindAsync(gardinerCode);
             if (Glyph == null)
-                return BadRequest("Hieroglyph was not found");
+                return BadRequest($"Hieroglyph {gardinerCode} was not found");
             _context.Glyphs.Remove(Glyph);
             await _context.SaveChangesAsync();
             return Ok(await _context.Glyphs.ToArrayAsync());

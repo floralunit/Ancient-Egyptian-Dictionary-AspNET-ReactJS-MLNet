@@ -10,7 +10,7 @@ export function God() {
     // этот useEffect будет запущен один раз
     // аналогично componentDidMount()
     useEffect(() => {
-        fetch("https://localhost:7059/api/gods/all")
+        fetch("https://api.ancient-egyptian-helper.ru/api/gods/all")
             .then(res => res.json())
             .then(
                 (result) => {

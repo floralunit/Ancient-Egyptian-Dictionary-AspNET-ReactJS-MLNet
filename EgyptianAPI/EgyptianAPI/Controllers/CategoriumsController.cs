@@ -20,25 +20,33 @@ namespace EgyptianAPI.Controllers
         {
             _context = context;
         }
-        // GET: categoriums
-        [HttpGet("all")]
+        // GET: api/categoriums/all
+        /// <summary>
+        /// Вывод всех категорий
+        /// </summary>
+        [HttpGet("all"), Tags("Категории")]
         public async Task<ActionResult<Categorium>> GetCategoria()
         {
             return Ok(await _context.Categoria.ToListAsync());
         }
-        // GET: categoriums/find/A
-        [HttpGet("find/{Categoria}")]
-        public async Task<ActionResult<Categorium>> GetCategoria(string categoriaId)
+        // GET: api/categoriums/find/A
+        /// <summary>
+        /// Поиск категории по названию
+        /// </summary>
+        [HttpGet("find/{categoria}"), Tags("Категории")]
+        public async Task<ActionResult<Categorium>> GetCategoria(string categoria)
         {
-            var categoria = await _context.Categoria.FindAsync(categoriaId);
-            if (categoria == null)
-                return BadRequest("Categoria was not found");
-            return Ok(categoria);
+            var Categoria = await _context.Categoria.FindAsync(categoria);
+            if (Categoria == null)
+                return BadRequest($"Categoria {categoria} was not found");
+            return Ok(Categoria);
         }
 
-        // POST: categoriums/add
-
-        [HttpPost("add")]
+        // POST: api/categoriums/add
+        /// <summary>
+        /// Добавить категорию
+        /// </summary>
+        [HttpPost("add"), Tags("Категории")]
         public async Task<ActionResult<Categorium>> AddCategoria(Categorium categoria)
         {
             await _context.Categoria.AddAsync(categoria);
@@ -46,27 +54,33 @@ namespace EgyptianAPI.Controllers
             return Ok(await _context.Categoria.ToArrayAsync());
         }
 
-        // PUT: categoriums/update/A
-        [HttpPut("update")]
+        // PUT: api/categoriums/update/A
+        /// <summary>
+        /// Обновить информацию о категории
+        /// </summary>
+        [HttpPut("update"), Tags("Категории")]
         public async Task<ActionResult<Categorium>> UpdateCategoria(Categorium request)
         {
             var dbCategoria = await _context.Categoria.FindAsync(request.Categoria);
             if (dbCategoria == null)
-                return BadRequest("Categoria was not found");
+                return BadRequest($"Categoria {request.Categoria} was not found");
             dbCategoria.Amount = request.Amount;
             dbCategoria.Name= request.Name;
             await _context.SaveChangesAsync();
             return Ok(await _context.Categoria.ToArrayAsync());
         }
 
-        // DELETE: categoriums/delete/A
-        [HttpDelete("delete/{Categoria}")]
-        public async Task<ActionResult<Categorium>> DeleteCategoria (string categoriaId)
+        // DELETE: api/categoriums/delete/A
+        /// <summary>
+        /// Удалить категорию
+        /// </summary>
+        [HttpDelete("delete/{categoria}"), Tags("Категории")]
+        public async Task<ActionResult<Categorium>> DeleteCategoria (string categoria)
         {
-            var categoria = await _context.Categoria.FindAsync(categoriaId);
-            if (categoria == null)
-                return BadRequest("Categoria was not found");
-            _context.Categoria.Remove(categoria);
+            var Categoria = await _context.Categoria.FindAsync(categoria);
+            if (Categoria == null)
+                return BadRequest($"Categoria {categoria} was not found");
+            _context.Categoria.Remove(Categoria);
             await _context.SaveChangesAsync();
             return Ok(await _context.Categoria.ToArrayAsync());
         }

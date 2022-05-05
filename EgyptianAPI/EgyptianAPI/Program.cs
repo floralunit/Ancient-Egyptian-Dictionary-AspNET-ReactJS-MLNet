@@ -1,6 +1,8 @@
 using EgyptianAPI;
 using EgyptianAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -12,6 +14,19 @@ builder.Services.AddCors(options =>
                       {
                           builder.WithOrigins("*");
                       });
+});
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1",
+        new Microsoft.OpenApi.Models.OpenApiInfo
+        {
+            Title = "EgyptianAPI - V1",
+            Version = "v1"
+        }
+     );
+
+    var filePath = Path.Combine(System.AppContext.BaseDirectory, "EgyptianAPI.xml");
+    c.IncludeXmlComments(filePath);
 });
 
 // Add services to the container.
@@ -28,11 +43,13 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
+    //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "EgyptianAPI V1"));
     app.UseSwaggerUI();
 }
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();

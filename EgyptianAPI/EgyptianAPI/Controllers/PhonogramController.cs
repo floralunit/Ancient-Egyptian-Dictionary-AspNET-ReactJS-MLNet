@@ -15,25 +15,33 @@ namespace EgyptianAPI.Controllers
         {
             _context = context;
         }
-        // GET: phonograms
-        [HttpGet("all")]
+        // GET: api/phonograms/all
+        /// <summary>
+        /// Вывод всех фонограмм
+        /// </summary>
+        [HttpGet("all"), Tags("Фонограммы")]
         public async Task<ActionResult<Phonogram>> GetPhonogram()
         {
             return Ok(await _context.Phonograms.ToListAsync());
         }
-        // GET: phonograms/find/5
-        [HttpGet("find/{Id}")]
-        public async Task<ActionResult<Phonogram>> GetPhonogram(int id)
+        ///<summary>
+        /// Поиск фонограммы по коду Гардинера
+        ///</summary>
+        // GET: api/phonograms/find/G14
+        [HttpGet("find/{gardinerCode}"), Tags("Фонограммы")]
+        public async Task<ActionResult<Phonogram>> GetPhonogram(string gardinerCode)
         {
-            var Phonogram = await _context.Phonograms.FindAsync(id);
+            var Phonogram = await _context.Phonograms.FirstOrDefaultAsync(g => g.GardinerCode == gardinerCode);
             if (Phonogram == null)
-                return BadRequest("Phonogram was not found");
+                return BadRequest($"Phonogram {gardinerCode} was not found");
             return Ok(Phonogram);
         }
 
-        // POST: phonograms/add
-
-        [HttpPost("add")]
+        // POST: api/phonograms/add
+        ///<summary>
+        /// Добавление фонограммы
+        ///</summary>
+        [HttpPost("add"), Tags("Фонограммы")]
         public async Task<ActionResult<Phonogram>> AddPhonogram(Phonogram Phonogram)
         {
             await _context.Phonograms.AddAsync(Phonogram);
@@ -41,13 +49,16 @@ namespace EgyptianAPI.Controllers
             return Ok(await _context.Phonograms.ToArrayAsync());
         }
 
-        // PUT: phonograms/update/5
-        [HttpPut("update")]
+        // PUT: api/phonograms/update/5
+        ///<summary>
+        /// Обновление информации о фонограмме
+        ///</summary>
+        [HttpPut("update"), Tags("Фонограммы")]
         public async Task<ActionResult<Phonogram>> UpdatePhonogram(Phonogram request)
         {
-            var dbPhonogram = await _context.Phonograms.FindAsync(request.Id);
+            var dbPhonogram = await _context.Phonograms.FindAsync(request.GardinerCode);
             if (dbPhonogram == null)
-                return BadRequest("Phonogram was not found");
+                return BadRequest($"Phonogram {request.GardinerCode} was not found");
             dbPhonogram.Glyph = request.Glyph;
             dbPhonogram.Transliteration = request.Transliteration;
             dbPhonogram.ManuelCotage = request.ManuelCotage;
@@ -57,13 +68,17 @@ namespace EgyptianAPI.Controllers
             return Ok(await _context.Phonograms.ToArrayAsync());
         }
 
-        // DELETE: phonograms/delete/5
-        [HttpDelete("delete/{Id}")]
-        public async Task<ActionResult<Phonogram>> DeletePhonogram(int id)
+        // DELETE: api/phonograms/delete/5
+        ///<summary>
+        /// Удаление фонограммы
+        ///</summary>
+
+        [HttpDelete("delete/{gardinerCode}"), Tags("Фонограммы")]
+        public async Task<ActionResult<Phonogram>> DeletePhonogram(string gardinerCode)
         {
-            var Phonogram = await _context.Phonograms.FindAsync(id);
+            var Phonogram = await _context.Phonograms.FirstOrDefaultAsync(g => g.GardinerCode == gardinerCode);
             if (Phonogram == null)
-                return BadRequest("Phonogram was not found");
+                return BadRequest($"Phonogram {gardinerCode} was not found");
             _context.Phonograms.Remove(Phonogram);
             await _context.SaveChangesAsync();
             return Ok(await _context.Phonograms.ToArrayAsync());

@@ -19,25 +19,33 @@ namespace EgyptianAPI.Controllers
         {
             _context = context;
         }
-        // GET: gods
-        [HttpGet("all")]
+        // GET: api/gods/all
+        /// <summary>
+        /// Вывод всех богов
+        /// </summary>
+        [HttpGet("all"), Tags("Божества")]
         public async Task<ActionResult<God>> GetGod()
         {
             return Ok(await _context.Gods.ToListAsync());
         }
-        // GET: gods/find/Анубис
-        [HttpGet("find/{Name}")]
+        // GET: api/gods/find/Анубис
+        /// <summary>
+        /// Поиск бога по имени
+        /// </summary>
+        [HttpGet("find/{name}"), Tags("Божества")]
         public async Task<ActionResult<God>> GetGod(string name)
         {
-            var God = await _context.Gods.FindAsync(name);
+            var God = await _context.Gods.FirstOrDefaultAsync(g => g.Name.Contains(name));
             if (God == null)
-                return BadRequest("God was not found");
+                return BadRequest($"God {name} was not found");
             return Ok(God);
         }
 
-        // POST: gods/add
-
-        [HttpPost("add")]
+        // POST: api/gods/add
+        /// <summary>
+        /// Добавление бога
+        /// </summary>
+        [HttpPost("add"), Tags("Божества")]
         public async Task<ActionResult<God>> AddGod(God God)
         {
             await _context.Gods.AddAsync(God);
@@ -45,13 +53,16 @@ namespace EgyptianAPI.Controllers
             return Ok(await _context.Gods.ToArrayAsync());
         }
 
-        // PUT: gods/update/Анубис
-        [HttpPut("update")]
+        // PUT: api/gods/update/Анубис
+        /// <summary>
+        /// Обновление информации о боге
+        /// </summary>
+        [HttpPut("update"), Tags("Божества")]
         public async Task<ActionResult<God>> UpdateGod(God request)
         {
-            var dbGod = await _context.Gods.FindAsync(request.Name);
+            var dbGod = await _context.Gods.FirstOrDefaultAsync(g => g.Name.Contains(request.Name));
             if (dbGod == null)
-                return BadRequest("God was not found");
+                return BadRequest($"God {request.Name} was not found");
             dbGod.GardinerCode = request.GardinerCode;
             dbGod.Transliteration = request.Transliteration;
             dbGod.Hieroglyphic = request.Hieroglyphic;
@@ -63,13 +74,16 @@ namespace EgyptianAPI.Controllers
             return Ok(await _context.Gods.ToArrayAsync());
         }
 
-        // DELETE: gods/delete/Анубис
-        [HttpDelete("delete/{Name}")]
+        // DELETE: api/gods/delete/Анубис
+        /// <summary>
+        /// Удаление бога
+        /// </summary>
+        [HttpDelete("delete/{name}"), Tags("Божества")]
         public async Task<ActionResult<God>> DeleteGod(string name)
         {
-            var God = await _context.Gods.FindAsync(name);
+            var God = await _context.Gods.FirstOrDefaultAsync(g => g.Name.Contains(name));
             if (God == null)
-                return BadRequest("God was not found");
+                return BadRequest($"God {name} was not found");
             _context.Gods.Remove(God);
             await _context.SaveChangesAsync();
             return Ok(await _context.Gods.ToArrayAsync());
