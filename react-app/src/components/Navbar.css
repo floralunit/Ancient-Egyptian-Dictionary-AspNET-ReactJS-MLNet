@@ -5,6 +5,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+/* Чтоб закрепить вверху
+position: fixed;
+top: 0; */
 }
 
 .navbar-logo {

@@ -1,0 +1,50 @@
+.content-table {
+    text-align: center;
+    position: relative;
+    border-collapse: collapse;
+    margin: 25px 50px;
+    font-size: 0.75em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    width: fit-content;
+    color: black;
+    background-color: #FBEEC1;
+}
+
+/*Стиль заголовка*/
+
+.content-table thead tr {
+    background-color: #A55C39;
+    position: sticky;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.1em;
+    top: 0; /* Don't forget this, required for the stickiness */
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+    border: white;
+}
+
+
+/*Паддинги в ячейках*/
+.content-table th,
+.content-table td {
+    padding: 10px 12px;
+}
+
+/*Нижняя граница строк*/
+.content-table tbody tr {
+    border-bottom: 1px solid white;
+}
+
+/*Стиль для четных строк при чередовании*/
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #fcf1cb;
+}
+
+/*Нижняя граница всей таблицы*/
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid white;
+}

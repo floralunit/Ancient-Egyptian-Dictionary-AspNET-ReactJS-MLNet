@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Table} from "react-bootstrap";
+import "./StickyTableStyle.css";
 
 export function God() {
     const [error, setError] = useState(null);
@@ -32,13 +32,17 @@ export function God() {
         return <div>Загрузка...</div>;
     } else {
         return (
-            <div className={"gods1"}>
-            <Table className="mt-4" striped bordered hover size="sm">
+            <div className={"gods"}>
+            <table className="content-table">
                 <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>Имя</th>
                     <th>Код Гардинера</th>
-                    <th>Вид</th>
+                    <th>Иероглифическое написание</th>
+                    <th>Транслитерация</th>
+                    <th>Категория</th>
+                    <th>Функции</th>
+                    <th>Описание</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -46,11 +50,15 @@ export function God() {
                     <tr key={item.name}>
                         <td>{item.name}</td>
                         <td>{item.gardinerCode}</td>
+                        <td style={{fontSize: '2em'}}>{item.hieroglyphic}</td>
+                        <td>{item.transliteration}</td>
+                        <td>{item.type}</td>
+                        <td>{item.description}</td>
                         <td>{item.view}</td>
                     </tr>)}
                 </tbody>
 
-            </Table>
+            </table>
             </div>
         );
     }
