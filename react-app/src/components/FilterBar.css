@@ -1,0 +1,13 @@
+.empty{
+    height: 3vh;
+}
+.filterbar {
+    background-color: #FBEEC1;
+    margin: 0 12vh;
+    padding: 1em;
+/*    border-color: #A55C39;
+    border-width: thin;
+    border-style: wave;*/
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
