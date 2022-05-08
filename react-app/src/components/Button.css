@@ -1,17 +1,18 @@
 .btn {
-    border: none;
-    padding: 6px 16px;
+    border-color: #FBEEC1;
+    border-width: 2px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #FBEEC1;
     font-size: 1.1rem;
-    color: #734222;
-    background: #FBEEC1;
-    border-radius: 5px;
-    transition: 0.3s all ease-out;
-    cursor: pointer;
+    padding: 6px 20px;
+
     margin-bottom: 2vh;
 
 }
 
 .btn:hover {
-    color: #753313;
-    background: white;
+    color: #734222;
+    background: #FBEEC1;
+
 }

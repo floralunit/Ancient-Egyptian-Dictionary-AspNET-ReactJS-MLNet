@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import "./Navbar.css";
 import { navItems } from "./NavItems";
 import Button from "./Button";
@@ -12,10 +12,10 @@ export function Navbar() {
     return (
         <>
             <nav className="navbar">
-                <Link to="/about" className="navbar-logo">
+                <div  className="navbar-logo">
                     <img src='https://cdn-icons-png.flaticon.com/512/2166/2166288.png' width={32} height={32}/>
                     Древнеегипетский справочник
-                </Link>
+                </div>
                 <ul className="nav-items">
                     {navItems.map((item) => {
                         if (item.title === "Фараоны1") {
@@ -26,14 +26,14 @@ export function Navbar() {
                                     onMouseEnter={() => setDropdown(true)}
                                     onMouseLeave={() => setDropdown(false)}
                                 >
-                                    <Link to={item.path}>{item.title}</Link>
+                                    <NavLink to={item.path}>{item.title}</NavLink>
                                     {dropdown && <Dropdown />}
                                 </li>
                             );
                         }
                         return (
                             <li key={item.id} className={item.cName}>
-                                <Link to={item.path}>{item.title}</Link>
+                                <NavLink to={item.path}>{item.title}</NavLink>
                             </li>
                         );
                     })}

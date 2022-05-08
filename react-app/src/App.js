@@ -1,6 +1,6 @@
 import './App.css';
 import {Navbar} from './components/Navbar';
-import {BrowserRouter, Route,  Routes} from 'react-router-dom';
+import {BrowserRouter, Route,  Routes, Navigate} from 'react-router-dom';
 import {Dictionary} from "./pages/Dictionary";
 import {Phonogram} from "./pages/Phonogram";
 import {Pharaoh} from "./pages/Pharaoh";
@@ -13,12 +13,14 @@ function App() {
       <BrowserRouter>
           <Navbar/>
           <Routes>
-            <Route path='/dictionary' element={<Dictionary/>}/>
-             <Route path='/phonograms' element={<Phonogram/>}/>
+              <Route path="/" element={<Navigate to="/about" replace />} />
+              <Route path='/about' element={<About/>}/>
+              <Route path='/dictionary' element={<Dictionary/>}/>
+              <Route path='/phonograms' element={<Phonogram/>}/>
               <Route path='/pharaohs' element={<Pharaoh/>}/>
               <Route path='/gods' element={<God/>}/>
-              <Route path='/about' element={<About/>}/>
               <Route path='/glyphreader' element={<GlyphReader/>}/>
+              <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
       </BrowserRouter>
   );
