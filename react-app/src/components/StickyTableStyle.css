@@ -2,15 +2,13 @@
     text-align: center;
     position: relative;
     border-collapse: collapse;
-    margin: 2em 12vh;
     font-size: 0.75em;
     min-width: 400px;
     border-radius: 5px 5px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    display: inline-block;
-    width: fit-content;
     color: black;
     background-color: #FBEEC1;
+    min-height: 40vh;
 }
 
 /*Стиль заголовка*/

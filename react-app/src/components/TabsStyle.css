@@ -1,0 +1,55 @@
+
+.bloc-tabs {
+    display: flex;
+}
+/*Неактивные вкладки*/
+.tabs {
+    padding: 8px;
+    text-align: center;
+    width: 50%;
+    background: #995231;
+    cursor: pointer;
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+    margin: 2vh 0;
+    color: white;
+}
+
+
+/*Граница справа для вкладки*/
+.tabs:not(:last-child){
+/*    border-right: 1px solid rgba(255, 255, 255, 0.274);*/
+}
+
+/*Активная вкладка*/
+.active-tabs  {
+    background: #A55C39;
+
+}
+
+/*Линия над вкладкой*/
+.active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100%);
+    height: 5px;
+    background: white;
+}
+
+
+button {
+    border: none;
+
+}
+.content-tabs {
+    flex-grow : 1;
+}
+
+.active-content {
+    display: block;
+}

@@ -1,21 +1,17 @@
 import { useState } from "react";
 import "./FilterBar.css";
 
-const FilterBar = ({
+const FilterBarGod = ({
                        onNameFilter,
                        onCodeFilter,
-                       onTranslitFilter,
                        onGlyphFilter,
                        onDescFilter,
-                       onViewFilter,
                    }) => {
     const [filters, setFilters] = useState({
         name: "",
         gardinerCode: "",
         hieroglyphic: "",
-        transliteration: "",
         description: "",
-        view: ""
     });
 
     const handleInput = (field) => (event) => {
@@ -36,14 +32,8 @@ const FilterBar = ({
             case "hieroglyphic":
                 onGlyphFilter(value);
                 break;
-            case "transliteration":
-                onTranslitFilter(value);
-                break;
             case "description":
                 onDescFilter(value);
-                break;
-            case "view ":
-                onViewFilter(value);
                 break;
             default:
                 break;
@@ -82,16 +72,6 @@ const FilterBar = ({
                     onChange = {handleInput("hieroglyphic")}
                 />
             </form>
-{/*            <div className="col-sm-12 my-2">
-                <label htmlFor="transliteration">Поиск по транслитерации</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="transliteration"
-                    onChange={handleInput("transliteration")}
-                />
-            </div>*/}
-
             <form>
                 <label htmlFor="description" >Поиск по функциям и описанию</label>
                 <input
@@ -102,17 +82,8 @@ const FilterBar = ({
                     onChange = {handleInput("description")}
                 />
             </form>
-{/*            <div className="col-sm-12 my-2">
-                <label htmlFor="view">Поиск по описанию</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="view"
-                    onChange={handleInput("view")}
-                />
-            </div>*/}
         </div>
     );
 };
 
-export default FilterBar;
+export default FilterBarGod;

@@ -47,10 +47,6 @@ top: 0; */
     padding: 6px 16px;
     border-radius: 5px;
 
-    -moz-osx-font-smoothing:grayscale;
-    backface-visibility:hidden;
-    transform:translateZ(0);
-    transition:transform 0.25s ease-out;
 }
 /* Стиль активного элемента */
 .nav-item a.active {

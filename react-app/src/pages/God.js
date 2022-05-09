@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import FilterBar from "../components/FilterBar";
+import FilterBarGod from "../components/FilterBarGod";
 import "../components/StickyTableStyle.css";
 import "../components/FilterBar.css"
 
@@ -57,24 +57,6 @@ export function God() {
 
         setData(filteredData);
     };
-/*    const handleFilterTranslit = (transliteration) => {
-        const filteredData = items.filter((item) => {
-            if ((item.transliteration||'').toLowerCase().includes(transliteration.toLowerCase())) {
-                return item;
-            }
-        });
-
-        setData(filteredData);
-    };
-    const handleFilterView = (view) => {
-        const filteredData = items.filter((item) => {
-            if ((item.view||'').toLowerCase().includes(view.toLowerCase())) {
-                return item;
-            }
-        });
-
-        setData(filteredData);
-    };*/
     const handleFilterDescription = (description) => {
 
         const filteredData = items.filter((item) => {
@@ -96,7 +78,7 @@ export function God() {
                 <div className={"empty"}/>
                 <div className={"filterbar"}>
                     <h2 align={"center"} className={"black"}>Древнеегипетские божества</h2>
-                    <table >
+                    <table>
                         <td style={{padding: '0.5vh', verticalAlign: 'middle'}}>
                             <div >
                                 <img src={require('../images/osiris.jpg')} style={{float: 'right', margin: '2vh 4vh'}} height={"200vh"}/>
@@ -106,7 +88,7 @@ export function God() {
                             </div>
                         </td>
                         <td width={"40%"}>
-                            <FilterBar
+                            <FilterBarGod
                                 onNameFilter={handleFilterName}
                                 onCodeFilter={handleFilterCode}
                                 onGlyphFilter={handleFilterGlyph}
@@ -115,7 +97,7 @@ export function God() {
                         </td>
                     </table>
                 </div>
-            <table className="content-table">
+            <table className="content-table" style={{margin: '2em 12vh 2em 12vh', display: 'inline-block', width: 'fit-content'}}>
                 <thead>
                 <tr>
                     <th>Имя</th>
