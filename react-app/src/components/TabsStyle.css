@@ -1,3 +1,10 @@
+.headerTab{
+    background-color: #FBEEC1;
+    border-radius: 5px;
+    padding: 1vh;
+    margin: 1vh auto;
+    display: table;
+}
 
 .bloc-tabs {
     display: flex;
@@ -12,11 +19,15 @@
     box-sizing: content-box;
     position: relative;
     outline: none;
-    margin: 2vh 0;
+    margin: 0 0 1vh 0;
     color: white;
+    top: 0;
+    transition: all 0.25s;
 }
-
-
+.tabs:hover {
+    top: -0.25rem;
+    transition: top 0.25s;
+}
 /*Граница справа для вкладки*/
 .tabs:not(:last-child){
 /*    border-right: 1px solid rgba(255, 255, 255, 0.274);*/

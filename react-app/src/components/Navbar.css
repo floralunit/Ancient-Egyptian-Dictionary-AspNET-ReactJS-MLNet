@@ -56,7 +56,6 @@ top: 0; */
     color: #734222;
     background: #FBEEC1;
     border-radius: 5px;
-    transition: 0.3s all ease-out;
     cursor: pointer;
 }
 /* Стиль при наведении мышкой */
