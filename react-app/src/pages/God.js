@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import FilterBarGod from "../components/FilterBarGod";
 import "../components/StickyTableStyle.css";
 import "../components/FilterBar.css"
+import ReactLoading from "react-loading";
 
 export function God() {
     const [error, setError] = useState(null);
@@ -71,7 +72,7 @@ export function God() {
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Загрузка...</div>;
+        return <div className={"loadingDiv"}><ReactLoading  type={"spinningBubbles"} color={"#673923"} height={'5%'} width={'5%'} className={"loadingBar"}/></div>;
     } else {
         return (
             <div className={"gods"}>

@@ -15,18 +15,14 @@
   min-height: 92vh;
 }
 
-.dictionary,.phonograms, .gods {
-  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+.dictionary,.phonograms, .gods, .about {
+  background-image: url("./images/glyphs.jpg");
 }
-
+.glyphreader{
+  background-image: url("./images/wall.jpg");
+}
 .pharaohs{
-  background-image: url(https://bridgetomastery.com/wp-content/uploads/2018/01/Karnak-Temple.jpg);
-}
-.about {
-  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
-}
-.glyphreader {
-  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+  background-image: url("./images/pharaohs.jpg");
 }
 
 

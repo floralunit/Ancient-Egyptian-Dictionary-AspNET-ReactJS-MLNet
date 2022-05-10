@@ -3,6 +3,7 @@ import "../components/StickyTableStyle.css";
 import "../components/FilterBar.css"
 import "../components/TabsStyle.css"
 import FilterBarDictionary from "../components/FilterBarDictionary";
+import ReactLoading from 'react-loading';
 
 export function Dictionary() {
     const [error, setError] = useState(null);
@@ -114,7 +115,7 @@ export function Dictionary() {
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div>Загрузка...</div>;
+        return <div className={"loadingDiv"}><ReactLoading  type={"spinningBubbles"} color={"#673923"} height={'5%'} width={'5%'} className={"loadingBar"}/></div>;
     } else {
         return (
             <div className={"dictionary"}>
