@@ -97,7 +97,7 @@ export function Dictionary() {
     };
 
     const [toggleState, setToggleState] = useState('A');
-    const [categoriaName, setCategoriaName] = useState('Мужчина и его занатия');
+    const [categoriaName, setCategoriaName] = useState('Категория A: мужчина и его занятия');
 
     const toggleTab = (categoria) => {
         setToggleState(categoria);

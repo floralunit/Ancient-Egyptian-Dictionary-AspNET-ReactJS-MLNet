@@ -1,43 +1,44 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace EgyptianAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/glyphreader")]
     [ApiController]
     public class GlyphReaderController : ControllerBase
     {
-        // GET: api/<GlyphReaderController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // POST: api/glyphreader
+        /// <summary>
+        /// Загрузка картинки и получение прогноза
+        /// </summary>
+        [HttpPost, Tags("Расшифратор иероглифов")]
+        public async Task<IActionResult> GetImage(IFormFile image)
         {
-            return new string[] { "value1", "value2" };
+            //Load sample data
+            long length = image.Length;
+            if (length < 0)
+                return BadRequest();
+
+            using var fileStream = image.OpenReadStream();
+            byte[] imageBytes = new byte[length];
+            fileStream.Read(imageBytes, 0, (int)image.Length);
+            EgyptianMLModel.ModelInput sampleData = new EgyptianMLModel.ModelInput()
+            {
+                ImageSource = imageBytes,
+            };
+
+            //Load model and predict output
+            var result = EgyptianMLModel.Predict(sampleData);
+            return Ok(result.PredictedLabel);
+
         }
 
-        // GET api/<GlyphReaderController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<GlyphReaderController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<GlyphReaderController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<GlyphReaderController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

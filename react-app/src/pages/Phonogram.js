@@ -124,7 +124,7 @@ export function Phonogram() {
                     </table>
                 </div>
                 <div style={{margin: '0 auto', width: '90vh'}}>
-                <div className="bloc-tabs">
+                <div className="bloc-tabs" style={{margin: '2vh auto'}}>
                     <button
                         className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                         onClick={() => toggleTab(1)}
