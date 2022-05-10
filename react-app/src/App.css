@@ -12,19 +12,13 @@
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: cover;
+  min-height: 92vh;
 }
 
-.dictionary {
+.dictionary,.phonograms, .gods {
   background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }
 
-.phonograms{
-  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
-}
-.gods{
-  background-image: url(https://images.unsplash.com/photo-1628086466927-f55cb2c24ca0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdl);/*
-  https://images.unsplash.com/photo-1594050753831-ebf4b3b52af7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80*/
-}
 .pharaohs{
   background-image: url(https://bridgetomastery.com/wp-content/uploads/2018/01/Karnak-Temple.jpg);
 }
