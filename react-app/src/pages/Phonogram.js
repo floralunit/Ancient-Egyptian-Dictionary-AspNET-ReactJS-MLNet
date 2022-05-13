@@ -23,7 +23,7 @@ export function Phonogram() {
                     setIsLoaded(true);
                     setItems(result);
                     const filteredData = result.filter((item) => {
-                        if ((item.type||'').toLowerCase().includes('alphabet')) {
+                        if ((item.type || '').toLowerCase().includes('alphabet')) {
                             return item;
                         }
                     });
@@ -39,7 +39,7 @@ export function Phonogram() {
     }, [])
     const handleFilterGlyph = (glyph) => {
         const filteredData = items.filter((item) => {
-            if ((item.glyph||'').toLowerCase().includes(glyph.toLowerCase())) {
+            if ((item.glyph || '').toLowerCase().includes(glyph.toLowerCase())) {
                 return item;
             }
         });
@@ -48,7 +48,7 @@ export function Phonogram() {
     };
     const handleFilterCode = (gardinerCode) => {
         const filteredData = items.filter((item) => {
-            if ((item.gardinerCode||'').toLowerCase().includes(gardinerCode.toLowerCase())) {
+            if ((item.gardinerCode || '').toLowerCase().includes(gardinerCode.toLowerCase())) {
                 return item;
             }
         });
@@ -56,14 +56,14 @@ export function Phonogram() {
         setData(filteredData);
     };
     const handleFilterTranslit = (transliteration) => {
-            const filteredData = items.filter((item) => {
-                const fullTranslit = `${item.transliteration} ${item.manuelCotage}`;
-                if ((fullTranslit||'').toLowerCase().includes(transliteration.toLowerCase())) {
-                    return item;
-                }
-            });
-            setData(filteredData);
-        };
+        const filteredData = items.filter((item) => {
+            const fullTranslit = `${item.transliteration} ${item.manuelCotage}`;
+            if ((fullTranslit || '').toLowerCase().includes(transliteration.toLowerCase())) {
+                return item;
+            }
+        });
+        setData(filteredData);
+    };
 
     const [toggleState, setToggleState] = useState(1);
 
@@ -84,7 +84,7 @@ export function Phonogram() {
                 break;
         }
         const filteredData = items.filter((item) => {
-            if ((item.type||'').toLowerCase().includes(type)) {
+            if ((item.type || '').toLowerCase().includes(type)) {
                 return item;
             }
         });
@@ -93,79 +93,90 @@ export function Phonogram() {
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div className={"loadingDiv"}><ReactLoading  type={"spinningBubbles"} color={"#673923"} height={'5%'} width={'5%'} className={"loadingBar"}/></div>;
+        return <div className={"loadingDiv"}><ReactLoading type={"spinningBubbles"} color={"#673923"} height={'5%'}
+                                                           width={'5%'} className={"loadingBar"}/></div>;
     } else {
         return (
             <div className={"phonograms"}>
                 <div className={"empty"}/>
-
-                <div className={"filterbar"}>
-                    <h2 align={"center"} className={"black"}>Фонограммы</h2>
-                    <table>
-                        <td style={{padding: '0.5vh'}}>
-                            <div >
-                                Среди египетских иероглифов различают две основные группы символов: звуковые знаки (фонограммы) и смысловые знаки (идеограммы).
-                                Фонограммы или звуковые знаки бывают трёх типов:
-                                <ol>
-                                    <li style={{margin: '0.5em'}}><i>Односогласные или алфавитные знаки</i>, которые обозначают один согласный звук, например f , r.
-                                        ПРИМЕЧАНИЕ: алфавитными этот тип знаков можно назвать только условно, поскольку алфавита в нашем понимании этого слова у египтян не было.
-                                    </li>
-                                    <li style={{margin: '0.5em'}}><i>Двусогласные знаки</i>, обозначающие два согласных звука, например m + n (или кратко, mn); p + r (pr).</li>
-                                    <li style={{margin: '0.5em'}}><i>Трёхсогласные знаки</i>, обозначающие три согласных звука, например, nfr ; Htp.</li>
-                                </ol>
+                <div className={"container"}>
+                    <div className={"row"}>
+                        <div className={"col"}>
+                            <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh'}}>
+                                <h2 align={"center"} className={"black"}>Фонограммы</h2>
+                                <div>
+                                    Среди египетских иероглифов различают две основные группы символов: звуковые
+                                    знаки (фонограммы) и смысловые знаки (идеограммы).
+                                    Фонограммы или звуковые знаки бывают трёх типов:
+                                    <ol>
+                                        <li style={{margin: '0.5em'}}><i>Односогласные или алфавитные знаки</i>,
+                                            которые обозначают один согласный звук, например f , r.
+                                            <br/>ПРИМЕЧАНИЕ: алфавитными этот тип знаков можно назвать только
+                                            условно, поскольку алфавита в нашем понимании этого слова у египтян
+                                            не было.
+                                        </li>
+                                        <li style={{margin: '0.5em'}}><i>Двусогласные знаки</i>, обозначающие
+                                            два согласных звука, например m + n (или кратко, mn); p + r (pr).
+                                        </li>
+                                        <li style={{margin: '0.5em'}}><i>Трёхсогласные знаки</i>, обозначающие
+                                            три согласных звука, например, nfr ; Htp.
+                                        </li>
+                                    </ol>
+                                </div>
+                                <FilterBarPhonogram
+                                    onGlyphFilter={handleFilterGlyph}
+                                    onCodeFilter={handleFilterCode}
+                                    onTranslitFilter={handleFilterTranslit}
+                                />
                             </div>
-                        </td>
-                        <td width={"40%"}>
-                            <FilterBarPhonogram
-                                onGlyphFilter={handleFilterGlyph}
-                                onCodeFilter={handleFilterCode}
-                                onTranslitFilter={handleFilterTranslit}
-                            />
-                        </td>
-                    </table>
-                </div>
-                <div style={{margin: '0 auto', width: '90vh'}}>
-                <div className="bloc-tabs" style={{margin: '2vh auto'}}>
-                    <button
-                        className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(1)}
-                    >
-                        Алфавит
-                    </button>
-                    <button
-                        className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(2)}
-                    >
-                        Двухсогласные знаки
-                    </button>
-                    <button
-                        className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                        onClick={() => toggleTab(3)}
-                    >
-                        Трехсогласные знаки
-                    </button>
-                </div>
-                <table className="content-table" style={{minHeight: '40vh', margin: '0 auto', width: '90vh'}}>
-                    <thead>
-                    <tr>
-                        <th>Иероглиф</th>
-                        <th>Код Гардинера</th>
-                        <th>Транслитерация</th>
-                        <th>Manuel de Codage</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {allData.map(item =>
-                        <tr key={item.id}>
-                            <td style={{fontSize: '4em'}}>{item.glyph}</td>
-                            <td>{item.gardinerCode}</td>
-                            <td>{item.transliteration}</td>
-                            <td>{item.manuelCotage}</td>
-                        </tr>)}
-                    </tbody>
+                        </div>
+                        <div className={"col"}>
+                            <div style={{margin: '0 auto', width: '90vh'}}>
+                                <div className="bloc-tabs" style={{margin: '2vh auto'}}>
+                                    <button
+                                        className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                                        onClick={() => toggleTab(1)}
+                                    >
+                                        Алфавит
+                                    </button>
+                                    <button
+                                        className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                                        onClick={() => toggleTab(2)}
+                                    >
+                                        Двухсогласные знаки
+                                    </button>
+                                    <button
+                                        className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+                                        onClick={() => toggleTab(3)}
+                                    >
+                                        Трехсогласные знаки
+                                    </button>
+                                </div>
+                                <table className="content-table"
+                                       style={{minHeight: '40vh', margin: '0 auto', width: '90vh'}}>
+                                    <thead>
+                                    <tr>
+                                        <th>Иероглиф</th>
+                                        <th>Код Гардинера</th>
+                                        <th>Транслитерация</th>
+                                        <th>Manuel de Codage</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {allData.map(item =>
+                                        <tr key={item.id}>
+                                            <td style={{fontSize: '4em'}}>{item.glyph}</td>
+                                            <td>{item.gardinerCode}</td>
+                                            <td>{item.transliteration}</td>
+                                            <td>{item.manuelCotage}</td>
+                                        </tr>)}
+                                    </tbody>
 
-                </table>
-                    <div className={"empty"}/>
+                                </table>
+                                <div className={"empty"}/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
