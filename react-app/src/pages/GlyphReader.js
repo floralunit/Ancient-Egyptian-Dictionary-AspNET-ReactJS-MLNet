@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
-import axios, {AxiosResponse} from "axios";
-import "../components/GlyphReaderStyle.scss";
+import React, {useState} from "react";
+import axios from "axios";
+import "../components/GlyphReaderStyle.css";
 import ReactLoading from "react-loading";
 
 export const GlyphReader = () => {
@@ -35,30 +35,36 @@ export const GlyphReader = () => {
     };
 
     return (
-        <div className={"glyphreader"} >
+        <div className={"glyphreader"}>
             <div className={"empty"}/>
             <div className={"container"}>
                 <div className={"row"} style={{background: '#FBEEC1', borderRadius: '10px'}}>
-                    <h2 align={"center"} style={{display: 'table', margin: '0 auto', color: "black"}}>Расшифратор иероглифов по фото</h2>
+                    <h2 align={"center"} style={{display: 'table', margin: '0 auto', color: "black"}}>Расшифратор
+                        иероглифов по фото</h2>
                     <div className={"col"}>
                         <div className="file-upload">
                             {!selectedImage && (
                                 <div>
-                                <div className="image-upload-wrap">
-                                    <input className="file-upload-input" type='file' onChange={saveFileSelected}
-                                           accept="image/*"/>
-                                    <div className="drag-text">
-                                        <h4>Выберите или перетащите картинку</h4>
+                                    <div className="image-upload-wrap">
+                                        <input className="file-upload-input" type='file' onChange={saveFileSelected}
+                                               accept="image/*"/>
+                                        <div className="drag-text">
+                                            <h4>Выберите или перетащите картинку</h4>
+                                        </div>
                                     </div>
-                                </div>
                                     <div style={{margin: '3vh 0'}}>
                                         Примеры фотографий:
                                         <p style={{margin: '1vh 0'}}>
-                                            <img src={require('../images/birth(42).jpg')} alt="Фотография 1" width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
-                                            <img src={require('../images/owl(49).jpg')} alt="Фотография 2" width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
-                                            <img src={require('../images/ankh (49).jpg')} alt="Фотография 3" width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
-                                            <img src={require('../images/he (48).jpg')} alt="Фотография 4" width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
-                                            <img src={require('../images/corpse (50).jpg')} alt="Фотография 4" width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
+                                            <img src={require('../images/birth(42).jpg')} alt="Фотография 1"
+                                                 width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
+                                            <img src={require('../images/owl(49).jpg')} alt="Фотография 2" width="120vh"
+                                                 height="120vh" style={{margin: '0 1vh'}}/>
+                                            <img src={require('../images/ankh (49).jpg')} alt="Фотография 3"
+                                                 width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
+                                            <img src={require('../images/he (48).jpg')} alt="Фотография 4" width="120vh"
+                                                 height="120vh" style={{margin: '0 1vh'}}/>
+                                            <img src={require('../images/corpse (50).jpg')} alt="Фотография 5"
+                                                 width="120vh" height="120vh" style={{margin: '0 1vh'}}/>
                                         </p>
                                     </div>
                                 </div>
@@ -79,23 +85,30 @@ export const GlyphReader = () => {
                             )}
                         </div>
                     </div>
-                    <div className={"col"} style={{border: 'black', borderStyle:'solid', borderWidth: '2px', margin: '2vh', borderRadius: '10px'}}>
-                        <div >
+                    <div className={"col"} style={{
+                        border: 'black',
+                        borderStyle: 'solid',
+                        borderWidth: '2px',
+                        margin: '2vh',
+                        borderRadius: '10px'
+                    }}>
+                        <div>
                             <h5 align={"center"} style={{margin: '0vh'}}><u>Результат расшифровки</u></h5>
                             {loading && (
-                                <ReactLoading  type={"spinningBubbles"} color={"#673923"} height={'5%'} width={'5%'}  className={"loadingBar"}/>
-                                )}
+                                <ReactLoading type={"spinningBubbles"} color={"#673923"} height={'5%'} width={'5%'}
+                                              className={"loadingBar"}/>
+                            )}
                             {!loading && (
                                 <div>
-                            <div style={{fontSize: '6em', display: 'table', margin: '0 auto'}}>
-                                {glyph.glyphUnicode}
-                            </div>
-                            <div style={{display: 'table', margin: '0 auto', color: '#b02818'}}>
-                                {glyph.gardinerCode}
-                            </div>
-                            <div>
-                                <u>Описание:</u> <p style={{color: '#b02818'}}>{glyph.description}</p>
-                                </div>
+                                    <div style={{fontSize: '6em', display: 'table', margin: '0 auto'}}>
+                                        {glyph.glyphUnicode}
+                                    </div>
+                                    <div style={{display: 'table', margin: '0 auto', color: '#b02818'}}>
+                                        {glyph.gardinerCode}
+                                    </div>
+                                    <div>
+                                        <u>Описание:</u> <p style={{color: '#b02818'}}>{glyph.description}</p>
+                                    </div>
                                     <div>
                                         <u>Фонограмма:</u> <p style={{color: '#b02818'}}>{glyph.phonogram}</p>
                                     </div>
@@ -104,9 +117,9 @@ export const GlyphReader = () => {
                                     </div>
                                     <div>
                                         <u>Заметки:</u> <p style={{color: '#b02818'}}>{glyph.notes}</p>
-                            </div>
+                                    </div>
                                 </div>
-                                )}
+                            )}
                         </div>
                     </div>
                 </div>
