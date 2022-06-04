@@ -18,7 +18,7 @@ export function Navbar() {
                 </div>
                 <ul className="nav-items">
                     {navItems.map((item) => {
-                        if (item.title === "Фараоны1") {
+                        if (item.title === "Фараоны ▾") {
                             return (
                                 <li
                                     key={item.id}

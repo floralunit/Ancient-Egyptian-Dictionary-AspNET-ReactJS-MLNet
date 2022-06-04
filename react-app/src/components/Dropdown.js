@@ -9,7 +9,7 @@ function Dropdown() {
     return (
         <>
             <ul
-                className={dropdown ? "services-submenu clicked" : "services-submenu"}
+                className={dropdown ? "pharaohs-submenu clicked" : "pharaohs-submenu"}
                 onClick={() => setDropdown(!dropdown)}
             >
                 {pharaohDropdown.map((item) => {

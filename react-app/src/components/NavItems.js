@@ -31,7 +31,7 @@ export const navItems = [
     },
     {
         id: 6,
-        title: "Фараоны",
+        title: "Фараоны ▾",
         path: "/pharaohs",
         cName: "nav-item",
     },
@@ -39,14 +39,14 @@ export const navItems = [
 export const pharaohDropdown = [
     {
         id: 1,
-        title: "Династия 1",
-        path: "./dynasty1",
+        title: "Абидосский список",
+        path: "/pharaohs",
         cName: "submenu-item",
     },
     {
         id: 2,
         title: "Династия 2",
-        path: "./dynasty2",
+        path: "/pharaohs",
         cName: "submenu-item",
     },
 ];

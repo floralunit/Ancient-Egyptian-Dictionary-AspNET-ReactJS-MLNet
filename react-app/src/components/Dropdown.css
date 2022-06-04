@@ -1,25 +1,25 @@
 .pharaohs-submenu {
-    width: 10rem;
     position: absolute;
-    top: 67px;
+    top: 7.2vh;
     list-style: none;
     text-align: start;
+    margin: auto -4vh;
 }
 
 .pharaohs-submenu li {
-    background: rgb(0, 212, 212);
+    background: #673923;
     cursor: pointer;
 }
 
 .pharaohs-submenu li a:hover {
-    background: rgb(0, 175, 175);
+    background: #995231;
 }
 
 .pharaohs-submenu.clicked {
     display: none;
 }
 
-.pharaohs-item {
+.submenu-item {
     display: block;
     width: 100%;
     height: 100%;
