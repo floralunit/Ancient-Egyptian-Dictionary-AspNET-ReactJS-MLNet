@@ -21,77 +21,25 @@ namespace EgyptianAPI.Controllers
             _context = context;
         }
 
-        // GET: api/pharaohs/all
+        // GET: api/pharaohs/abydoscanon
         /// <summary>
-        /// Вывод всех фараонов
+        /// Просмотр абидосского списка
         /// </summary>
-        [HttpGet("all"), Tags("Фараоны")]
-        public async Task<ActionResult<Pharaoh>> GetPharaoh()
+        [HttpGet("abydoscanon"), Tags("Фараоны")]
+        public async Task<ActionResult<AbydosCanon>> GetAbydoscanon()
         {
-            return Ok(await _context.Pharaohs.ToListAsync());
-        }
-        // GET: api/pharaohs/find/Cleopatra
-        /// <summary>
-        /// Поиск фараона по имени
-        /// </summary>
-        [HttpGet("find/{name}"), Tags("Фараоны")]
-        public async Task<ActionResult<Pharaoh>> GetPharaoh(string name)
-        {
-            var Pharaoh = await _context.Pharaohs.FindAsync(name);
-            if (Pharaoh == null)
-                return BadRequest($"Pharaoh {name} was not found");
-            return Ok(Pharaoh);
+            return Ok(await _context.AbydosCanons.ToListAsync());
         }
 
-        // POST: api/pharaohs/add
+        // GET: api/pharaohs/saqqaracanon
         /// <summary>
-        /// Добавление фараона
+        /// Просмотр саккарского списка
         /// </summary>
-        [HttpPost("add"), Tags("Фараоны")]
-        public async Task<ActionResult<Pharaoh>> AddPharaoh(Pharaoh Pharaoh)
+        [HttpGet("saqqaracanon"), Tags("Фараоны")]
+        public async Task<ActionResult<SaqqaraCanon>> GetPharaoh()
         {
-            await _context.Pharaohs.AddAsync(Pharaoh);
-            await _context.SaveChangesAsync();
-            return Ok(await _context.Pharaohs.ToArrayAsync());
+            return Ok(await _context.SaqqaraCanons.ToListAsync());
         }
 
-        // PUT: api/pharaohs/update/Cleopatra
-        /// <summary>
-        /// Обновление информации о фараоне
-        /// </summary>
-        [HttpPut("update"), Tags("Фараоны")]
-        public async Task<ActionResult<Pharaoh>> UpdatePharaoh(Pharaoh request)
-        {
-            var dbPharaoh = await _context.Pharaohs.FindAsync(request.Name);
-            if (dbPharaoh == null)
-                return BadRequest($"Pharaoh {request.Name} was not found");
-            dbPharaoh.BirthDescription = request.BirthDescription;
-            dbPharaoh.BirthName = request.BirthName;
-            dbPharaoh.ThroneName = request.ThroneName;
-            dbPharaoh.Name = request.Name;
-            dbPharaoh.Dynasty = request.Dynasty;
-            dbPharaoh.NebtyDescription = request.NebtyDescription;
-            await _context.SaveChangesAsync();
-            return Ok(await _context.Pharaohs.ToArrayAsync());
-        }
-
-        // DELETE: api/pharaohs/delete/Cleopatra
-        /// <summary>
-        /// Удаление фараона
-        /// </summary>
-        [HttpDelete("delete/{name}"), Tags("Фараоны")]
-        public async Task<ActionResult<Pharaoh>> DeletePharaoh(string name)
-        {
-            var Pharaoh = await _context.Pharaohs.FindAsync(name);
-            if (Pharaoh == null)
-                return BadRequest($"Pharaoh {name} was not found");
-            _context.Pharaohs.Remove(Pharaoh);
-            await _context.SaveChangesAsync();
-            return Ok(await _context.Pharaohs.ToArrayAsync());
-        }
-        private bool PharaohExists(string name)
-        {
-            return _context.Pharaohs.Any(e => e.Name == name);
-        }
     }
 }
