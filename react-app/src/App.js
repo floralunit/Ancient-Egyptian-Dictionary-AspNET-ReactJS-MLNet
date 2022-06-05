@@ -9,6 +9,7 @@ import {SaqqaraCanon} from "./pages/SaqqaraCanon";
 import {God} from "./pages/God";
 import {About} from "./pages/About";
 import {GlyphReader} from "./pages/GlyphReader";
+import {LoginPage} from "./pages/LoginPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
               <Route path="/" element={<Navigate to="/about" replace />} />
               <Route path='/about' element={<About/>}/>
+              <Route path='/auth' element={<LoginPage/>}/>
               <Route path='/dictionary' element={<Dictionary/>}/>
               <Route path='/phonograms' element={<Phonogram/>}/>
               <Route path='/pharaohs' element={<Pharaoh/>}/>

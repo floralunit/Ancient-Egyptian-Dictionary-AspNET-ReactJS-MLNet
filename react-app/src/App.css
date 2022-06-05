@@ -12,7 +12,7 @@
   border: none;
 }
 
-.glyphreader, .pharaohs, .gods, .about, .dictionary, .phonograms
+.glyphreader, .pharaohs, .gods, .about, .dictionary, .phonograms, .loginpage
 {
   background-position: center;
   background-repeat: repeat;
@@ -29,6 +29,10 @@
 }
 .pharaohs{
   background-image: url("./images/pharaohs.jpg");
+
+}
+.loginpage{
+  background-image: url("./images/pyramids.jpg");
 
 }
 .pharaohs a:link {
