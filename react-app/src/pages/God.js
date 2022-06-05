@@ -79,6 +79,7 @@ export function God() {
                 <div className={"empty"}/>
                 <div className={"filterbar"}>
                     <h2 align={"center"} className={"black"}>Древнеегипетские божества</h2>
+                    <hr/>
                     <table>
                         <td style={{padding: '0.5vh', verticalAlign: 'middle'}}>
                             <div >

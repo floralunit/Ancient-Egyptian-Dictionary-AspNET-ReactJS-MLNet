@@ -98,6 +98,7 @@ export function AbydosCanon() {
                         <div className={"col"}>
                             <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh'}}>
                                 <h2 align={"center"} className={"black"}>Абидосский список</h2>
+                                <hr/>
                                 <FilterBarPharaoh
                                     onNameFilter={handleFilterName}
                                     onTranslitFilter={handleFilterTranslit}

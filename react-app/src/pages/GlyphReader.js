@@ -39,8 +39,9 @@ export const GlyphReader = () => {
             <div className={"empty"}/>
             <div className={"container"}>
                 <div className={"row"} style={{background: '#FBEEC1', borderRadius: '10px'}}>
+                    <div className={"empty"}/>
                     <h2 align={"center"} style={{display: 'table', margin: '0 auto', color: "black"}}>Расшифратор
-                        иероглифов по фото</h2>
+                        иероглифов по фото <hr/></h2>
                     <div className={"col"}>
                         <div className="file-upload">
                             {!selectedImage && (

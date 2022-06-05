@@ -6,6 +6,7 @@ export function About() {
             <div className={"empty"}/>
             <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh', margin: 'auto 30vh'}}>
                 <h2 align={"center"} className={"black"}>Древнеегипетский справочник</h2>
+                <hr/>
                 <div style={{fontSize: '2.5vh'}}>
                     <img src={require('../images/favicon.ico')} style={{float: 'right', margin: '2vh 4vh'}} height={"200vh"}/>
                     Древнеегипетский справочник призван стать вашим помощником изучении и практике перевода с древнеегипетского языка.<p/>

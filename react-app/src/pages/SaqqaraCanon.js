@@ -95,6 +95,7 @@ export function SaqqaraCanon() {
                         <div className={"col"}>
                             <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh'}}>
                                 <h2 align={"center"} className={"black"}>Саккарский список</h2>
+                                <hr/>
                                 <FilterBarPharaoh
                                     onNameFilter={handleFilterName}
                                     onTranslitFilter={handleFilterTranslit}

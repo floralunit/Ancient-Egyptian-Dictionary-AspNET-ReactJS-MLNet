@@ -104,6 +104,7 @@ export function Phonogram() {
                         <div className={"col"}>
                             <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh'}}>
                                 <h2 align={"center"} className={"black"}>Фонограммы</h2>
+                                <hr/>
                                 <div>
                                     Среди египетских иероглифов различают две основные группы символов: звуковые
                                     знаки (фонограммы) и смысловые знаки (идеограммы).
