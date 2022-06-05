@@ -40,13 +40,13 @@ export const pharaohDropdown = [
     {
         id: 1,
         title: "Абидосский список",
-        path: "/pharaohs",
+        path: "/pharaohs/abydoscanon",
         cName: "submenu-item",
     },
     {
         id: 2,
-        title: "Династия 2",
-        path: "/pharaohs",
+        title: "Саккарский список",
+        path: "/pharaohs/saqqaracanon",
         cName: "submenu-item",
     },
 ];

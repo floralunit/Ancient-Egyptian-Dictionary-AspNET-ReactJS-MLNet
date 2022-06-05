@@ -29,6 +29,21 @@
 }
 .pharaohs{
   background-image: url("./images/pharaohs.jpg");
-}
 
+}
+.pharaohs a:link {
+  color: #497DDD;
+  border-bottom: 1px dashed;
+}
+.pharaohs a:visited {
+  color: #EF7D55;
+}
+.pharaohs a:hover {
+  color: #154088;
+  border-bottom: .07em solid;
+}
+.pharaohs a:active {
+  color: #497DDD;
+  border-bottom: 1px dashed;
+}
 
