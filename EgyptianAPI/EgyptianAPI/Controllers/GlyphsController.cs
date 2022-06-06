@@ -49,7 +49,7 @@ namespace EgyptianAPI.Controllers
         [HttpGet("find/{gardinerCode}"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> GetGlyph(string gardinerCode)
         {
-            var Glyph = await _context.Glyphs.FindAsync(gardinerCode);
+            var Glyph = await _context.Glyphs.FirstOrDefaultAsync(x => x.GardinerCode == gardinerCode);
             if (Glyph == null)
                 return BadRequest($"Hieroglyph {gardinerCode} was not found");
             return Ok(Glyph);
