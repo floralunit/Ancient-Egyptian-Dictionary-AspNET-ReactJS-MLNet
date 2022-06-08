@@ -7,8 +7,6 @@
     font-size: 1.1rem;
     padding: 6px 20px;
 
-    margin-bottom: 2vh;
-
 }
 
 .btn:hover {
@@ -16,3 +14,20 @@
     background: #FBEEC1;
 
 }
+.btn a {
+    border-color: #FBEEC1;
+    border-width: 2px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #FBEEC1;
+    font-size: 1.1rem;
+    padding: 6px 20px;
+
+}
+
+.btn a:hover {
+    color: #734222;
+
+}
+
+

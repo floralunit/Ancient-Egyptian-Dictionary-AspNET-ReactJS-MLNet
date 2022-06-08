@@ -1,26 +1,51 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../actions/userActions";
 import "../components/LoginPage.css";
+import {Col, Row} from "react-bootstrap";
+import {NavLink} from "react-router-dom";
 
 export function LoginPage() {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const dispatch = useDispatch();
+
+    const userLogin = useSelector((state) => state.userLogin);
+    const { loading, error, userInfo } = userLogin;
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        dispatch(login(username, password));
+    };
     return (
         <div className={"loginpage"}>
         <div className="container">
             <div className="screen">
                 <div className="screen__content">
-                    <form className="login">
+                    <form className="login" onSubmit={submitHandler}>
                         <div className="login__field">
                             <i className="login__icon fas fa-user"/>
-                            <input type="text" className="login__input" placeholder="Телефон или e-mail"/>
+                            <input type="text" className="login__input" placeholder="Телефон или e-mail"
+                                   value={username}
+                                   onChange={(e) => setUsername(e.target.value)}/>
                         </div>
                         <div className="login__field">
                             <i className="login__icon fas fa-lock"/>
-                            <input type="password" className="login__input" placeholder="Пароль"/>
+                            <input type="password" className="login__input" placeholder="Пароль"
+                                   value={password}
+                                   onChange={(e) => setPassword(e.target.value)}/>
                         </div>
-                        <button className="button login__submit">
+                        <button className="button login__submit" type="submit">
                             <span className="button__text">Войти</span>
                             <i className="button__icon fas fa-chevron-right"/>
                         </button>
                     </form>
+                    <Row className="py-3">
+                        <Col>
+                            New Customer ? <NavLink to="/register">Register Here</NavLink>
+                        </Col>
+                    </Row>
                     {/*<div className="social-login">*/}
                     {/*    <h3>log in via</h3>*/}
                     {/*    <div className="social-icons">*/}

@@ -1,14 +1,27 @@
 
-import React, { useState } from "react";
-import { NavLink} from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import {Link, NavLink} from "react-router-dom";
 import "./Navbar.css";
 import { navItems } from "./NavItems";
-import Button from "./Button";
 import Dropdown from "./Dropdown";
+import {logout} from "../actions/userActions";
+import "./Button.css";
+import {NavDropdown} from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 
 
 export function Navbar() {
     const [dropdown, setDropdown] = useState(false);
+    const dispatch = useDispatch();
+
+    const userLogin = useSelector((state) => state.userLogin);
+    const { userInfo } = userLogin;
+
+    const logoutHandler = () => {
+        dispatch(logout());
+    };
+
+    useEffect(() => {}, [userInfo]);
     return (
         <>
             <nav className="navbar">
@@ -31,14 +44,43 @@ export function Navbar() {
                                 </li>
                             );
                         }
+
                         return (
                             <li key={item.id} className={item.cName}>
                                 <NavLink to={item.path}>{item.title}</NavLink>
                             </li>
                         );
                     })}
+                    {userInfo ? (
+                        <>
+                            <NavDropdown
+                                title={`${userInfo.token}`}
+                                id="collasible-nav-dropdown"
+                            >
+                                <NavDropdown.Item href="/profile">
+                                    {/* <img
+                      alt=""
+                      src={`${userInfo.pic}`}
+                      width="25"
+                      height="25"
+                      style={{ marginRight: 10 }}
+                    /> */}
+                                    Профиль
+                                </NavDropdown.Item>
+
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item onClick={logoutHandler}>
+                                    Выйти
+                                </NavDropdown.Item>
+                            </NavDropdown>
+                        </>
+                    ) :
+                        (
+                            <li className={"btn"}>
+                                <NavLink to="/signin">Войти</NavLink>
+                            </li>
+                        )}
                 </ul>
-                <Button />
             </nav>
         </>
     );

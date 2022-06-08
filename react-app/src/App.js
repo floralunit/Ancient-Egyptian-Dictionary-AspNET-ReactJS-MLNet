@@ -18,7 +18,7 @@ function App() {
           <Routes>
               <Route path="/" element={<Navigate to="/about" replace />} />
               <Route path='/about' element={<About/>}/>
-              <Route path='/auth' element={<LoginPage/>}/>
+              <Route path='/signin' element={<LoginPage/>}/>
               <Route path='/dictionary' element={<Dictionary/>}/>
               <Route path='/phonograms' element={<Phonogram/>}/>
               <Route path='/pharaohs' element={<Pharaoh/>}/>
