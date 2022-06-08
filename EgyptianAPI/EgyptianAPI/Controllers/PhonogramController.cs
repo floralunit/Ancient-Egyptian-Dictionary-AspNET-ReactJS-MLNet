@@ -1,4 +1,5 @@
 ﻿using EgyptianAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -41,7 +42,7 @@ namespace EgyptianAPI.Controllers
         ///<summary>
         /// Добавление фонограммы
         ///</summary>
-        [HttpPost("add"), Tags("Фонограммы")]
+        [HttpPost("add"), Authorize(Roles = "Admin"), Tags("Фонограммы")]
         public async Task<ActionResult<Phonogram>> AddPhonogram(Phonogram Phonogram)
         {
             await _context.Phonograms.AddAsync(Phonogram);
@@ -53,7 +54,7 @@ namespace EgyptianAPI.Controllers
         ///<summary>
         /// Обновление информации о фонограмме
         ///</summary>
-        [HttpPut("update"), Tags("Фонограммы")]
+        [HttpPut("update"), Authorize(Roles = "Admin"), Tags("Фонограммы")]
         public async Task<ActionResult<Phonogram>> UpdatePhonogram(Phonogram request)
         {
             var dbPhonogram = await _context.Phonograms.FindAsync(request.GardinerCode);
@@ -73,7 +74,7 @@ namespace EgyptianAPI.Controllers
         /// Удаление фонограммы
         ///</summary>
 
-        [HttpDelete("delete/{gardinerCode}"), Tags("Фонограммы")]
+        [HttpDelete("delete/{gardinerCode}"), Authorize(Roles = "Admin"), Tags("Фонограммы")]
         public async Task<ActionResult<Phonogram>> DeletePhonogram(string gardinerCode)
         {
             var Phonogram = await _context.Phonograms.FirstOrDefaultAsync(g => g.GardinerCode == gardinerCode);

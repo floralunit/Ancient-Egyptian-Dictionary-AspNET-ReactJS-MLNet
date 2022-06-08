@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthenticationWebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/auth")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -15,14 +15,20 @@ namespace AuthenticationWebApi.Controllers
             _authService = authService;
         }
 
-        [HttpPost]
+        /// <summary>
+        /// Регистрация
+        /// </summary>
+        [HttpPost("signup"), Tags("Авторизация")]
         public async Task<ActionResult<User>> RegisterUser(UserDto request)
         {
             var response = await _authService.RegisterUser(request);
             return Ok(response);
         }
 
-        [HttpPost("login")]
+        /// <summary>
+        /// Авторизация
+        /// </summary>
+        [HttpPost("signin"), Tags("Авторизация")]
         public async Task<ActionResult<User>> Login(UserDto request)
         {
             var response = await _authService.Login(request);
@@ -32,7 +38,10 @@ namespace AuthenticationWebApi.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpPost("refresh-token")]
+        /// <summary>
+        /// Обновление токена
+        /// </summary>
+        [HttpPost("refresh-token"), Tags("Авторизация")]
         public async Task<ActionResult<string>> RefreshToken()
         {
             var response = await _authService.RefreshToken();
@@ -42,7 +51,10 @@ namespace AuthenticationWebApi.Controllers
             return BadRequest(response.Message);
         }
 
-        [HttpGet, Authorize(Roles = "User,Admin")]
+        /// <summary>
+        /// Проверка на авторизацию под админом
+        /// </summary>
+        [HttpGet("check-auth"), Authorize(Roles = "Admin"), Tags("Авторизация")]
         public ActionResult<string> Aloha()
         {
             return Ok("Aloha! You're authorized!");

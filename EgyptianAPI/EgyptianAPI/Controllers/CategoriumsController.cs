@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EgyptianAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EgyptianAPI.Controllers
 {
@@ -46,7 +47,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Добавить категорию
         /// </summary>
-        [HttpPost("add"), Tags("Категории")]
+        [HttpPost("add"), Authorize(Roles = "Admin"), Tags("Категории")]
         public async Task<ActionResult<Categorium>> AddCategoria(Categorium categoria)
         {
             await _context.Categoria.AddAsync(categoria);
@@ -58,7 +59,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Обновить информацию о категории
         /// </summary>
-        [HttpPut("update"), Tags("Категории")]
+        [HttpPut("update"), Authorize(Roles = "Admin"), Tags("Категории")]
         public async Task<ActionResult<Categorium>> UpdateCategoria(Categorium request)
         {
             var dbCategoria = await _context.Categoria.FindAsync(request.Categoria);
@@ -74,7 +75,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Удалить категорию
         /// </summary>
-        [HttpDelete("delete/{categoria}"), Tags("Категории")]
+        [HttpDelete("delete/{categoria}"), Authorize(Roles = "Admin"), Tags("Категории")]
         public async Task<ActionResult<Categorium>> DeleteCategoria (string categoria)
         {
             var Categoria = await _context.Categoria.FindAsync(categoria);
@@ -83,10 +84,6 @@ namespace EgyptianAPI.Controllers
             _context.Categoria.Remove(Categoria);
             await _context.SaveChangesAsync();
             return Ok(await _context.Categoria.ToArrayAsync());
-        }
-        private bool CategoriumExists(string categoriaId)
-        {
-            return _context.Categoria.Any(e => e.Categoria == categoriaId);
         }
     }
 }

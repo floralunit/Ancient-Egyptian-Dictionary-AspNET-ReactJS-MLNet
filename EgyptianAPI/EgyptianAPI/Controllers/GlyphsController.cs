@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EgyptianAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EgyptianAPI.Controllers
 {
@@ -59,7 +60,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Добавление иероглифа
         /// </summary>
-        [HttpPost("add"), Tags("Иероглифы")]
+        [HttpPost("add"), Authorize(Roles = "Admin"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> AddGlyph(Glyph Glyph)
         {
             await _context.Glyphs.AddAsync(Glyph);
@@ -71,7 +72,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Обновление информации об иероглифе
         /// </summary>
-        [HttpPut("update"), Tags("Иероглифы")]
+        [HttpPut("update"), Authorize(Roles = "Admin"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> UpdateGlyph(Glyph request)
         {
             var dbGlyph = await _context.Glyphs.FindAsync(request.GardinerCode);
@@ -93,7 +94,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Удаление иероглифа
         /// </summary>
-        [HttpDelete("delete/{gardinerCode}"), Tags("Иероглифы")]
+        [HttpDelete("delete/{gardinerCode}"), Authorize(Roles = "Admin"), Tags("Иероглифы")]
         public async Task<ActionResult<Glyph>> DeleteGlyphs(string gardinerCode)
         {
             var Glyph = await _context.Glyphs.FindAsync(gardinerCode);
@@ -102,10 +103,6 @@ namespace EgyptianAPI.Controllers
             _context.Glyphs.Remove(Glyph);
             await _context.SaveChangesAsync();
             return Ok(await _context.Glyphs.ToArrayAsync());
-        }
-        private bool GlyphExists(string gardinerCode)
-        {
-            return _context.Glyphs.Any(e => e.GardinerCode == gardinerCode);
         }
     }
 }

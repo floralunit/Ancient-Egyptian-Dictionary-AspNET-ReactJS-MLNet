@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EgyptianAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EgyptianAPI.Controllers
 {
@@ -45,7 +46,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Добавление бога
         /// </summary>
-        [HttpPost("add"), Tags("Божества")]
+        [HttpPost("add"), Authorize(Roles = "Admin"), Tags("Божества")]
         public async Task<ActionResult<God>> AddGod(God God)
         {
             await _context.Gods.AddAsync(God);
@@ -57,7 +58,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Обновление информации о боге
         /// </summary>
-        [HttpPut("update"), Tags("Божества")]
+        [HttpPut("update"), Authorize(Roles = "Admin"), Tags("Божества")]
         public async Task<ActionResult<God>> UpdateGod(God request)
         {
             var dbGod = await _context.Gods.FirstOrDefaultAsync(g => g.Name.Contains(request.Name));
@@ -78,7 +79,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Удаление бога
         /// </summary>
-        [HttpDelete("delete/{name}"), Tags("Божества")]
+        [HttpDelete("delete/{name}"), Authorize(Roles = "Admin"), Tags("Божества")]
         public async Task<ActionResult<God>> DeleteGod(string name)
         {
             var God = await _context.Gods.FirstOrDefaultAsync(g => g.Name.Contains(name));
