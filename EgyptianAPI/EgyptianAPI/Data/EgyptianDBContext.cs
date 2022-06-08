@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace EgyptianAPI.Models
+namespace EgyptianAPI.Data
 {
     public partial class EgyptianDBContext : DbContext
     {
-
         public EgyptianDBContext()
         {
         }
@@ -16,6 +15,7 @@ namespace EgyptianAPI.Models
             : base(options)
         {
         }
+
         public virtual DbSet<AbydosCanon> AbydosCanons { get; set; } = null!;
         public virtual DbSet<Categorium> Categoria { get; set; } = null!;
         public virtual DbSet<Glyph> Glyphs { get; set; } = null!;
@@ -23,6 +23,7 @@ namespace EgyptianAPI.Models
         public virtual DbSet<Phonogram> Phonograms { get; set; } = null!;
         public virtual DbSet<SaqqaraCanon> SaqqaraCanons { get; set; } = null!;
         public virtual DbSet<Sysdiagram> Sysdiagrams { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -41,7 +42,9 @@ namespace EgyptianAPI.Models
             {
                 entity.ToTable("AbydosCanon", "dbo");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Dynasty)
                     .HasMaxLength(10)
@@ -144,7 +147,9 @@ namespace EgyptianAPI.Models
             {
                 entity.ToTable("SaqqaraCanon", "dbo");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.EnglishPharaohName)
                     .HasMaxLength(255)
@@ -174,6 +179,35 @@ namespace EgyptianAPI.Models
                 entity.Property(e => e.PrincipalId).HasColumnName("principal_id");
 
                 entity.Property(e => e.Version).HasColumnName("version");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.ToTable("User");
+
+                entity.Property(e => e.PasswordHash)
+                    .HasMaxLength(255)
+                    .IsFixedLength();
+
+                entity.Property(e => e.PasswordSalt)
+                    .HasMaxLength(255)
+                    .IsFixedLength();
+
+                entity.Property(e => e.RefreshToken).IsUnicode(false);
+
+                entity.Property(e => e.Role).HasMaxLength(50);
+
+                entity.Property(e => e.TokenCreatedDt)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TokenExpires)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Username)
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

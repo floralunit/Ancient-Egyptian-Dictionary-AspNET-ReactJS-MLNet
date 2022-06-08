@@ -5,7 +5,7 @@ namespace EgyptianAPI.Models
 {
     public partial class SaqqaraCanon
     {
-        public string Id { get; set; }
+        public string Id { get; set; } = null!;
         public string? NameInList { get; set; }
         public string? Transliteration { get; set; }
         public string? PharaohName { get; set; }
