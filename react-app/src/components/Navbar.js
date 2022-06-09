@@ -22,11 +22,12 @@ export function Navbar() {
     };
 
     useEffect(() => {}, [userInfo]);
+
     return (
         <>
             <nav className="navbar">
                 <div  className="navbar-logo">
-                    <img src='https://cdn-icons-png.flaticon.com/512/2166/2166288.png' width={32} height={32}/>
+                    <img src='https://cdn-icons-png.flaticon.com/512/2166/2166288.png' width={32} height={32} style={{margin: '0 1vh'}}/>
                     Древнеегипетский справочник
                 </div>
                 <ul className="nav-items">
@@ -54,10 +55,11 @@ export function Navbar() {
                     {userInfo ? (
                         <>
                             <NavDropdown
-                                title={`${userInfo.token}`}
-                                id="collasible-nav-dropdown"
+                                title={`${userInfo.username}`}
+
+                                active={{color: 'white'}}
                             >
-                                <NavDropdown.Item href="/profile">
+                                <NavDropdown.Item href="/profile" >
                                     {/* <img
                       alt=""
                       src={`${userInfo.pic}`}
@@ -68,8 +70,8 @@ export function Navbar() {
                                     Профиль
                                 </NavDropdown.Item>
 
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item onClick={logoutHandler}>
+                                {/*<NavDropdown.Divider />*/}
+                                <NavDropdown.Item onClick={logoutHandler} >
                                     Выйти
                                 </NavDropdown.Item>
                             </NavDropdown>

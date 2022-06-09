@@ -12,6 +12,8 @@ import {
 } from "../constants/userConstants";
 import axios from "axios";
 
+import React from "react"
+
 export const login = (username, password) => async (dispatch) => {
   try {
     dispatch({ type: USER_LOGIN_REQUEST });
@@ -25,7 +27,7 @@ export const login = (username, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://localhost:7059/api/auth/signin",
+      "https://api.ancient-egyptian-helper.ru/api/auth/signin",
       { username, password },
       config
     );

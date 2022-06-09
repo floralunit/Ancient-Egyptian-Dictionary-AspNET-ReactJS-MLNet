@@ -10,6 +10,8 @@ import {God} from "./pages/God";
 import {About} from "./pages/About";
 import {GlyphReader} from "./pages/GlyphReader";
 import {LoginPage} from "./pages/LoginPage";
+import {RegisterPage} from "./pages/RegisterPage";
+import {Profile} from "./pages/Profile";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
               <Route path="/" element={<Navigate to="/about" replace />} />
               <Route path='/about' element={<About/>}/>
               <Route path='/signin' element={<LoginPage/>}/>
+              <Route path='/signup' element={<RegisterPage/>}/>
+              <Route path='/profile' element={<Profile/>}/>
               <Route path='/dictionary' element={<Dictionary/>}/>
               <Route path='/phonograms' element={<Phonogram/>}/>
               <Route path='/pharaohs' element={<Pharaoh/>}/>

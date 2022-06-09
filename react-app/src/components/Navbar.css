@@ -3,7 +3,7 @@
     height: 8vh;
     background:  #673923;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
 /* Чтоб закрепить вверху
 position: fixed;
@@ -17,7 +17,7 @@ top: 0; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 20rem;
+    width: auto;
     margin-bottom: 2vh;
     cursor: default;
 }
@@ -27,7 +27,7 @@ top: 0; */
     display: flex;
     list-style: none;
     text-align: center;
-    width: 70vw;
+    width: 76vw;
     justify-content: flex-end;
     margin-right: 1rem;
 }

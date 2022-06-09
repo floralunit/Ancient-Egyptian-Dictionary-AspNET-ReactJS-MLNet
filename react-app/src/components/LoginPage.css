@@ -7,7 +7,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 85vh;
 }
 
 .screen {
@@ -68,11 +68,11 @@ body {
 }
 
 .screen__background__shape4 {
-    height: 400px;
-    width: 200px;
+    height: 250px;
+    width: 150px;
     background: #673923;
-    top: 420px;
-    right: 50px;
+    top: 400px;
+    right: -50px;
     border-radius: 60px;
 }
 
