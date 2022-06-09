@@ -18,11 +18,12 @@ namespace EgyptianAPI.Data
 
         public virtual DbSet<AbydosCanon> AbydosCanons { get; set; } = null!;
         public virtual DbSet<Categorium> Categoria { get; set; } = null!;
+        public virtual DbSet<Comment> Comments { get; set; } = null!;
         public virtual DbSet<Glyph> Glyphs { get; set; } = null!;
         public virtual DbSet<God> Gods { get; set; } = null!;
         public virtual DbSet<Phonogram> Phonograms { get; set; } = null!;
+        public virtual DbSet<Question> Questions { get; set; } = null!;
         public virtual DbSet<SaqqaraCanon> SaqqaraCanons { get; set; } = null!;
-        public virtual DbSet<Sysdiagram> Sysdiagrams { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -72,6 +73,17 @@ namespace EgyptianAPI.Data
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name).HasMaxLength(255);
+            });
+
+            modelBuilder.Entity<Comment>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Comment", "dbo");
+
+                entity.Property(e => e.CreatedDt).HasColumnType("datetime");
+
+                entity.Property(e => e.Username).HasMaxLength(100);
             });
 
             modelBuilder.Entity<Glyph>(entity =>
@@ -143,6 +155,19 @@ namespace EgyptianAPI.Data
                     .IsUnicode(false);
             });
 
+            modelBuilder.Entity<Question>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Question", "dbo");
+
+                entity.Property(e => e.DtCreated).HasColumnType("datetime");
+
+                entity.Property(e => e.Subject).HasMaxLength(100);
+
+                entity.Property(e => e.Username).HasMaxLength(100);
+            });
+
             modelBuilder.Entity<SaqqaraCanon>(entity =>
             {
                 entity.ToTable("SaqqaraCanon", "dbo");
@@ -162,48 +187,19 @@ namespace EgyptianAPI.Data
                 entity.Property(e => e.Transliteration).HasMaxLength(255);
             });
 
-            modelBuilder.Entity<Sysdiagram>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
                 entity.HasNoKey();
 
-                entity.ToTable("sysdiagrams", "dbo");
+                entity.ToTable("User", "dbo");
 
-                entity.Property(e => e.Definition).HasColumnName("definition");
+                entity.Property(e => e.PasswordHash).HasMaxLength(255);
 
-                entity.Property(e => e.DiagramId).HasColumnName("diagram_id");
-
-                entity.Property(e => e.Name)
-                    .HasMaxLength(128)
-                    .HasColumnName("name");
-
-                entity.Property(e => e.PrincipalId).HasColumnName("principal_id");
-
-                entity.Property(e => e.Version).HasColumnName("version");
-            });
-
-            modelBuilder.Entity<User>(entity =>
-            {
-                entity.ToTable("User");
-
-                entity.Property(e => e.PasswordHash)
-                    .HasMaxLength(255)
-                    .IsFixedLength();
-
-                entity.Property(e => e.PasswordSalt)
-                    .HasMaxLength(255)
-                    .IsFixedLength();
+                entity.Property(e => e.PasswordSalt).HasMaxLength(255);
 
                 entity.Property(e => e.RefreshToken).IsUnicode(false);
 
                 entity.Property(e => e.Role).HasMaxLength(50);
-
-                entity.Property(e => e.TokenCreatedDt)
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.TokenExpires)
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.Username)
                     .HasMaxLength(255)
