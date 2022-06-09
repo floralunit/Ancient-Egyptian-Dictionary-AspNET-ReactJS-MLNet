@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
+using System.Security.Claims;
 
 namespace AuthenticationWebApi.Controllers
 {
@@ -8,10 +10,12 @@ namespace AuthenticationWebApi.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly EgyptianDBContext _context;
         private readonly IAuthService _authService;
 
-        public AuthController(IAuthService authService)
+        public AuthController(EgyptianDBContext context, IAuthService authService, IHttpContextAccessor httpContextAccessor)
         {
+            _context = context;
             _authService = authService;
         }
 
@@ -49,6 +53,19 @@ namespace AuthenticationWebApi.Controllers
                 return Ok(response);
 
             return BadRequest(response.Message);
+        }
+
+
+        /// <summary>
+        /// Поиск пользователя по нику
+        /// </summary>
+        [HttpGet("profile"), Tags("Авторизация")]
+        public async Task<ActionResult<string>> GetUserInfo(string username)
+        {
+            var User = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
+            if (User == null)
+                return BadRequest($"User {username} was not found");
+            return Ok(User);
         }
 
         /// <summary>

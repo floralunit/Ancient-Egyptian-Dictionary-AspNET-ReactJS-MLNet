@@ -18,7 +18,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("*");
+                          builder.WithOrigins("*").AllowAnyHeader()
+                          .AllowAnyMethod();
                       });
 });
 builder.Services.AddSwaggerGen(c =>
