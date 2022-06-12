@@ -4,7 +4,7 @@ import {Link, NavLink} from "react-router-dom";
 import "./Navbar.css";
 import { navItems } from "./NavItems";
 import Dropdown from "./Dropdown";
-import {logout} from "../actions/userActions";
+import {logout} from "../actions/auth";
 import "./Button.css";
 import {NavDropdown} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,14 +14,13 @@ export function Navbar() {
     const [dropdown, setDropdown] = useState(false);
     const dispatch = useDispatch();
 
-    const userLogin = useSelector((state) => state.userLogin);
-    const { userInfo } = userLogin;
+
+    const { user: currentUser } = useSelector((state) => state.auth);
 
     const logoutHandler = () => {
         dispatch(logout());
     };
 
-    useEffect(() => {}, [userInfo]);
 
     return (
         <>
@@ -52,10 +51,10 @@ export function Navbar() {
                             </li>
                         );
                     })}
-                    {userInfo ? (
+                    {currentUser ? (
                         <>
                             <NavDropdown
-                                title={`${userInfo.username}`}
+                                title={`${currentUser.message}`}
 
                                 active={{color: 'white'}}
                             >

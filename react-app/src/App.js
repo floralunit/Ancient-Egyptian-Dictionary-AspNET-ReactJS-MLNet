@@ -13,8 +13,23 @@ import {LoginPage} from "./pages/LoginPage";
 import {RegisterPage} from "./pages/RegisterPage";
 import {Profile} from "./pages/Profile";
 import {Chat} from "./pages/Chat";
+import {useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "./actions/auth";
+import { clearMessage } from "./actions/message";
+import { history } from "./helpers/history";
 
 function App() {
+    const { user: currentUser } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        history.listen((location) => {
+            dispatch(clearMessage()); // clear message when changing location
+        });
+    }, [dispatch]);
+    const logOut = () => {
+        dispatch(logout());
+    };
   return (
       <BrowserRouter>
           <Navbar/>

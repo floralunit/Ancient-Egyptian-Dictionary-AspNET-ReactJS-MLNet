@@ -3,16 +3,15 @@ import {useSelector} from "react-redux";
 import "../components/LoginPage.css";
 import {Navigate} from "react-router-dom";
 
-export function Profile() {
+export const Profile = () => {
+    const { user: currentUser } = useSelector((state) => state.auth);
 
-    const userLogin = useSelector((state) => state.userLogin);
-    const {userInfo} = userLogin;
-    useEffect(() => {
-    }, [userInfo]);
+    if (!currentUser) {
+        return <Navigate to="/signin" />;
+    }
 
     return (
         <>
-            {userInfo ? (
                     <div className={"loginpage"}>
                         <div className="container">
                             <div className="screen">
@@ -22,7 +21,7 @@ export function Profile() {
                                         <div className="login__field">
                                             <i className="login__icon fas fa-user"/>
                                             <input type="text" className="login__input" placeholder="Никнейм"
-                                                   value={userInfo.username}/>
+                                                   value={currentUser.username}/>
                                         </div>
                                     </form>
                                 </div>
@@ -35,10 +34,6 @@ export function Profile() {
                             </div>
                         </div>
                     </div>
-                ) :
-                (
-                    <Navigate to="/signin" replace={true}/>
-                )}
         </>
     );
 }

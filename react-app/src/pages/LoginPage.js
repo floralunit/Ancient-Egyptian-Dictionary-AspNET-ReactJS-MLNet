@@ -1,28 +1,52 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {login} from "../actions/userActions";
 import "../components/LoginPage.css";
 import {Col, Row} from "react-bootstrap";
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink, useNavigate, Navigate} from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";
+import { login } from "../actions/auth";
 
-export function LoginPage() {
-    const navigate = useNavigate();
+export const LoginPage = (props) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [message, setMessage] = useState(null);
+    const { message } = useSelector(state => state.message);
+
+    const [loading, setLoading] = useState(false);
 
     const dispatch = useDispatch();
 
-    const userLogin = useSelector((state) => state.userLogin);
-    const {loading, error, userInfo} = userLogin;
-
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(login(username, password)).then(() => {
-            navigate('/profile')
-        })
+
+        setLoading(true);
+
+            dispatch(login(username, password))
+                .then(() => {
+                    props.history.push("/profile");
+                    window.location.reload();
+                })
+                .catch(() => {
+                    setLoading(false);
+                });
     };
+
+    const { isLoggedIn } = useSelector(state => state.auth);
+
+
+    const onChangeUsername = (e) => {
+        const username = e.target.value;
+        setUsername(username);
+    };
+
+    const onChangePassword = (e) => {
+        const password = e.target.value;
+        setPassword(password);
+    };
+
+
+    if (isLoggedIn) {
+        return <Navigate to="/profile" />;
+    }
     return (
         <div className={"loginpage"}>
             <div className="container">
@@ -66,7 +90,6 @@ export function LoginPage() {
                         <span className="screen__background__shape screen__background__shape2"/>
                         <span className="screen__background__shape screen__background__shape1"/>
                     </div>
-                    {error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
                     {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
                 </div>
             </div>
