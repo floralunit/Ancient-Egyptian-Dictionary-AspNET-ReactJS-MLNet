@@ -7,6 +7,6 @@ namespace EgyptianAPI.Models
     {
         public string Categoria { get; set; } = null!;
         public short? Amount { get; set; }
-        public string Name { get; set; } = null!;
+        public string? Name { get; set; }
     }
 }

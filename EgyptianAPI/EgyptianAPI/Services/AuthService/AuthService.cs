@@ -22,12 +22,12 @@ namespace EgyptianAPI.Services.AuthService
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
             if (user == null)
             {
-                return new AuthResponseDto { Message = "User not found." };
+                return new AuthResponseDto { Message = "Пользователь не найден!" };
             }
 
             if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
             {
-                return new AuthResponseDto { Message = "Wrong Password." };
+                return new AuthResponseDto { Message = "Неправильно введен пароль!" };
             }
 
             string token = CreateToken(user);
@@ -40,7 +40,8 @@ namespace EgyptianAPI.Services.AuthService
                 Token = token,
                 Username = request.Username,
                 RefreshToken = refreshToken.Token,
-                TokenExpires = refreshToken.Expires
+                TokenExpires = refreshToken.Expires,
+                Message = "Успешная авторизация!"
             };
         }
 

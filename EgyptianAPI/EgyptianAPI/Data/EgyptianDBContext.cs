@@ -64,7 +64,7 @@ namespace EgyptianAPI.Data
 
             modelBuilder.Entity<Categorium>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.Categoria);
 
                 entity.ToTable("Categoria", "dbo");
 
@@ -77,8 +77,6 @@ namespace EgyptianAPI.Data
 
             modelBuilder.Entity<Comment>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Comment", "dbo");
 
                 entity.Property(e => e.CreatedDt).HasColumnType("datetime");
@@ -88,19 +86,19 @@ namespace EgyptianAPI.Data
 
             modelBuilder.Entity<Glyph>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(e => e.GardinerCode);
 
                 entity.ToTable("Glyph", "dbo");
+
+                entity.Property(e => e.GardinerCode)
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Categoria)
                     .HasMaxLength(5)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Description).HasMaxLength(255);
-
-                entity.Property(e => e.GardinerCode)
-                    .HasMaxLength(25)
-                    .IsUnicode(false);
 
                 entity.Property(e => e.GlyphUnicode).HasMaxLength(10);
 
@@ -134,8 +132,6 @@ namespace EgyptianAPI.Data
 
             modelBuilder.Entity<Phonogram>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Phonogram", "dbo");
 
                 entity.Property(e => e.GardinerCode)
@@ -157,8 +153,6 @@ namespace EgyptianAPI.Data
 
             modelBuilder.Entity<Question>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("Question", "dbo");
 
                 entity.Property(e => e.DtCreated).HasColumnType("datetime");
@@ -189,8 +183,6 @@ namespace EgyptianAPI.Data
 
             modelBuilder.Entity<User>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.ToTable("User", "dbo");
 
                 entity.Property(e => e.PasswordHash).HasMaxLength(255);
