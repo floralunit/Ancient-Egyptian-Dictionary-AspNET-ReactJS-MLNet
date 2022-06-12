@@ -22,25 +22,14 @@ export function RegisterPage() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-
-        axios
-            .get(`https://api.ancient-egyptian-helper.ru/api/auth/profile/${username}`, {
-                responseType: "json",
-            })
-            .then(function (response) {
-                setMessage("Пользователь с таким ником уже зарегистрирован!");
-            }).catch(function (error) {
-            if (error.response) {
                 if (password.length <= 6) {
                     setMessage("Длина пароля должна быть больше 6 символов!");
                 } else if (password !== confirmpassword) {
                     setMessage("Пароли не совпадают");}
                 else dispatch(register(username, password)).then(() => {
-                        navigate('/signin');
+                        navigate('/profile');
                     });
             }
-        });
-    };
     return (
         <div className={"loginpage"}>
             <div className="container">
@@ -71,7 +60,7 @@ export function RegisterPage() {
                             </button>
                             <Row className="py-3">
                                 <Col>
-                                    Есть аккаут? <NavLink to="/signin" style={{color: 'white'}}>Авторизуйтесь</NavLink>
+                                    Есть аккаунт? <NavLink to="/signin" style={{color: 'white'}}>Авторизуйтесь</NavLink>
                                 </Col>
                             </Row>
                         </form>

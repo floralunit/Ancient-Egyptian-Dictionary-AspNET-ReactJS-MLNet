@@ -12,6 +12,7 @@ import {GlyphReader} from "./pages/GlyphReader";
 import {LoginPage} from "./pages/LoginPage";
 import {RegisterPage} from "./pages/RegisterPage";
 import {Profile} from "./pages/Profile";
+import {Chat} from "./pages/Chat";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path='/signin' element={<LoginPage/>}/>
               <Route path='/signup' element={<RegisterPage/>}/>
               <Route path='/profile' element={<Profile/>}/>
+              <Route path='/chat' element={<Chat/>}/>
               <Route path='/dictionary' element={<Dictionary/>}/>
               <Route path='/phonograms' element={<Phonogram/>}/>
               <Route path='/pharaohs' element={<Pharaoh/>}/>

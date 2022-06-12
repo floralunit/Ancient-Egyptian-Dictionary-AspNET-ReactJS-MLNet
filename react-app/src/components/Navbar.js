@@ -69,6 +69,9 @@ export function Navbar() {
                     /> */}
                                     Профиль
                                 </NavDropdown.Item>
+                                <NavDropdown.Item href="/chat" >
+                                    Чат
+                                </NavDropdown.Item>
 
                                 {/*<NavDropdown.Divider />*/}
                                 <NavDropdown.Item onClick={logoutHandler} >

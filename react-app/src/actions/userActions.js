@@ -36,13 +36,10 @@ export const login = (username, password) => async (dispatch) => {
 
     localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (error) {
-    // dispatch({
-    //   type: USER_LOGIN_FAIL,
-    //   payload:
-    //     error.response && error.response.data.message
-    //       ? error.response.data.message
-    //       : error.message,
-    // });
+    dispatch({
+       type: USER_LOGIN_FAIL,
+       payload: error.response.data
+     });
   }
 };
 
@@ -62,7 +59,7 @@ export const register = (username, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://api.ancient-egyptian-helper.ru/api/auth/signup",
+      "https://localhost:7059/api/auth/signup",
       { username, password },
       config
     );
