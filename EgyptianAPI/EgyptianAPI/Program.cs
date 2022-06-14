@@ -18,8 +18,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("*").AllowAnyHeader()
-                          .AllowAnyMethod();
+                          builder.WithOrigins("https://ancient-egyptian-helper.ru", "http://localhost:3000", "http://localhost:3001")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .AllowCredentials();
                       });
 });
 builder.Services.AddSwaggerGen(c =>
