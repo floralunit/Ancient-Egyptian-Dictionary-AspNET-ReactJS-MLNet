@@ -45,13 +45,13 @@ namespace EgyptianAPI.Controllers
         /// Вывод всех комментариев конкретного обсуждения по id
         /// </summary>
         [HttpGet("comments/{id}"), Authorize, Tags("Обсуждения")]
-        public async Task<ActionResult<Comment>> GetCommentsById(int Id)
+        public async Task<ActionResult<Comment>> GetCommentsById(int id)
         {
-            var comments = await _context.Comments.Where(x => x.QuestionId == Id).ToListAsync();
+            var comments = await _context.Comments.Where(x => x.QuestionId == id).ToListAsync();
             if (comments.Count() > 0)
                 return Ok(comments);
             else 
-                return BadRequest($"No comments for question №{Id} were found");
+                return BadRequest($"No comments for question №{id} were found");
         }
 
         // POST: api/questions/add
@@ -61,11 +61,7 @@ namespace EgyptianAPI.Controllers
         [HttpPost("questions/add"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<Question>> AddQuestion(Question question)
         {
-            var refreshToken = _httpContextAccessor?.HttpContext?.Request.Cookies["refreshToken"];
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
             question.DtCreated = DateTime.Now;
-            question.UserId = user.UserId;
-            question.Username = user.Username;
             await _context.Questions.AddAsync(question);
             await _context.SaveChangesAsync();
             return Ok(await _context.Questions.ToArrayAsync());
@@ -74,25 +70,41 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Создание комментария в каком-то обсуждении по id
         /// </summary>
-        [HttpPost("comments/{id}/add"), Authorize, Tags("Обсуждения")]
+        [HttpPost("comments/add/{id}"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<Question>> AddComment(Comment comment, int id)
         {
-            var refreshToken = _httpContextAccessor?.HttpContext?.Request.Cookies["refreshToken"];
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
             comment.QuestionId = id;
             comment.CreatedDt = DateTime.Now;
-            comment.UserId = user.UserId;
-            comment.Username = user.Username;
             await _context.Comments.AddAsync(comment);
             await _context.SaveChangesAsync();
             return Ok(await _context.Comments.Where(x => x.QuestionId == id).ToArrayAsync());
         }
+        // POST: api/comments/3/count
+        /// <summary>
+        /// Подсчет количества комментариев в обсуждении по Id
+        /// </summary>
+        [HttpPost("comments/count/{id}"), Authorize, Tags("Обсуждения")]
+        public async Task<ActionResult<Question>> CommentsQuestionCount(int id)
+        {
+            var comments = await _context.Comments.Where(x => x.QuestionId == id).ToListAsync();
+            return Ok(comments.Count());
+        }
+        // POST: api/comments/user/3/count
+        /// <summary>
+        /// Подсчет количества комментариев пользователя по Id
+        /// </summary>
+        [HttpPost("comments/count/user/{id}"), Authorize, Tags("Обсуждения")]
+        public async Task<ActionResult<Question>> CommentsUserCount(int id)
+        {
+            var comments = await _context.Comments.Where(x => x.UserId == id).ToListAsync();
+            return Ok(comments.Count());
+        }
 
         // DELETE: api/questions/delete/3
         /// <summary>
-        /// Удаление обсуждения (только для администратора)
+        /// Удаление обсуждения
         /// </summary>
-        [HttpDelete("questions/delete/{id}"), Authorize(Roles = "Admin"), Tags("Обсуждения")]
+        [HttpDelete("questions/delete/{id}"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<God>> DeleteQuestion(int id)
         {
             var Question = await _context.Questions.FirstOrDefaultAsync(g => g.Id == id);
@@ -101,15 +113,20 @@ namespace EgyptianAPI.Controllers
             else
             {
                 _context.Questions.Remove(Question);
+                foreach (var comment in _context.Comments)
+                {
+                    if (comment.QuestionId == id)
+                        _context.Comments.Remove(comment);
+                }
                 await _context.SaveChangesAsync();
                 return Ok(await _context.Questions.ToArrayAsync());
             }
         }
         // DELETE: api/comments/delete/3
         /// <summary>
-        /// Удаление комментария (только для администратора)
+        /// Удаление комментария
         /// </summary>
-        [HttpDelete("comments/delete/{id}"), Authorize(Roles = "Admin"), Tags("Обсуждения")]
+        [HttpDelete("comments/delete/{id}"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<God>> DeleteComment( int id)
         {
             var Comment = await _context.Comments.FirstOrDefaultAsync(g => g.Id == id);

@@ -26,7 +26,11 @@ namespace AuthenticationWebApi.Controllers
         public async Task<ActionResult<User>> RegisterUser(UserDto request)
         {
             var response = await _authService.RegisterUser(request);
-            return Ok(response);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
+            if (user == null)
+                return Ok(response);
+            else
+                return BadRequest("Пользователь с таким ником уже зарегистрирован!");
         }
 
         /// <summary>

@@ -38,6 +38,7 @@ namespace EgyptianAPI.Services.AuthService
             {
                 Success = true,
                 Token = token,
+                UserId = user.UserId,
                 Username = request.Username,
                 RefreshToken = refreshToken.Token,
                 TokenExpires = refreshToken.Expires,
