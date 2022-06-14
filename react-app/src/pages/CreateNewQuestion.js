@@ -1,12 +1,17 @@
 import React from 'react'
-
+import {TiArrowBackOutline} from "react-icons/ti";
+import {NavLink} from "react-router-dom";
+import {useSelector} from "react-redux";
+import ErrorMessage from "../components/ErrorMessage";
 
 const CreateNewQuestion = ({
-                       error,
-                       handleBody,
-                       handleSubject,
-                       submitAll}) => {
+                               error,
+                               handleBody,
+                               handleSubject,
+                               submitAll
+                           }) => {
 
+    const {user: currentUser} = useSelector((state) => state.auth);
 
     function titleCase(str) {
         str = str.toLowerCase().split(' ');
@@ -16,38 +21,46 @@ const CreateNewQuestion = ({
         return str.join(' ');
     }
 
-    return(
-        <div className='create-new'>
-            <h2 align={"center"} className={"black"}>Создание обсуждения</h2>
-            <div className='new-card'>
-                <div className='new-content'>
-                    <div className='content-body'>
-                        <ul className='new-task-details'>
-                            <li className='new-subject'>Subject:
-                                <input
-                                    type='text'
-                                    className='new-task-subject'
-                                    autoFocus
-                                    onChange={(e) =>  handleSubject(e.target.value)}>
-                                </input>
-                            </li>
-                            <li className='body-input'>
-                                <textarea
-                                    className='new-task-input'
-                                    onChange={(e) =>  handleBody(e.target.value)}>
-                                </textarea>
-                                <input
-                                    type="submit"
-                                    value='Send'
-                                    onClick={() => submitAll()}>
-                                </input>
-                            </li>
-                            <li className='error-new-task'>{error}</li>
-                        </ul>
-                    </div>
-                </div>
+    return (
+        <div style={{margin: "0 0 3vh 0"}}>
+            <div className={"m-2"}>
+                <NavLink to="/questions"
+                         style={{color: 'black', textDecoration: 'none'}}><TiArrowBackOutline/> Назад к
+                    обсуждениям</NavLink>
+            </div>
+            <div className="commenterImage">
+                <img src={require("../images/svin.jpg")}/>
+            </div>
+            <div className="comment-author">{currentUser.username}<span
+                style={{color: "black"}}> хочет спросить:</span></div>
+            <div className={"empty"}/>
+            <div className="commentText">
+                <label>Тема</label>
+                <input
+                    type='text'
+                    className="form-control"
+                    autoFocus
+                    onChange={(e) => handleSubject(e.target.value)}>
+                </input>
+                <label>Описание</label>
+                <textarea style={{minHeight: "100px"}}
+                          className="form-control"
+                          onChange={(e) => handleBody(e.target.value)}>
+                </textarea>
+                <div className={"empty"}/>
+                <button
+                    className="comment-upload-btn"
+                    type="submit"
+                    onClick={() => submitAll()}>
+                    Отправить
+                </button>
+                {error ?
+                    <ErrorMessage>{error}</ErrorMessage>
+                    : null
+                }
             </div>
         </div>
+
     )
 }
 

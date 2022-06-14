@@ -1,5 +1,6 @@
 import {React, useEffect} from "react"
 import {Link, Navigate, NavLink} from 'react-router-dom'
+import {TiArrowBackOutline} from "react-icons/ti";
 import {useState} from 'react'
 import {
     AiOutlineCloseCircle
@@ -37,8 +38,9 @@ const Questions = ({
     function handleRemoveComment(id) {
         const removeIndex = questions.findIndex(item => item.id === parseInt(id));
         questions.splice(removeIndex, 1);
-/*        refresh();*/
+        /*        refresh();*/
     }
+
     return (
         <div className='task-grid'>
             <h2 align={"center"} className={"black"}>Древнеегипетские обсуждения</h2>
@@ -46,7 +48,7 @@ const Questions = ({
                 <Col>
                     <Row>
                         <NavLink to="/profile"
-                                 style={{color: 'black', textDecoration: 'none'}}><AiOutlineCloseCircle/> Выйти в
+                                 style={{color: 'black', textDecoration: 'none'}}><TiArrowBackOutline/> Вернуться в
                             профиль</NavLink>
                     </Row>
                     <Row>
@@ -57,33 +59,42 @@ const Questions = ({
             </Row>
             {questions ? <div className='task-container'>
                 <div className='actionBox'>
-                        {questions.length > 0 ?
-                            questions.map((t) =>
-                                <div key={t.id} className='comment'>
-                                    <div className='comment-right-part'>
-                                            <Link to={`/questions/${t.id}`} style={{color: 'black', textDecoration: 'none'}}>
-                                                <div className="commenterImage">
-                                                    <img src="http://placekitten.com/45/45"/>
-                                                </div>
-                                                <div className="comment-author">{t.username}</div>
-                                                <div className="commentText">
-                                                    <div style={{fontSize: '30px'}}>{titleCase(t.subject)}</div>
-                                                    <p style={{fontSize: '15px'}}>{t.description}</p> <span
-                                                    className="date sub-text"><Moment format="HH:mm DD.MM.YYYY">{t.dtCreated}</Moment></span>
-
-                                                </div>
-                                            </Link>
+                    {questions.length > 0 ?
+                        questions.map((t) =>
+                            <div key={t.id} className='comment'>
+                                <div className='comment-right-part'>
+                                    <div className="comment-content">
+                                        <div className="commenterImage">
+                                            <img src="http://placekitten.com/45/45"/>
+                                        </div>
+                                        <div className="comment-author">{t.username}</div>
+                                        <div className='comment-actions'>{user.userId === t.userId ?
+                                            <>
+                                                <MdDeleteForever onClick={() => handleDelete(t.id)}/>
+                                            </>
+                                            : null}
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                            :
-                            <div className='no-card'>
-                                <div className='content'>
-                                    Nothing to see here...
+                                    <Link to={`/questions/${t.id}`} style={{color: 'black', textDecoration: 'none'}}>
+                                        <div className="commentText">
+                                            <div style={{fontSize: '30px'}}>{titleCase(t.subject)}</div>
+                                            <p style={{fontSize: '15px'}}>{t.description}</p> <span
+                                            className="date sub-text"><Moment
+                                            format="HH:mm DD.MM.YYYY">{t.dtCreated}</Moment></span>
+
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
-                        }
-                    </div>
+                        )
+                        :
+                        <div className='no-card'>
+                            <div className='content'>
+                                Nothing to see here...
+                            </div>
+                        </div>
+                    }
+                </div>
             </div> : null}
         </div>
     )

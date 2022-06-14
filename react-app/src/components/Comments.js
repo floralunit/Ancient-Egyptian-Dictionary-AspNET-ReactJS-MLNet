@@ -31,7 +31,7 @@ const Comments = ({
 
     const handleSubmitComment = (e) => {
         e.preventDefault();
-        fetch(`https://localhost:7059/api/comments/${id}/add`, {
+        fetch(`https://api.ancient-egyptian-helper.ru/api/comments/add/${id}`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -75,14 +75,17 @@ const Comments = ({
 
     return (
         <div>
-            <form className='form-inline' role="form" onSubmit={handleSubmitComment}>
-                <div className="form-group">
-                            <textarea type="text" name="comment" autoFocus className="form-control"
-                                      onChange={(e) => setNewComment(e.target.value)}/>
-                </div>
-                <div className="form-group">
-                    <input type="submit" className="btn btn-default" value='Send'/>
-                </div>
+            <form role="form" onSubmit={handleSubmitComment}>
+                <Row className="row py-3">
+                    <Col className={"col-xl-8"}>
+                        <input type="text" name="comment" autoFocus className="form-control"
+                               placeholder={"Оставьте комментарий"}
+                               onChange={(e) => setNewComment(e.target.value)}/>
+                    </Col>
+                    <Col className={"col col-lg-3"}>
+                        <button type="submit" className="comment-upload-btn">Отправить</button>
+                    </Col>
+                </Row>
             </form>
             <div className="commentBox">
                 {comments ?

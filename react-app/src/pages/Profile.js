@@ -12,7 +12,7 @@ export const Profile = () => {
     useEffect(() => {
         try {
             axios
-                .post(`https://localhost:7059/api/comments/user/${currentUser.userId}/count`, {
+                .post(`https://api.ancient-egyptian-helper.ru/api/comments/count/user/${currentUser.userId}`, {
                     responseType: "json",
                 },{headers})
                 .then(function (response) {

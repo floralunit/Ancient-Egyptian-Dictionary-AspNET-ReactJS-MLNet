@@ -73,8 +73,8 @@ export function Navbar() {
                                 </NavDropdown.Item>
 
                                 {/*<NavDropdown.Divider />*/}
-                                <NavDropdown.Item onClick={logoutHandler} >
-                                    <NavLink to="/signin">Выйти</NavLink>
+                                <NavDropdown.Item onClick={logoutHandler} href="/signin">
+                                    Выйти
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </>

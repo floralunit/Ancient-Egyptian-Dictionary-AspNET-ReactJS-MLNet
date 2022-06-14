@@ -37,11 +37,11 @@ const QuestionsPage = () => {
     const submitAll = () => {
         if (sub && body) {
             if (sub.length > 30) {
-                setError('Subject character limit = 30')
-            } else if (body.length > 2000) {
-                setError('Description character limit = 2000')
+                setError('Тема должна быть > 30 символов')
+            } else if (body.length > 100) {
+                setError('Описание должно быть больше > 100 символов')
             } else {
-                fetch(`https://localhost:7059/api/questions/add`, {
+                fetch(`https://api.ancient-egyptian-helper.ru/api/questions/add`, {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",
@@ -63,9 +63,9 @@ const QuestionsPage = () => {
                 navigate('/questions')
             }
         } else if (!sub) {
-            setError('Subject field required')
+            setError('Заполните тему!')
         } else if (!body) {
-            setError('Description field required')
+            setError('Заполните описание!')
         }
     }
     return (

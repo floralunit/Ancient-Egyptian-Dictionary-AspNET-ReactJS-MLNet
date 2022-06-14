@@ -1,10 +1,9 @@
 
-
-
 .comment {
     display: flex;
     margin-bottom: 28px;
 }
+
 .comment:hover {
     background-color: #fcf1cb;
 }
@@ -57,72 +56,107 @@
 
 
 .detailBox {
-    width:320px;
-    border:1px solid #bbb;
-    margin:50px;
+    width: 320px;
+    border: 1px solid #bbb;
+    margin: 50px;
 }
+
 .titleBox {
-    background-color:#fdfdfd;
-    padding:10px;
+    background-color: #fdfdfd;
+    padding: 10px;
 }
-.titleBox label{
-    color:#444;
-    margin:0;
-    display:inline-block;
+
+.titleBox label {
+    color: #444;
+    margin: 0;
+    display: inline-block;
 }
 
 .commentBox {
-    padding:10px;
-    border-top:1px dotted #bbb;
-}
-.commentBox .form-group:first-child, .actionBox .form-group:first-child {
-    width:80%;
-}
-.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
-    width:18%;
-}
-.actionBox .form-group * {
-    width:100%;
-}
-.taskDescription {
-    margin-top:10px;
-}
-.commentList {
-    padding:0;
-    list-style:none;
-    max-height:200px;
-    overflow:auto;
-}
-.commentList li {
-    margin:0;
-    margin-top:10px;
-}
-.commentList li > div {
-    display:table-cell;
-}
-.commenterImage {
-    width:30px;
-    margin-right:5px;
-    height:100%;
-    float:left;
-}
-.commenterImage img {
-    width:100%;
-    border-radius:50%;
-}
-.commentText p {
-    margin:0;
-}
-.sub-text {
-    color:#aaa;
-    font-family:verdana;
-    font-size:11px;
-}
-.actionBox {
-    border-top:1px dotted #bbb;
-    padding:10px;
+    padding: 10px;
+    border-top: 1px dotted #bbb;
 }
 
-.form-inline{
+.commentBox .form-group:first-child, .actionBox .form-group:first-child {
+    width: 80%;
+}
+
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+    width: 18%;
+}
+
+.actionBox .form-group * {
+    width: 100%;
+}
+
+.taskDescription {
+    margin-top: 10px;
+}
+
+.commentList {
+    padding: 0;
+    list-style: none;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.commentList li {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.commentList li > div {
+    display: table-cell;
+}
+
+.commenterImage {
+    width: 30px;
+    margin-right: 5px;
+    height: 100%;
+    float: left;
+}
+
+.commenterImage img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.commentText p {
+    margin: 0;
+}
+
+.sub-text {
+    color: #aaa;
+    font-family: verdana;
+    font-size: 11px;
+}
+
+.actionBox {
+    border-top: 1px dotted #bbb;
+    padding: 10px;
+}
+
+.form-inline {
     display: inline;
+}
+
+.form-control {
+    min-height: 100%;
+    border: black;
+}
+
+.comment-upload-btn {
+    width: 100%;
+    margin: 1vh 0;
+    color: #fff;
+    background: #A55C39;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #673923;
+    transition: all .2s ease;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
 }

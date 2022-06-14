@@ -1,21 +1,19 @@
-import {React, useEffect} from 'react'
-/*import './Task.css'*/
+import {React} from 'react'
 import {useParams, useNavigate, NavLink} from 'react-router-dom'
-import { useState } from 'react';
-import CommentsStyle from "../styles/CommentsStyle.css";
-import { useDispatch, useSelector } from "react-redux";
-import Questions from "./Questions";
+import {useState} from 'react';
+import {useSelector} from "react-redux";
 import Comments from "./Comments";
 import Moment from "react-moment";
-import {Col, Row} from "react-bootstrap";
-import {AiOutlineCloseCircle} from "react-icons/ai";
-import {MdDeleteForever, MdOutlineCreate} from "react-icons/md";
+import {TiArrowBackOutline} from "react-icons/ti";
+import {MdDeleteForever} from "react-icons/md";
 import axios from "axios";
 
-const Question = ({user,
-                  questions}) => {
+const Question = ({
+                      user,
+                      questions
+                  }) => {
 
-    const { id } = useParams()
+    const {id} = useParams()
 
     const navigate = useNavigate()
 
@@ -28,18 +26,15 @@ const Question = ({user,
     }
 
 
-    const refresh = ()=>{
-        window.location.reload();
+    const refresh = () => {
+
     }
     const [comments, setComments] = useState([])
-    const { user: currentUser } = useSelector((state) => state.auth);
-    const headers = {Authorization: `Bearer ${user.token}`};
+    const {user: currentUser} = useSelector((state) => state.auth);
+    const headers = {Authorization: `Bearer ${currentUser.token}`};
     const handleDelete = (e) => {
         try {
-            axios
-                .delete(`https://localhost:7059/api/questions/delete/${e}`, {
-                    responseType: "json",
-                },{headers});
+            axios.delete(`https://api.ancient-egyptian-helper.ru/api/questions/delete/${e}`, {headers});
         } catch (ex) {
             console.log(ex);
         }
@@ -50,41 +45,40 @@ const Question = ({user,
     function handleRemoveComment(id) {
         const removeIndex = comments.findIndex(item => item.id === parseInt(id));
         comments.splice(removeIndex, 1);
-       navigate("/questions");
+        navigate("/questions");
     }
-    return(
-        <div >
-            {questions.filter((t) => t.id === parseInt(id) )
-                .map((t) => (
-                    <div key={t.id} >
-                                    <div >
-                                        <div className={"p-1 m-2"}>
-                                                    <NavLink to="/questions"
-                                                             style={{color: 'black', textDecoration: 'none'}}><AiOutlineCloseCircle/>   Назад к обсуждениям</NavLink>
-                                                    {user.userId === t.userId ?
-                                                        <>
-                                                            <div onClick={() => handleDelete(t.id)}><MdDeleteForever/>  Удалить</div>
-                                                        </>
-                                                        : null}
-                                        </div>
-                                        <div className="commenterImage">
-                                            <img src="http://placekitten.com/45/45"/>
-                                        </div>
-                                        <div className="comment-author">{t.username} спрашивает:</div>
-                                        <span
-                                            className="date sub-text"><Moment format="HH:mm DD.MM.YYYY">{t.dtCreated}</Moment></span>
-                                        <div className="commentText">
-                                            <div style={{fontSize: '40px'}}>{titleCase(t.subject)}</div>
-                                            <p style={{fontSize: '25px', margin: 'auto 0'}}>{t.description}</p>
 
-                                        </div>
-                                    </div>
-                                    <div className='actionBox'>
-                                        <Comments
-                                            id={id}
-                                            refresh={refresh}
-                                        />
-                                    </div>
+    return (
+        <div>
+            {questions.filter((t) => t.id === parseInt(id))
+                .map((t) => (
+                    <div key={t.id}>
+                        <div style={{margin: "0 0 3vh 0"}}>
+                            <div className={"m-2"}>
+                                <NavLink to="/questions"
+                                         style={{color: 'black', textDecoration: 'none'}}><TiArrowBackOutline/> Назад к
+                                    обсуждениям</NavLink>
+                            </div>
+                            <div className="commenterImage">
+                                <img src="http://placekitten.com/45/45"/>
+                            </div>
+                            <div className="comment-author">{t.username}<span
+                                style={{color: "black"}}> спрашивает:</span></div>
+                            <span
+                                className="date sub-text"><Moment
+                                format="HH:mm DD.MM.YYYY">{t.dtCreated}</Moment></span>
+                            <div className="commentText">
+                                <div style={{fontSize: '40px'}}>{titleCase(t.subject)}</div>
+                                <p style={{fontSize: '20px', margin: 'auto 0'}}>{t.description}</p>
+
+                            </div>
+                        </div>
+                        <div className='actionBox'>
+                            <Comments
+                                id={id}
+                                refresh={refresh}
+                            />
+                        </div>
                     </div>))}
         </div>
     )
