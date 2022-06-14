@@ -22,17 +22,17 @@
 }
 
 .dictionary,.phonograms, .gods, .about {
-  background-image: url("./images/glyphs.jpg");
+  background-image: url("../images/glyphs.jpg");
 }
 .glyphreader{
-  background-image: url("./images/wall.jpg");
+  background-image: url("../images/wall.jpg");
 }
 .pharaohs{
-  background-image: url("./images/pharaohs.jpg");
+  background-image: url("../images/pharaohs.jpg");
 
 }
 .loginpage{
-  background-image: url("./images/pyramids.jpg");
+  background-image: url("../images/pyramids.jpg");
 
 }
 .pharaohs a:link {

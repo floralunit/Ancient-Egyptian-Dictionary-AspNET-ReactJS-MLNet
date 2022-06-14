@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import "../components/StickyTableStyle.css";
-import "../components/FilterBar.css"
-import "../components/TabsStyle.css"
-import FilterBarDictionary from "../components/FilterBarDictionary";
+import "../styles/StickyTableStyle.css";
+import "../styles/FilterBar.css"
+import "../styles/TabsStyle.css"
+import FilterBarDictionary from "../components/filters/FilterBarDictionary";
 import ReactLoading from 'react-loading';
 
 export function Dictionary() {

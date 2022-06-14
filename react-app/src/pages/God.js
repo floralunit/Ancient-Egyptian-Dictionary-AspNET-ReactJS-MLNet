@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import FilterBarGod from "../components/FilterBarGod";
-import "../components/StickyTableStyle.css";
-import "../components/FilterBar.css"
+import FilterBarGod from "../components/filters/FilterBarGod";
+import "../styles/StickyTableStyle.css";
+import "../styles/FilterBar.css"
 import ReactLoading from "react-loading";
 
 export function God() {

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import "../components/LoginPage.css";
+import "../styles/LoginPage.css";
 import {Col, Row} from "react-bootstrap";
 import {NavLink, useNavigate, Navigate} from "react-router-dom";
 import ErrorMessage from "../components/ErrorMessage";

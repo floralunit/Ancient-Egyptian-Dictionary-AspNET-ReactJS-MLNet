@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./FilterBar.css";
+import "../../styles/FilterBar.css";
 
 const FilterBarDictionary = ({
                                 onGlyphFilter,

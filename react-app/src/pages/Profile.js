@@ -1,15 +1,31 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
-import "../components/LoginPage.css";
+import "../styles/LoginPage.css";
 import {Navigate} from "react-router-dom";
+import axios from "axios";
 
 export const Profile = () => {
     const { user: currentUser } = useSelector((state) => state.auth);
+    const headers = {Authorization: `Bearer ${currentUser.token}`};
+    const [commentsCount, setCommentsCount,] = useState([]);
+
+    useEffect(() => {
+        try {
+            axios
+                .post(`https://localhost:7059/api/comments/user/${currentUser.userId}/count`, {
+                    responseType: "json",
+                },{headers})
+                .then(function (response) {
+                    setCommentsCount(response.data);
+                });
+        } catch (ex) {
+            console.log(ex);
+        }
+    }, [])
 
     if (!currentUser) {
         return <Navigate to="/signin" />;
     }
-
     return (
         <>
                     <div className={"loginpage"}>
@@ -23,6 +39,7 @@ export const Profile = () => {
                                             <input type="text" className="login__input" placeholder="Никнейм"
                                                    value={currentUser.username}/>
                                         </div>
+                                        <div>Ты написал(а) {commentsCount} комментариев</div>
                                     </form>
                                 </div>
                                 <div className="screen__background">

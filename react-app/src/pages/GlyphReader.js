@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-import "../components/GlyphReaderStyle.css";
+import "../styles/GlyphReaderStyle.css";
 import ReactLoading from "react-loading";
 
 export const GlyphReader = () => {

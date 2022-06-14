@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import "../components/StickyTableStyle.css";
-import "../components/FilterBar.css"
-import "../components/TabsStyle.css"
-import FilterBarPhonogram from "../components/FilterBarPhonogram";
+import "../styles/StickyTableStyle.css";
+import "../styles/FilterBar.css"
+import "../styles/TabsStyle.css"
+import FilterBarPhonogram from "../components/filters/FilterBarPhonogram";
 import ReactLoading from "react-loading";
 
 export function Phonogram() {

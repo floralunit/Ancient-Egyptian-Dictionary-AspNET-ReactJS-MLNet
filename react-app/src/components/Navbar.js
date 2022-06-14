@@ -1,11 +1,11 @@
 
 import React, { useState,useEffect } from "react";
 import {Link, NavLink} from "react-router-dom";
-import "./Navbar.css";
+import "../styles/Navbar.css";
 import { navItems } from "./NavItems";
 import Dropdown from "./Dropdown";
 import {logout} from "../actions/auth";
-import "./Button.css";
+import "../styles/Button.css";
 import {NavDropdown} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -54,7 +54,7 @@ export function Navbar() {
                     {currentUser ? (
                         <>
                             <NavDropdown
-                                title={`${currentUser.message}`}
+                                title={`${currentUser.username}`}
 
                                 active={{color: 'white'}}
                             >
@@ -68,13 +68,13 @@ export function Navbar() {
                     /> */}
                                     Профиль
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="/chat" >
-                                    Чат
+                                <NavDropdown.Item href="/questions" >
+                                    Обсуждения
                                 </NavDropdown.Item>
 
                                 {/*<NavDropdown.Divider />*/}
                                 <NavDropdown.Item onClick={logoutHandler} >
-                                    Выйти
+                                    <NavLink to="/signin">Выйти</NavLink>
                                 </NavDropdown.Item>
                             </NavDropdown>
                         </>

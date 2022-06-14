@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import "../components/StickyTableStyle.css";
-import "../components/FilterBar.css"
+import "../styles/StickyTableStyle.css";
+import "../styles/FilterBar.css"
 import ReactLoading from "react-loading";
-import FilterBarPharaoh from "../components/FilterBarPharaoh";
+import FilterBarPharaoh from "../components/filters/FilterBarPharaoh";
 
 export function AbydosCanon() {
     const [error, setError] = useState(null);

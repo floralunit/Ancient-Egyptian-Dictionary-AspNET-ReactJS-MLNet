@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { pharaohDropdown } from "./NavItems";
 import { Link } from "react-router-dom";
-import "./Dropdown.css";
+import "../styles/Dropdown.css";
 
 function Dropdown() {
     const [dropdown, setDropdown] = useState(false);
