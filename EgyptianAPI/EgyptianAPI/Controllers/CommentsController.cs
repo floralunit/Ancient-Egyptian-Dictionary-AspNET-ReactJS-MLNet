@@ -29,7 +29,7 @@ namespace EgyptianAPI.Controllers
         [HttpGet("questions/all"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<Question>> GetQuestions()
         {
-            return Ok(await _context.Questions.ToListAsync());
+            return Ok(await _context.Questions.OrderByDescending(x => x.DtCreated).ToListAsync());
         }
         // GET: api/comments/all
         /// <summary>
@@ -38,7 +38,7 @@ namespace EgyptianAPI.Controllers
         [HttpGet("comments/all"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<Comment>> GetComments()
         {
-            return Ok(await _context.Comments.ToListAsync());
+            return Ok(await _context.Comments.OrderByDescending(x => x.CreatedDt).ToListAsync());
         }
         // GET: api/comments/3
         /// <summary>
@@ -49,7 +49,7 @@ namespace EgyptianAPI.Controllers
         {
             var comments = await _context.Comments.Where(x => x.QuestionId == id).ToListAsync();
             if (comments.Count() > 0)
-                return Ok(comments);
+                return Ok(comments.OrderByDescending(x => x.CreatedDt));
             else 
                 return BadRequest($"No comments for question №{id} were found");
         }
@@ -64,7 +64,7 @@ namespace EgyptianAPI.Controllers
             question.DtCreated = DateTime.Now;
             await _context.Questions.AddAsync(question);
             await _context.SaveChangesAsync();
-            return Ok(await _context.Questions.ToArrayAsync());
+            return Ok(await _context.Questions.OrderByDescending(x => x.DtCreated).ToArrayAsync());
         }
         // POST: api/comments/3/add
         /// <summary>
@@ -77,7 +77,7 @@ namespace EgyptianAPI.Controllers
             comment.CreatedDt = DateTime.Now;
             await _context.Comments.AddAsync(comment);
             await _context.SaveChangesAsync();
-            return Ok(await _context.Comments.Where(x => x.QuestionId == id).ToArrayAsync());
+            return Ok(await _context.Comments.Where(x => x.QuestionId == id).OrderByDescending(x => x.CreatedDt).ToArrayAsync());
         }
         // POST: api/comments/3/count
         /// <summary>
@@ -104,7 +104,7 @@ namespace EgyptianAPI.Controllers
         /// <summary>
         /// Удаление обсуждения
         /// </summary>
-        [HttpDelete("questions/delete/{id}"), Authorize, Tags("Обсуждения")]
+        [HttpGet("questions/delete/{id}"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<God>> DeleteQuestion(int id)
         {
             var Question = await _context.Questions.FirstOrDefaultAsync(g => g.Id == id);
@@ -119,14 +119,14 @@ namespace EgyptianAPI.Controllers
                         _context.Comments.Remove(comment);
                 }
                 await _context.SaveChangesAsync();
-                return Ok(await _context.Questions.ToArrayAsync());
+                return Ok(await _context.Questions.OrderByDescending(x => x.DtCreated).ToArrayAsync());
             }
         }
         // DELETE: api/comments/delete/3
         /// <summary>
         /// Удаление комментария
         /// </summary>
-        [HttpDelete("comments/delete/{id}"), Authorize, Tags("Обсуждения")]
+        [HttpGet("comments/delete/{id}"), Authorize, Tags("Обсуждения")]
         public async Task<ActionResult<God>> DeleteComment( int id)
         {
             var Comment = await _context.Comments.FirstOrDefaultAsync(g => g.Id == id);
@@ -136,7 +136,7 @@ namespace EgyptianAPI.Controllers
             {
                 _context.Comments.Remove(Comment);
                 await _context.SaveChangesAsync();
-                return Ok(await _context.Comments.ToArrayAsync());
+                return Ok(await _context.Comments.OrderByDescending(x => x.CreatedDt).ToArrayAsync());
             }
         }
     }

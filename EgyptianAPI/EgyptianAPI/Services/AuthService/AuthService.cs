@@ -42,6 +42,7 @@ namespace EgyptianAPI.Services.AuthService
                 Username = request.Username,
                 RefreshToken = refreshToken.Token,
                 TokenExpires = refreshToken.Expires,
+                Role = user.Role,
                 Message = "Успешная авторизация!"
             };
         }
