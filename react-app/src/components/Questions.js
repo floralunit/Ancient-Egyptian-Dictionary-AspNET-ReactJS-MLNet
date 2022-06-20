@@ -16,22 +16,26 @@ const Questions = ({
                        user,
                        questions
                    }) => {
-    function titleCase(str) {
+/*    function titleCase(str) {
         str = str.toLowerCase().split(' ');
         for (var i = 0; i < str.length; i++) {
             str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
         }
         return str.join(' ');
-    }
+    }*/
 
     const handleDelete = (e) => {
         fetch(`https://api.ancient-egyptian-helper.ru/api/questions/delete/${e}`, {
-            method: "DELETE",
+            method: "GET",
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "Authorization": `Bearer ${user.token}`
             },
         })
-            .then(console.log('deleted'))
+            .then(() => {
+                console.log('deleted');
+                window.location.reload();
+            })
         handleRemoveComment(e)
     }
 
@@ -68,7 +72,7 @@ const Questions = ({
                                             <img src="http://placekitten.com/45/45"/>
                                         </div>
                                         <div className="comment-author">{t.username}</div>
-                                        <div className='comment-actions'>{user.userId === t.userId ?
+                                        <div className='comment-actions'>{user.userId === t.userId || user.role === "Admin" ?
                                             <>
                                                 <MdDeleteForever onClick={() => handleDelete(t.id)}/>
                                             </>
@@ -77,7 +81,8 @@ const Questions = ({
                                     </div>
                                     <Link to={`/questions/${t.id}`} style={{color: 'black', textDecoration: 'none'}}>
                                         <div className="commentText">
-                                            <div style={{fontSize: '30px'}}>{titleCase(t.subject)}</div>
+{/*                                            <div style={{fontSize: '30px'}}>{titleCase(t.subject)}</div>*/}
+                                            <div style={{fontSize: '30px'}}>{t.subject}</div>
                                             <p style={{fontSize: '15px'}}>{t.description}</p> <span
                                             className="date sub-text"><Moment
                                             format="HH:mm DD.MM.YYYY">{t.dtCreated}</Moment></span>

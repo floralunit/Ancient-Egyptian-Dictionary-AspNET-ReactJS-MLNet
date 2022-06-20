@@ -31,16 +31,6 @@ const Question = ({
     }
     const [comments, setComments] = useState([])
     const {user: currentUser} = useSelector((state) => state.auth);
-    const headers = {Authorization: `Bearer ${currentUser.token}`};
-    const handleDelete = (e) => {
-        try {
-            axios.delete(`https://api.ancient-egyptian-helper.ru/api/questions/delete/${e}`, {headers});
-        } catch (ex) {
-            console.log(ex);
-        }
-
-        handleRemoveComment(e)
-    }
 
     function handleRemoveComment(id) {
         const removeIndex = comments.findIndex(item => item.id === parseInt(id));

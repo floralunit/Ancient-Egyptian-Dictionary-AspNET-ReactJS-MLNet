@@ -55,7 +55,7 @@ const CreateNewQuestion = ({
                     Отправить
                 </button>
                 {error ?
-                    <ErrorMessage>{error}</ErrorMessage>
+                    <ErrorMessage variant="danger">{error}</ErrorMessage>
                     : null
                 }
             </div>

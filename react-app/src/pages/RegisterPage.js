@@ -4,8 +4,9 @@ import { register } from "../actions/auth";
 import ErrorMessage from "../components/ErrorMessage";
 import "../styles/LoginPage.css";
 import {Col, Row} from "react-bootstrap";
-import {NavLink, useNavigate} from "react-router-dom";
-import axios from "axios";
+import {Navigate, NavLink, useNavigate} from "react-router-dom";
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
 const required = (value) => {
     if (!value) {
         return (
@@ -40,50 +41,37 @@ const vpassword = (value) => {
         const [username, setUsername] = useState("");
         const [password, setPassword] = useState("");
         const [confirmPassword, setConfirmPassword] = useState("");
+        const navigate = useNavigate();
         const [successful, setSuccessful] = useState(false);
 
         let {message} = useSelector(state => state.message);
+        const [error, setError] = useState("");
+
         const dispatch = useDispatch();
-
-        const onChangeUsername = (e) => {
-            const username = e.target.value;
-            setUsername(username);
-        };
-
-
-        const onChangePassword = (e) => {
-            const password = e.target.value;
-            setPassword(password);
-        };
 
         const handleRegister = (e) => {
             e.preventDefault();
 
             setSuccessful(false);
-            if (password.length <= 6) {
-                message = "Длина пароля должна быть больше 6 символов!";
+            if (password.length === 0 || confirmPassword.length === 0 || username.length === 0) {
+                setError("Есть незаполненные поля!");
+            } else if (password.length <= 6) {
+                setError("Длина пароля должна быть больше 6 символов!");
             } else if (password !== confirmPassword) {
-                message = "Пароли не совпадают";}
-            else dispatch(register(username, password))
+                setError("Пароли не совпадают");}
+            else
+            {
+                dispatch(register(username, password))
                     .then(() => {
                         setSuccessful(true);
                     })
                     .catch(() => {
                         setSuccessful(false);
                     });
+                navigate('/signin');
+            }
 
         };
-
-/*    const submitHandler = (e) => {
-        e.preventDefault();
-                if (password.length <= 6) {
-                    setMessage("Длина пароля должна быть больше 6 символов!");
-                } else if (password !== confirmpassword) {
-                    setMessage("Пароли не совпадают");}
-                else dispatch(register(username, password)).then(() => {
-                        navigate('/profile');
-                    });
-            }*/
     return (
         <div className={"loginpage"}>
             <div className="container">
@@ -120,14 +108,6 @@ const vpassword = (value) => {
                                 </Col>
                             </Row>
                         </form>
-                        {/*<div className="social-login">*/}
-                        {/*    <h3>log in via</h3>*/}
-                        {/*    <div className="social-icons">*/}
-                        {/*        <a href="#" className="social-login__icon fab fa-instagram"/>*/}
-                        {/*        <a href="#" className="social-login__icon fab fa-facebook"/>*/}
-                        {/*        <a href="#" className="social-login__icon fab fa-twitter"/>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </div>
                     <div className="screen__background">
                         <span className="screen__background__shape screen__background__shape4"/>
@@ -135,7 +115,13 @@ const vpassword = (value) => {
                         <span className="screen__background__shape screen__background__shape2"/>
                         <span className="screen__background__shape screen__background__shape1"/>
                     </div>
-                    {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
+                    {message ?
+                        <ErrorMessage variant="danger">{message}</ErrorMessage>
+                        :
+                            error ?
+                                <ErrorMessage variant="danger">{error}</ErrorMessage>
+                                : null
+                    }
                 </div>
             </div>
         </div>

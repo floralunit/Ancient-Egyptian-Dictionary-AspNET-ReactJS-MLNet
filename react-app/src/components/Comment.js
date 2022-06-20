@@ -4,6 +4,7 @@ import {
 } from 'react-icons/md'
 import {useState} from 'react'
 import CommentsStyle from "../styles/CommentsStyle.css"
+import Moment from "react-moment";
 
 const Comment = ({
                      c,
@@ -19,7 +20,7 @@ const Comment = ({
                         <img src={require("../images/ava.png")}/>
                     </div>
                     <div className="comment-author">{c.username}</div>
-                    <div className='comment-actions'>{user.userId === c.userId ?
+                    <div className='comment-actions'>{user.userId === c.userId || user.role === "Admin"?
                         <>
                             <MdDeleteForever onClick={() => handleDelete(c.id)}/>
                         </>
@@ -27,9 +28,9 @@ const Comment = ({
                     </div>
                 </div>
                 <div className="commentText">
-                    <p className="">{c.description}</p> <span
-                    className="date sub-text">{c.createdDt}</span>
-
+                    <p className="">{c.description}</p><span
+                    className="date sub-text"><Moment
+                    format="HH:mm DD.MM.YYYY">{c.createdDt}</Moment></span>
                 </div>
             </div>
         </div>

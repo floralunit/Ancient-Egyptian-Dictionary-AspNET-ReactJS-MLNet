@@ -47,9 +47,9 @@ const Comments = ({
                 handleAddComment(addcomment)
                 console.log(addcomment)
                 e.target.reset();
+                window.location.reload();
             })
         setNewComment('');
-        refresh()
     }
 
     function handleAddComment(comment) {
@@ -58,12 +58,16 @@ const Comments = ({
 
     const handleDelete = (e) => {
         fetch(`https://api.ancient-egyptian-helper.ru/api/comments/delete/${e}`, {
-            method: "DELETE",
+            method: "GET",
             headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "Authorization": `Bearer ${currentUser.token}`
             },
         })
-            .then(console.log('deleted'))
+            .then(() => {
+                    console.log('deleted');
+                    window.location.reload();
+        })
         handleRemoveComment(e)
     }
 

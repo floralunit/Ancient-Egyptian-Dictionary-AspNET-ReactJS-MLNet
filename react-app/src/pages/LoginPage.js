@@ -90,7 +90,10 @@ export const LoginPage = (props) => {
                         <span className="screen__background__shape screen__background__shape2"/>
                         <span className="screen__background__shape screen__background__shape1"/>
                     </div>
-                    {message && <ErrorMessage variant="danger">{message}</ErrorMessage>}
+                    {message ?
+                        <ErrorMessage variant="danger">{message}</ErrorMessage>
+                        : null
+                    }
                 </div>
             </div>
         </div>
