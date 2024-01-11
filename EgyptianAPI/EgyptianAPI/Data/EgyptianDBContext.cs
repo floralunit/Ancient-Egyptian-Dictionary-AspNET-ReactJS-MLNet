@@ -31,13 +31,13 @@ namespace EgyptianAPI.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=wpl37.hosting.reg.ru;Database=u1667294_EgyptianDB;User Id=u1667294_u1667294;Password=51ApEpAv;Trusted_Connection=False;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-EA92TFG\\FLORALSERVER;Database=EgyptianDB;User Id=floralunit;Password=51apepav;TrustServerCertificate=True");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("u1667294_u1667294");
+            modelBuilder.HasDefaultSchema("floralunit");
 
             modelBuilder.Entity<AbydosCanon>(entity =>
             {
