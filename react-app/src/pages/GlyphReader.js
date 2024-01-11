@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import "../styles/GlyphReaderStyle.css";
 import ReactLoading from "react-loading";
+import {API_URL} from "../global-const.js";
 
 export const GlyphReader = () => {
     const [fileSelected, setFileSelected] = useState();
@@ -20,9 +21,9 @@ export const GlyphReader = () => {
         const formData = new FormData();
         formData.append("file", fileSelected);
         try {
-            const res = await axios.post("https://api.ancient-egyptian-helper.ru/api/glyphreader", formData);
+            const res = await axios.post(`${API_URL}/glyphreader`, formData);
             axios
-                .get(`https://api.ancient-egyptian-helper.ru/api/glyphs/find/${res.data}`, {
+                .get(`${API_URL}/glyphs/find/${res.data}`, {
                     responseType: "json",
                 })
                 .then(function (response) {

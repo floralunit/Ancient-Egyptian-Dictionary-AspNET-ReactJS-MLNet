@@ -18,8 +18,9 @@ top: 0; */
     align-items: center;
     justify-content: space-between;
     width: auto;
-    margin-bottom: 2vh;
     cursor: default;
+    position: absolute;
+    left: 0;
 }
 
 /* Стиль всей панели элементов */

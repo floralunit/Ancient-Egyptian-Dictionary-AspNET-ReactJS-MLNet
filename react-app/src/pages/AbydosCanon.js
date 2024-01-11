@@ -3,6 +3,7 @@ import "../styles/StickyTableStyle.css";
 import "../styles/FilterBar.css"
 import ReactLoading from "react-loading";
 import FilterBarPharaoh from "../components/filters/FilterBarPharaoh";
+import {API_URL} from "../global-const.js";
 
 export function AbydosCanon() {
     const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ export function AbydosCanon() {
     // аналогично componentDidMount()
 
     useEffect(() => {
-        fetch("https://api.ancient-egyptian-helper.ru/api/pharaohs/abydoscanon")
+        fetch(`${API_URL}/pharaohs/abydoscanon`)
             .then(res => res.json())
             .then(
                 (result) => {

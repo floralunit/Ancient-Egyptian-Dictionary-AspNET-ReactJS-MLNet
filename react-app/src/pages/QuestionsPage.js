@@ -6,6 +6,7 @@ import Question from "../components/Question";
 import {useSelector} from "react-redux";
 import Questions from "../components/Questions";
 import CreateNewQuestion from "./CreateNewQuestion";
+import {API_URL} from "../global-const.js";
 
 
 const QuestionsPage = () => {
@@ -15,7 +16,7 @@ const QuestionsPage = () => {
     const {user: currentUser} = useSelector((state) => state.auth);
     const headers = {Authorization: `Bearer ${currentUser.token}`};
     useEffect(() => {
-        fetch(`https://api.ancient-egyptian-helper.ru/api/questions/all`, {headers})
+        fetch(`${API_URL}/questions/all`, {headers})
             .then((res) => res.json())
             .then((data) => setQuestions(data))
             .catch(console.error);
@@ -41,7 +42,7 @@ const QuestionsPage = () => {
             } else if (body.length > 100) {
                 setError('Описание должно быть больше > 100 символов')
             } else {
-                fetch(`https://api.ancient-egyptian-helper.ru/api/questions/add`, {
+                fetch(`${API_URL}/questions/add`, {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",

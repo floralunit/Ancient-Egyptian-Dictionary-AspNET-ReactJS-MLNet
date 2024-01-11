@@ -4,6 +4,7 @@ import "../styles/FilterBar.css"
 import "../styles/TabsStyle.css"
 import FilterBarDictionary from "../components/filters/FilterBarDictionary";
 import ReactLoading from 'react-loading';
+import {API_URL} from "../global-const.js";
 
 export function Dictionary() {
     const [error, setError] = useState(null);
@@ -17,7 +18,7 @@ export function Dictionary() {
     // аналогично componentDidMount()
 
     useEffect(() => {
-        fetch("https://api.ancient-egyptian-helper.ru/api/glyphs/all")
+        fetch(`${API_URL}/glyphs/all`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -39,7 +40,7 @@ export function Dictionary() {
             )
     }, [])
     useEffect(() => {
-        fetch("https://api.ancient-egyptian-helper.ru/api/categoriums/all")
+        fetch(`${API_URL}/categoriums/all`)
             .then(res => res.json())
             .then(
                 (result) => {

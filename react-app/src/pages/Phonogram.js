@@ -4,6 +4,7 @@ import "../styles/FilterBar.css"
 import "../styles/TabsStyle.css"
 import FilterBarPhonogram from "../components/filters/FilterBarPhonogram";
 import ReactLoading from "react-loading";
+import {API_URL} from "../global-const.js";
 
 export function Phonogram() {
     const [error, setError] = useState(null);
@@ -16,7 +17,7 @@ export function Phonogram() {
     // аналогично componentDidMount()
 
     useEffect(() => {
-        fetch("https://api.ancient-egyptian-helper.ru/api/phonograms/all")
+        fetch(`${API_URL}/phonograms/all`)
             .then(res => res.json())
             .then(
                 (result) => {

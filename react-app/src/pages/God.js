@@ -3,6 +3,7 @@ import FilterBarGod from "../components/filters/FilterBarGod";
 import "../styles/StickyTableStyle.css";
 import "../styles/FilterBar.css"
 import ReactLoading from "react-loading";
+import {API_URL} from "../global-const.js";
 
 export function God() {
     const [error, setError] = useState(null);
@@ -15,7 +16,7 @@ export function God() {
     // аналогично componentDidMount()
 
     useEffect(() => {
-        fetch("https://api.ancient-egyptian-helper.ru/api/gods/all")
+        fetch(`${API_URL}/gods/all`)
             .then(res => res.json())
             .then(
                 (result) => {

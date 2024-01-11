@@ -1,7 +1,8 @@
 import axios from "axios";
+import {API_URL} from "../global-const.js";
 
 const instance = axios.create({
-    baseURL: "https://api.ancient-egyptian-helper.ru/api",
+    baseURL: `${API_URL}`,
     headers: {
         "Content-Type": "application/json",
     },

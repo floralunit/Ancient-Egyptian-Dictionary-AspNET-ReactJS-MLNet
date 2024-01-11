@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 import "../styles/LoginPage.css";
 import {Navigate} from "react-router-dom";
 import axios from "axios";
+import {API_URL} from "../global-const.js";
 
 export const Profile = () => {
     const { user: currentUser } = useSelector((state) => state.auth);
@@ -12,7 +13,7 @@ export const Profile = () => {
     useEffect(() => {
         try {
             axios
-                .post(`https://api.ancient-egyptian-helper.ru/api/comments/count/user/${currentUser.userId}`, {
+                .post(`${API_URL}/comments/count/user/${currentUser.userId}`, {
                     responseType: "json",
                 },{headers})
                 .then(function (response) {
