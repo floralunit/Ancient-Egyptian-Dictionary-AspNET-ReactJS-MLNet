@@ -71,7 +71,7 @@ export const LoginPage = (props) => {
                             </button>
                             <Row className="py-3">
                                 <Col>
-                                    Нет аккаунта? <NavLink to="/signup" style={{color: 'white'}}>Зарегистрируйтесь</NavLink>
+                                    Нет аккаунта? <NavLink to="signup" style={{color: 'white'}}>Зарегистрируйтесь</NavLink>
                                 </Col>
                             </Row>
                         </form>
