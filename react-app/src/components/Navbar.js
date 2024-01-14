@@ -58,7 +58,7 @@ export function Navbar() {
 
                                 active={{color: 'white'}}
                             >
-                                <NavDropdown.Item href="ancient-egyptian-dictionary/profile" >
+                                <NavDropdown.Item href="profile" >
                                     {/* <img
                       alt=""
                       src={`${userInfo.pic}`}
@@ -68,12 +68,12 @@ export function Navbar() {
                     /> */}
                                     Профиль
                                 </NavDropdown.Item>
-                                <NavDropdown.Item href="ancient-egyptian-dictionary/questions" >
+                                <NavDropdown.Item href="questions" >
                                     Обсуждения
                                 </NavDropdown.Item>
 
                                 {/*<NavDropdown.Divider />*/}
-                                <NavDropdown.Item onClick={logoutHandler} href="/signin">
+                                <NavDropdown.Item onClick={logoutHandler} href="signin">
                                     Выйти
                                 </NavDropdown.Item>
                             </NavDropdown>
@@ -81,7 +81,7 @@ export function Navbar() {
                     ) :
                         (
                             <li className={"btn"}>
-                                <NavLink to="ancient-egyptian-dictionary/signin">Войти</NavLink>
+                                <NavLink to="signin">Войти</NavLink>
                             </li>
                         )}
                 </ul>
