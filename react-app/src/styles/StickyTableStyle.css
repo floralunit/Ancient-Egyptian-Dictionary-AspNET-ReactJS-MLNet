@@ -24,6 +24,16 @@
     color: black;
     background-color: #FBEEC1;
     min-height: 40vh;
+    width: 180vh;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+@media (max-width: 1024px){
+    .content-table {
+        margin: 0 5vh;
+        width: 100vh;
+    }
 }
 
 /*Стиль заголовка*/
@@ -34,7 +44,7 @@
     color: #ffffff;
     text-align: center;
     vertical-align: middle;
-    font-size: 1.1em;
+    font-size: zem;
     top: 0; /* Don't forget this, required for the stickiness */
     box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
     border: white;
@@ -45,6 +55,7 @@
 .content-table th,
 .content-table td {
     padding: 10px 12px;
+    word-wrap:break-word;
 }
 
 /*Нижняя граница строк*/

@@ -9,3 +9,10 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     width: 180vh;
 }
+
+@media (max-width: 1025px){
+    .filterbar {
+        margin: 0 5vh;
+        width: 100vh;
+    }
+}

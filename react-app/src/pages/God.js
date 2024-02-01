@@ -100,7 +100,8 @@ export function God() {
                         </td>
                     </table>
                 </div>
-            <table className="content-table" style={{margin: '2em 12vh 2em 12vh', display: 'inline-block', width: 'fit-content'}}>
+                <div className={"empty"}/>
+            <table className="content-table">
                 <thead>
                 <tr>
                     <th>Имя</th>

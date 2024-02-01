@@ -64,6 +64,26 @@ export function SaqqaraCanon() {
                 <div className={"container"}>
                     <div className={"row"}>
                         <div className={"col"}>
+                            <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh', margin: '0 auto', width: '90vh'}}>
+                                <h2 align={"center"} className={"black"}>Саккарский список</h2>
+                                <hr/>
+                                <div>
+                                    <i>Саккарский список</i> — перечень 58 египетских царей от Аджиба и Каа (I династия) до Рамзеса II (XIX династия), в правление которого он и был составлен.
+                                    Происходит из гробницы зодчего Тунари, который руководил строительными работами Рамзеса II.
+                                    Многие фараоны в списке пропущены составителем по не всегда ясным соображениям. Так, из всей III династии упоминаются только четыре правителя. Саккарский список, обнаруженный в 1861 году, находится в собрании Каирского музея.
+                                    <p/>
+                                    Иногда Саккарским списком называют полустёртый перечень фараонов VI династии, найденный в 1932 г. на крышке саркофага Анхесенпепи I — супруги фараона Пепи I.
+                                    <p/>
+                                    <img src={require('../images/saqqara.png')}  style={{margin:'1vh auto', display: 'block'}}/>
+                                </div>
+                                <FilterBarPharaoh
+                                    onNameFilter={handleFilterName}
+                                    onTranslitFilter={handleFilterTranslit}
+                                />
+                            </div>
+                            <div className={"empty"}/>
+                        </div>
+                        <div className={"col"}>
                             <div style={{margin: '0 auto', width: '90vh'}}>
                                 <table className="content-table"
                                        style={{minHeight: '40vh', margin: '0 auto', width: '90vh'}}>
@@ -91,25 +111,6 @@ export function SaqqaraCanon() {
 
                                 </table>
                                 <div className={"empty"}/>
-                            </div>
-                        </div>
-                        <div className={"col"}>
-                            <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh'}}>
-                                <h2 align={"center"} className={"black"}>Саккарский список</h2>
-                                <hr/>
-                                <FilterBarPharaoh
-                                    onNameFilter={handleFilterName}
-                                    onTranslitFilter={handleFilterTranslit}
-                                />
-                                <div>
-                                    <i>Саккарский список</i> — перечень 58 египетских царей от Аджиба и Каа (I династия) до Рамзеса II (XIX династия), в правление которого он и был составлен.
-                                    Происходит из гробницы зодчего Тунари, который руководил строительными работами Рамзеса II.
-                                    Многие фараоны в списке пропущены составителем по не всегда ясным соображениям. Так, из всей III династии упоминаются только четыре правителя. Саккарский список, обнаруженный в 1861 году, находится в собрании Каирского музея.
-                                    <p/>
-                                    Иногда Саккарским списком называют полустёртый перечень фараонов VI династии, найденный в 1932 г. на крышке саркофага Анхесенпепи I — супруги фараона Пепи I.
-                                    <p/>
-                                    <img src={require('../images/saqqara.png')}  style={{margin:'1vh auto', display: 'block'}}/>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -127,14 +127,12 @@ export function Dictionary() {
                     <hr/>
                     <table>
                         <td style={{padding: '0.5vh'}}>
-                            <div >
                                 <i>Список знаков Гардинера</i> - это список распространенных египетских иероглифов, составленный Аланом Гардинером. Он считается стандартным справочником при изучении древнеегипетских иероглифов.
                                 <br /><br />Гардинер перечисляет только общие формы египетских иероглифов, но он включает обширные подкатегории, а также вертикальные и горизонтальные формы для многих иероглифов.
                                 Он включает формы изменения размера, чтобы помочь с чтением иероглифов в бегущих блоках текста. В отличие от этого, например, справочник Баджа содержит около 1000 иероглифов, перечисленных на 50 страницах, но без изменений размера.
-                            </div>
                         </td>
                         <td width={"40%"}>
-                            <FilterBarDictionary
+                        <FilterBarDictionary
                                 onGlyphFilter={handleFilterGlyph}
                                 onCodeFilter={handleFilterCode}
                                 onTranslitFilter={handleFilterTranslit}
@@ -143,7 +141,7 @@ export function Dictionary() {
                         </td>
                     </table>
                 </div>
-                <div style={{margin: '0 auto', width: '180vh'}}>
+                <div style={{margin: '0 auto'}}>
                         <h5 className={"headerTab"}>{categoriaName}</h5>
                     <div className="bloc-tabs">
                         <button
@@ -251,7 +249,7 @@ export function Dictionary() {
                             onClick={() => toggleTab('Aa')}>Aa
                         </button>
                     </div>
-                    <table className="content-table" style={{minHeight: '40vh', margin: '0 auto', width: '180vh'}}>
+                    <table className="content-table" style={{minHeight: '40vh'}}>
                         <thead>
                         <tr>
                             <th>Иероглиф</th>

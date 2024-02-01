@@ -23,6 +23,12 @@ top: 0; */
     left: 0;
 }
 
+.navbar-logo img {
+    height: 32px;
+    width: 32px;
+    margin: 0 1vh;
+}
+
 /* Стиль всей панели элементов */
 .nav-items {
     display: flex;
@@ -62,4 +68,31 @@ top: 0; */
 /* Стиль при наведении мышкой */
 .nav-item a:hover {
     transform:scale(1.05)
+}
+
+@media (max-width: 1024px){
+    .navbar {
+        height: 6vh;
+        width: 110vh;
+    }
+    .navbar-logo {
+        font-size: 0.8rem;
+    }
+    .nav-item a {
+        font-size: 0.7rem;
+    }
+    .nav-item a.active {
+        font-size: 0.7rem;
+    }
+    .navbar-logo img {
+        height: 16px;
+        width: 16px;
+        margin: 0 1vh;
+    }
+    .nav-item {
+        height: 4vh;
+    }
+    .nav-items {
+        width: 1000vw;
+    }
 }

@@ -3,13 +3,17 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
 }
 
 .empty {
   height: 2.9vh;
   border: none;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
 }
 
 .glyphreader, .pharaohs, .gods, .about, .dictionary, .phonograms, .loginpage
@@ -19,7 +23,31 @@
   background-attachment: fixed;
   background-size: cover;
   min-height: 92vh;
+  justify-content: center;
 }
+
+@media (max-width: 1024px){
+  .glyphreader, .pharaohs, .gods, .about, .dictionary, .phonograms, .loginpage
+{
+  width: 110vh;
+  min-height: 250vh;
+}
+  .about-box {
+    max-width: 100%; 
+    margin: 5%;
+  }
+  .flex-container{
+
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .glyphreader, .pharaohs, .gods, .about, .dictionary, .phonograms, .loginpage
+  {
+    width: 110vh;
+    min-height: 150vh;
+  }
+  }
 
 .dictionary,.phonograms, .gods, .about {
   background-image: url("../images/glyphs.jpg");
@@ -50,6 +78,7 @@
   color: #497DDD;
   border-bottom: 1px dashed;
 }
+
 
 
 

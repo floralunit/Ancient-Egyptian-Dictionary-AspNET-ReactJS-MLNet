@@ -26,7 +26,7 @@ export function Navbar() {
         <>
             <nav className="navbar">
                 <div  className="navbar-logo">
-                    <img src='https://cdn-icons-png.flaticon.com/512/2166/2166288.png' width={32} height={32} style={{margin: '0 1vh'}}/>
+                    <img src='https://cdn-icons-png.flaticon.com/512/2166/2166288.png'/>
                     Древнеегипетский справочник
                 </div>
                 <ul className="nav-items">

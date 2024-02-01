@@ -20,14 +20,18 @@
     border-radius: 10px;
     text-decoration: none;
     color: #FBEEC1;
-    font-size: 1.1rem;
-    padding: 6px 20px;
-
 }
 
 .btn a:hover {
     color: #734222;
 
+}
+
+@media (max-width: 768px){
+    .btn {
+        font-size: 0.7rem;
+        padding: 6px;
+    }
 }
 
 

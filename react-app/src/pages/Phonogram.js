@@ -103,7 +103,7 @@ export function Phonogram() {
                 <div className={"container"}>
                     <div className={"row"}>
                         <div className={"col"}>
-                            <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh'}}>
+                            <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh', width: '90vh', margin: '0 auto'}}>
                                 <h2 align={"center"} className={"black"}>Фонограммы</h2>
                                 <hr/>
                                 <div>
@@ -133,8 +133,8 @@ export function Phonogram() {
                             </div>
                         </div>
                         <div className={"col"}>
-                            <div style={{margin: '0 auto', width: '90vh'}}>
-                                <div className="bloc-tabs" style={{margin: '2vh auto'}}>
+                            <div style={{margin: '0 auto'}}>
+                                <div className="bloc-tabs" style={{margin: '2vh auto', width: '90vh'}}>
                                     <button
                                         className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                                         onClick={() => toggleTab(1)}

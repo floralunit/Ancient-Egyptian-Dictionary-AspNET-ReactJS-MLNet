@@ -92,7 +92,7 @@ export const LoginPage = (props) => {
                     </div>
                     {message ?
                         <ErrorMessage variant="danger">{message}</ErrorMessage>
-                        : null
+                        :  <ErrorMessage variant="danger">В данной версии сайта не работает!</ErrorMessage>
                     }
                 </div>
             </div>

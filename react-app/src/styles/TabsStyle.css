@@ -8,6 +8,15 @@
 
 .bloc-tabs {
     display: flex;
+    width: 180vh;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px){
+    .bloc-tabs {
+        width: 100vh;
+        margin: 0 5vh;
+    }
 }
 /*Неактивные вкладки*/
 .tabs {
