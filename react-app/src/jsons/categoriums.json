@@ -1,0 +1,142 @@
+[
+  {
+    "categoria": "A",
+    "amount": 58,
+    "name": "мужчина и его занятия"
+  },
+  {
+    "categoria": "Aa",
+    "amount": 31,
+    "name": "не поддающиеся классификации"
+  },
+  {
+    "categoria": "B",
+    "amount": 77,
+    "name": "женщина и её занятия"
+  },
+  {
+    "categoria": "C",
+    "amount": 11,
+    "name": "антропоморфные божества"
+  },
+  {
+    "categoria": "D",
+    "amount": 63,
+    "name": "части тела человека"
+  },
+  {
+    "categoria": "E",
+    "amount": 32,
+    "name": "млекопитающие"
+  },
+  {
+    "categoria": "F",
+    "amount": 52,
+    "name": "части тела млекопитающих"
+  },
+  {
+    "categoria": "G",
+    "amount": 54,
+    "name": "птицы"
+  },
+  {
+    "categoria": "H",
+    "amount": 8,
+    "name": "части тела птиц"
+  },
+  {
+    "categoria": "I",
+    "amount": 15,
+    "name": "амфибии и пресмыкающиеся"
+  },
+  {
+    "categoria": "K",
+    "amount": 6,
+    "name": "рыбы и части тела рыб"
+  },
+  {
+    "categoria": "L",
+    "amount": 7,
+    "name": "беспозвоночные"
+  },
+  {
+    "categoria": "M",
+    "amount": 44,
+    "name": "деревья и растения"
+  },
+  {
+    "categoria": "N",
+    "amount": 42,
+    "name": "небо, земля, вода"
+  },
+  {
+    "categoria": "NL",
+    "amount": 20,
+    "name": "Нижний Нил"
+  },
+  {
+    "categoria": "NU",
+    "amount": 22,
+    "name": "Верхний Нил"
+  },
+  {
+    "categoria": "O",
+    "amount": 51,
+    "name": "здания и их части"
+  },
+  {
+    "categoria": "P",
+    "amount": 11,
+    "name": "суда и части судов"
+  },
+  {
+    "categoria": "Q",
+    "amount": 7,
+    "name": "домашняя и походная утварь"
+  },
+  {
+    "categoria": "R",
+    "amount": 25,
+    "name": "храмовая утварь и священные эмблемы"
+  },
+  {
+    "categoria": "S",
+    "amount": 45,
+    "name": "короны, одежда, посохи и т.п."
+  },
+  {
+    "categoria": "T",
+    "amount": 35,
+    "name": "оружие — военное, охотничье и т.п."
+  },
+  {
+    "categoria": "U",
+    "amount": 41,
+    "name": "орудия земледелия и разных ремёсел"
+  },
+  {
+    "categoria": "V",
+    "amount": 38,
+    "name": "корзины, мешки, изделия из верёвок и т.п."
+  },
+  {
+    "categoria": "W",
+    "amount": 25,
+    "name": "сосуды — каменные и глиняные"
+  },
+  {
+    "categoria": "X",
+    "amount": 8,
+    "name": "хлеб разных видов"
+  },
+  {
+    "categoria": "Y",
+    "amount": 8,
+    "name": "принадлежности письма и игры, музыкальные инструменты"
+  },
+  {
+    "categoria": "Z",
+    "amount": 11,
+    "name": "разные линии и геометрические фигуры"
+  }
+]

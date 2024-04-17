@@ -1,10 +1,11 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import "../styles/StickyTableStyle.css";
 import "../styles/FilterBar.css"
 import "../styles/TabsStyle.css"
 import FilterBarPhonogram from "../components/filters/FilterBarPhonogram";
 import ReactLoading from "react-loading";
-import {API_URL} from "../global-const.js";
+import { API_URL } from "../global-const.js";
+import data from "../jsons/phonograms.json";
 
 export function Phonogram() {
     const [error, setError] = useState(null);
@@ -16,28 +17,40 @@ export function Phonogram() {
     // этот useEffect будет запущен один раз
     // аналогично componentDidMount()
 
+    // useEffect(() => {
+    //     fetch(`${API_URL}/phonograms/all`)
+    //         .then(res => res.json())
+    //         .then(
+    //             (result) => {
+    //                 setIsLoaded(true);
+    //                 setItems(result);
+    //                 const filteredData = result.filter((item) => {
+    //                     if ((item.type || '').toLowerCase().includes('alphabet')) {
+    //                         return item;
+    //                     }
+    //                 });
+    //                 setData(filteredData);
+    //             },
+    //             // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+    //             // чтобы не перехватывать исключения из ошибок в самих компонентах.
+    //             (error) => {
+    //                 setIsLoaded(true);
+    //                 setError(error);
+    //             }
+    //         )
+    // }, [])
     useEffect(() => {
-        fetch(`${API_URL}/phonograms/all`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result);
-                    const filteredData = result.filter((item) => {
-                        if ((item.type || '').toLowerCase().includes('alphabet')) {
-                            return item;
-                        }
-                    });
-                    setData(filteredData);
-                },
-                // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-                // чтобы не перехватывать исключения из ошибок в самих компонентах.
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
+        if (allData.length === 0) {
+            setIsLoaded(true);
+            setItems(data);
+            const filteredData = data.filter((item) => {
+                if ((item.type || '').toLowerCase().includes('alphabet')) {
+                    return item;
                 }
-            )
-    }, [])
+            });
+            setData(filteredData);
+        }
+    })
     const handleFilterGlyph = (glyph) => {
         const filteredData = items.filter((item) => {
             if ((item.glyph || '').toLowerCase().includes(glyph.toLowerCase())) {
@@ -84,7 +97,7 @@ export function Phonogram() {
             default:
                 break;
         }
-        const filteredData = items.filter((item) => {
+        const filteredData = data.filter((item) => {
             if ((item.type || '').toLowerCase().includes(type)) {
                 return item;
             }
@@ -95,32 +108,32 @@ export function Phonogram() {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
         return <div className={"loadingDiv"}><ReactLoading type={"spinningBubbles"} color={"#673923"} height={'5%'}
-                                                           width={'5%'} className={"loadingBar"}/></div>;
+            width={'5%'} className={"loadingBar"} /></div>;
     } else {
         return (
             <div className={"phonograms"}>
-                <div className={"empty"}/>
+                <div className={"empty"} />
                 <div className={"container"}>
                     <div className={"row"}>
                         <div className={"col"}>
-                            <div style={{background: '#FBEEC1', borderRadius: '10px', padding: '2vh', width: '90vh', margin: '0 auto'}}>
+                            <div style={{ background: '#FBEEC1', borderRadius: '10px', padding: '2vh', width: '90vh', margin: '0 auto' }}>
                                 <h2 align={"center"} className={"black"}>Фонограммы</h2>
-                                <hr/>
+                                <hr />
                                 <div>
                                     Среди египетских иероглифов различают две основные группы символов: звуковые
                                     знаки (фонограммы) и смысловые знаки (идеограммы).
                                     Фонограммы или звуковые знаки бывают трёх типов:
                                     <ol>
-                                        <li style={{margin: '0.5em'}}><i>Односогласные или алфавитные знаки</i>,
+                                        <li style={{ margin: '0.5em' }}><i>Односогласные или алфавитные знаки</i>,
                                             которые обозначают один согласный звук, например f , r.
-                                            <br/>ПРИМЕЧАНИЕ: алфавитными этот тип знаков можно назвать только
+                                            <br />ПРИМЕЧАНИЕ: алфавитными этот тип знаков можно назвать только
                                             условно, поскольку алфавита в нашем понимании этого слова у египтян
                                             не было.
                                         </li>
-                                        <li style={{margin: '0.5em'}}><i>Двусогласные знаки</i>, обозначающие
+                                        <li style={{ margin: '0.5em' }}><i>Двусогласные знаки</i>, обозначающие
                                             два согласных звука, например m + n (или кратко, mn); p + r (pr).
                                         </li>
-                                        <li style={{margin: '0.5em'}}><i>Трёхсогласные знаки</i>, обозначающие
+                                        <li style={{ margin: '0.5em' }}><i>Трёхсогласные знаки</i>, обозначающие
                                             три согласных звука, например, nfr ; Htp.
                                         </li>
                                     </ol>
@@ -133,8 +146,8 @@ export function Phonogram() {
                             </div>
                         </div>
                         <div className={"col"}>
-                            <div style={{margin: '0 auto'}}>
-                                <div className="bloc-tabs" style={{margin: '2vh auto', width: '90vh'}}>
+                            <div style={{ margin: '0 auto' }}>
+                                <div className="bloc-tabs" style={{ margin: '2vh auto', width: '90vh' }}>
                                     <button
                                         className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                                         onClick={() => toggleTab(1)}
@@ -155,27 +168,27 @@ export function Phonogram() {
                                     </button>
                                 </div>
                                 <table className="content-table"
-                                       style={{minHeight: '40vh', margin: '0 auto', width: '90vh'}}>
+                                    style={{ minHeight: '40vh', margin: '0 auto', width: '90vh' }}>
                                     <thead>
-                                    <tr>
-                                        <th>Иероглиф</th>
-                                        <th>Код Гардинера</th>
-                                        <th>Транслитерация</th>
-                                        <th>Manuel de Codage</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Иероглиф</th>
+                                            <th>Код Гардинера</th>
+                                            <th>Транслитерация</th>
+                                            <th>Manuel de Codage</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    {allData.map(item =>
-                                        <tr key={item.id}>
-                                            <td style={{fontSize: '4em'}}>{item.glyph}</td>
-                                            <td>{item.gardinerCode}</td>
-                                            <td>{item.transliteration}</td>
-                                            <td>{item.manuelCotage}</td>
-                                        </tr>)}
+                                        {allData.map(item =>
+                                            <tr key={item.id}>
+                                                <td style={{ fontSize: '4em' }}>{item.glyph}</td>
+                                                <td>{item.gardinerCode}</td>
+                                                <td>{item.transliteration}</td>
+                                                <td>{item.manuelCotage}</td>
+                                            </tr>)}
                                     </tbody>
 
                                 </table>
-                                <div className={"empty"}/>
+                                <div className={"empty"} />
                             </div>
                         </div>
                     </div>

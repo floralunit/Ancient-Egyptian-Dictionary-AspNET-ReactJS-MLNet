@@ -10,6 +10,7 @@ import TokenService from "../services/token.service";
 import Comment from "./Comment";
 import {Col, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
+import {API_URL} from "../global-const.js";
 
 
 const Comments = ({
@@ -23,7 +24,7 @@ const Comments = ({
     const headers = {Authorization: `Bearer ${currentUser.token}`};
 
     useEffect(() => {
-        fetch(`https://api.ancient-egyptian-helper.ru/api/comments/${id}`, {headers})
+        fetch(`${API_URL}/comments/${id}`, {headers})
             .then((res) => res.json())
             .then((data) => setComments(data))
             .catch(console.error);
@@ -31,7 +32,7 @@ const Comments = ({
 
     const handleSubmitComment = (e) => {
         e.preventDefault();
-        fetch(`https://api.ancient-egyptian-helper.ru/api/comments/add/${id}`, {
+        fetch(`${API_URL}/comments/add/${id}`, {
             method: "POST",
             headers: {
                 "Content-type": "application/json",
@@ -57,7 +58,7 @@ const Comments = ({
     }
 
     const handleDelete = (e) => {
-        fetch(`https://api.ancient-egyptian-helper.ru/api/comments/delete/${e}`, {
+        fetch(`${API_URL}/comments/delete/${e}`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json",

@@ -1,1 +1,1 @@
-export const API_URL = 'https://floral-unit.is-probably.gay';
+export const API_URL = 'https://localhost:8000/api';

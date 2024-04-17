@@ -11,6 +11,7 @@ import {
 } from 'react-icons/md'
 import {Col, Row} from "react-bootstrap";
 import Moment from "react-moment";
+import {API_URL} from "../global-const.js";
 
 const Questions = ({
                        user,
@@ -25,7 +26,7 @@ const Questions = ({
     }*/
 
     const handleDelete = (e) => {
-        fetch(`https://api.ancient-egyptian-helper.ru/api/questions/delete/${e}`, {
+        fetch(`${API_URL}/questions/delete/${e}`, {
             method: "GET",
             headers: {
                 "Content-type": "application/json",

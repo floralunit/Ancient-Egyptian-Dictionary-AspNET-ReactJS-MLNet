@@ -1,0 +1,1090 @@
+[
+  {
+    "id": 1,
+    "glyph": "𓄿",
+    "gardinerCode": "G1",
+    "transliteration": "3",
+    "manuelCotage": "A",
+    "type": "alphabet"
+  },
+  {
+    "id": 2,
+    "glyph": "𓇋",
+    "gardinerCode": "M17",
+    "transliteration": "i, j",
+    "manuelCotage": "i",
+    "type": "alphabet"
+  },
+  {
+    "id": 3,
+    "glyph": "𓏭",
+    "gardinerCode": "Z4",
+    "transliteration": "y",
+    "manuelCotage": "y",
+    "type": "alphabet"
+  },
+  {
+    "id": 4,
+    "glyph": "𓇋𓇋",
+    "gardinerCode": "M17-M17",
+    "transliteration": "y",
+    "manuelCotage": "y",
+    "type": "alphabet"
+  },
+  {
+    "id": 5,
+    "glyph": "𓂝",
+    "gardinerCode": "D36",
+    "transliteration": "ʿ",
+    "manuelCotage": "a",
+    "type": "alphabet"
+  },
+  {
+    "id": 6,
+    "glyph": "𓅱",
+    "gardinerCode": "G43",
+    "transliteration": "w",
+    "manuelCotage": "w",
+    "type": "alphabet"
+  },
+  {
+    "id": 7,
+    "glyph": "𓏲",
+    "gardinerCode": "Z7",
+    "transliteration": "w",
+    "manuelCotage": "w",
+    "type": "alphabet"
+  },
+  {
+    "id": 8,
+    "glyph": "𓃀",
+    "gardinerCode": "D58",
+    "transliteration": "b",
+    "manuelCotage": "b",
+    "type": "alphabet"
+  },
+  {
+    "id": 9,
+    "glyph": "𓊪",
+    "gardinerCode": "Q3",
+    "transliteration": "p",
+    "manuelCotage": "p",
+    "type": "alphabet"
+  },
+  {
+    "id": 10,
+    "glyph": "𓆑",
+    "gardinerCode": "I9",
+    "transliteration": "f",
+    "manuelCotage": "f",
+    "type": "alphabet"
+  },
+  {
+    "id": 11,
+    "glyph": "𓅓",
+    "gardinerCode": "G17",
+    "transliteration": "m",
+    "manuelCotage": "m",
+    "type": "alphabet"
+  },
+  {
+    "id": 12,
+    "glyph": "𓐝",
+    "gardinerCode": "Aa15",
+    "transliteration": "m",
+    "manuelCotage": "m",
+    "type": "alphabet"
+  },
+  {
+    "id": 13,
+    "glyph": "𓈖",
+    "gardinerCode": "N35",
+    "transliteration": "n",
+    "manuelCotage": "n",
+    "type": "alphabet"
+  },
+  {
+    "id": 14,
+    "glyph": "𓋔",
+    "gardinerCode": "S3",
+    "transliteration": "n",
+    "manuelCotage": "n",
+    "type": "alphabet"
+  },
+  {
+    "id": 15,
+    "glyph": "𓂋",
+    "gardinerCode": "D21",
+    "transliteration": "r",
+    "manuelCotage": "r",
+    "type": "alphabet"
+  },
+  {
+    "id": 16,
+    "glyph": "𓉔",
+    "gardinerCode": "O4",
+    "transliteration": "h",
+    "manuelCotage": "h",
+    "type": "alphabet"
+  },
+  {
+    "id": 17,
+    "glyph": "𓎛",
+    "gardinerCode": "V28",
+    "transliteration": "ḥ",
+    "manuelCotage": "H",
+    "type": "alphabet"
+  },
+  {
+    "id": 18,
+    "glyph": "𓐍",
+    "gardinerCode": "Aa1",
+    "transliteration": "ḫ",
+    "manuelCotage": "x",
+    "type": "alphabet"
+  },
+  {
+    "id": 19,
+    "glyph": "𓄡",
+    "gardinerCode": "F32",
+    "transliteration": "ẖ",
+    "manuelCotage": "X",
+    "type": "alphabet"
+  },
+  {
+    "id": 20,
+    "glyph": "𓊃",
+    "gardinerCode": "O34",
+    "transliteration": "z",
+    "manuelCotage": "s, z",
+    "type": "alphabet"
+  },
+  {
+    "id": 21,
+    "glyph": "𓋴",
+    "gardinerCode": "S29",
+    "transliteration": "s",
+    "manuelCotage": "s, z",
+    "type": "alphabet"
+  },
+  {
+    "id": 22,
+    "glyph": "𓈙",
+    "gardinerCode": "N37",
+    "transliteration": "š",
+    "manuelCotage": "S",
+    "type": "alphabet"
+  },
+  {
+    "id": 23,
+    "glyph": "𓈎",
+    "gardinerCode": "N29",
+    "transliteration": "q",
+    "manuelCotage": "q",
+    "type": "alphabet"
+  },
+  {
+    "id": 24,
+    "glyph": "𓎡",
+    "gardinerCode": "V31",
+    "transliteration": "k",
+    "manuelCotage": "k",
+    "type": "alphabet"
+  },
+  {
+    "id": 25,
+    "glyph": "𓎼",
+    "gardinerCode": "W11",
+    "transliteration": "g",
+    "manuelCotage": "g",
+    "type": "alphabet"
+  },
+  {
+    "id": 26,
+    "glyph": "𓏏",
+    "gardinerCode": "X1",
+    "transliteration": "t",
+    "manuelCotage": "t",
+    "type": "alphabet"
+  },
+  {
+    "id": 27,
+    "glyph": "𓍿",
+    "gardinerCode": "V13",
+    "transliteration": "ṯ",
+    "manuelCotage": "T",
+    "type": "alphabet"
+  },
+  {
+    "id": 28,
+    "glyph": "𓂧",
+    "gardinerCode": "D46",
+    "transliteration": "d",
+    "manuelCotage": "d",
+    "type": "alphabet"
+  },
+  {
+    "id": 29,
+    "glyph": "𓆓",
+    "gardinerCode": "I10",
+    "transliteration": "ḏ",
+    "manuelCotage": "D",
+    "type": "alphabet"
+  },
+  {
+    "id": 30,
+    "glyph": "𓄫",
+    "gardinerCode": "F40",
+    "transliteration": "ꜣw",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 31,
+    "glyph": "𓍋",
+    "gardinerCode": "U23",
+    "transliteration": "ꜣb",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 32,
+    "glyph": "𓅜𓇇",
+    "gardinerCode": "G25-M15",
+    "transliteration": "ꜣḫ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 33,
+    "glyph": "𓊨𓄼",
+    "gardinerCode": "Q1-F51c",
+    "transliteration": "ꜣs",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 34,
+    "glyph": "𓂻𓃛",
+    "gardinerCode": "D54-E9",
+    "transliteration": "ỉw",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 35,
+    "glyph": "𓃙𓄣",
+    "gardinerCode": "E8-F34",
+    "transliteration": "ỉb",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 36,
+    "glyph": "𓐛𓏶",
+    "gardinerCode": "Aa13-Z11",
+    "transliteration": "ỉm",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 37,
+    "glyph": "𓀟𓆛𓏌𓏎",
+    "gardinerCode": "A27-K1-W24-W25",
+    "transliteration": "ỉn",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 38,
+    "glyph": "𓀹𓁹",
+    "gardinerCode": "A48-D4",
+    "transliteration": "ỉr",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 39,
+    "glyph": "𓌤",
+    "gardinerCode": "T24",
+    "transliteration": "ỉḥ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 40,
+    "glyph": "𓇩",
+    "gardinerCode": "M40",
+    "transliteration": "ỉz",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 41,
+    "glyph": "𓀗",
+    "gardinerCode": "A19",
+    "transliteration": "ỉk",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 42,
+    "glyph": "𓆊",
+    "gardinerCode": "I3",
+    "transliteration": "ỉt",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 43,
+    "glyph": "𓎁",
+    "gardinerCode": "V15",
+    "transliteration": "ỉṯ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 44,
+    "glyph": "𓉻",
+    "gardinerCode": "O29",
+    "transliteration": "ꜥꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 45,
+    "glyph": "𓄏",
+    "gardinerCode": "F16",
+    "transliteration": "ꜥb",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 46,
+    "glyph": "𓌤",
+    "gardinerCode": "T24",
+    "transliteration": "ꜥḥ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 47,
+    "glyph": "𓅧",
+    "gardinerCode": "G35",
+    "transliteration": "ꜥq",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 48,
+    "glyph": "𓆝𓎙𓎚",
+    "gardinerCode": "K3-V26-V27",
+    "transliteration": "ꜥḏ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 49,
+    "glyph": "𓍯",
+    "gardinerCode": "V4",
+    "transliteration": "wꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 50,
+    "glyph": "𓌡",
+    "gardinerCode": "T21",
+    "transliteration": "wꜥ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 51,
+    "glyph": "𓄋",
+    "gardinerCode": "F13",
+    "transliteration": "wp",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 52,
+    "glyph": "𓃹𓇬",
+    "gardinerCode": "E34-M42",
+    "transliteration": "wn",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 53,
+    "glyph": "𓅨",
+    "gardinerCode": "G36",
+    "transliteration": "wr",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 54,
+    "glyph": "𓄼𓊨𓊩",
+    "gardinerCode": "F51c-Q1-Q2",
+    "transliteration": "ws",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 55,
+    "glyph": "𓇅𓎗𓎘",
+    "gardinerCode": "M13-V24-V25",
+    "transliteration": "wḏ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 56,
+    "glyph": "𓆩𓆼",
+    "gardinerCode": "L6-M12",
+    "transliteration": "ḫꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 57,
+    "glyph": "𓈍",
+    "gardinerCode": "N28",
+    "transliteration": "ḫꜥ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 58,
+    "glyph": "𓂤",
+    "gardinerCode": "D43",
+    "transliteration": "ḫw",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 59,
+    "glyph": "𓋉",
+    "gardinerCode": "R22",
+    "transliteration": "ḫm",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 60,
+    "glyph": "𓆞",
+    "gardinerCode": "K4",
+    "transliteration": "ẖꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 61,
+    "glyph": "𓂙𓄚",
+    "gardinerCode": "D33-F26",
+    "transliteration": "ẖn",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 62,
+    "glyph": "𓌨",
+    "gardinerCode": "T28",
+    "transliteration": "ẖr",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 63,
+    "glyph": "𓅭𓎂𓎃",
+    "gardinerCode": "G39-V16-V17",
+    "transliteration": "zꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 64,
+    "glyph": "𓊗",
+    "gardinerCode": "O50",
+    "transliteration": "zp",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 65,
+    "glyph": "𓐟𓐠",
+    "gardinerCode": "Aa17-Aa18",
+    "transliteration": "sꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 66,
+    "glyph": "𓇓",
+    "gardinerCode": "M23",
+    "transliteration": "sw",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 67,
+    "glyph": "𓌢",
+    "gardinerCode": "T22",
+    "transliteration": "sn",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 68,
+    "glyph": "𓎝",
+    "gardinerCode": "V29",
+    "transliteration": "sk",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 69,
+    "glyph": "𓆆𓆷",
+    "gardinerCode": "H7-M8",
+    "transliteration": "šꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 70,
+    "glyph": "𓆄",
+    "gardinerCode": "H6",
+    "transliteration": "šw",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 71,
+    "glyph": "𓈝",
+    "gardinerCode": "N40",
+    "transliteration": "šm",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 72,
+    "glyph": "𓍢𓍲",
+    "gardinerCode": "V1-V7",
+    "transliteration": "šn",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 73,
+    "glyph": "𓍱",
+    "gardinerCode": "V6",
+    "transliteration": "šs",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 74,
+    "glyph": "𓐖",
+    "gardinerCode": "Aa8",
+    "transliteration": "qn",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 75,
+    "glyph": "𓌟",
+    "gardinerCode": "T19",
+    "transliteration": "qs",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 76,
+    "glyph": "𓂓",
+    "gardinerCode": "D28",
+    "transliteration": "kꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 77,
+    "glyph": "𓊶",
+    "gardinerCode": "R5",
+    "transliteration": "kp",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 78,
+    "glyph": "𓆎",
+    "gardinerCode": "I6",
+    "transliteration": "km",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 79,
+    "glyph": "𓅬",
+    "gardinerCode": "G38",
+    "transliteration": "gb",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 80,
+    "glyph": "𓅠",
+    "gardinerCode": "G28",
+    "transliteration": "gm",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 81,
+    "glyph": "𓐛𓐞",
+    "gardinerCode": "Aa13-Aa16",
+    "transliteration": "gs",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 82,
+    "glyph": "𓇾𓇿𓍔",
+    "gardinerCode": "N16-N17-U30",
+    "transliteration": "tꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 83,
+    "glyph": "𓍘",
+    "gardinerCode": "U33",
+    "transliteration": "tỉ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 84,
+    "glyph": "𓁶𓌐",
+    "gardinerCode": "D1-T8",
+    "transliteration": "tp",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 85,
+    "glyph": "𓍃",
+    "gardinerCode": "U15",
+    "transliteration": "tm",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 86,
+    "glyph": "𓆵",
+    "gardinerCode": "M6",
+    "transliteration": "tr",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 87,
+    "glyph": "𓅷",
+    "gardinerCode": "G47",
+    "transliteration": "ṯꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 88,
+    "glyph": "𓋭",
+    "gardinerCode": "S24",
+    "transliteration": "ṯz",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 89,
+    "glyph": "𓂞𓏙",
+    "gardinerCode": "D37-X8",
+    "transliteration": "dỉ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 90,
+    "glyph": "𓍑𓍒",
+    "gardinerCode": "U28-U29",
+    "transliteration": "ḏꜣ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 91,
+    "glyph": "𓏙",
+    "gardinerCode": "X8",
+    "transliteration": "ḏỉ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 92,
+    "glyph": "𓈋",
+    "gardinerCode": "N26",
+    "transliteration": "ḏw",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 93,
+    "glyph": "𓅙",
+    "gardinerCode": "G22",
+    "transliteration": "ḏb",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 94,
+    "glyph": "𓇥",
+    "gardinerCode": "M36",
+    "transliteration": "ḏr",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 95,
+    "glyph": "𓊽",
+    "gardinerCode": "R11",
+    "transliteration": "ḏd",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 96,
+    "glyph": "𓆕",
+    "gardinerCode": "I11",
+    "transliteration": "ḏḏ",
+    "manuelCotage": null,
+    "type": "biliteral"
+  },
+  {
+    "id": 97,
+    "glyph": "𓃰",
+    "gardinerCode": "E26",
+    "transliteration": "ꜣbw",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 98,
+    "glyph": "𓉺",
+    "gardinerCode": "O28",
+    "transliteration": "iwn",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 99,
+    "glyph": "𓄯",
+    "gardinerCode": "F44",
+    "transliteration": "isw, iwꜥ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 100,
+    "glyph": "𓋿",
+    "gardinerCode": "S39",
+    "transliteration": "ꜥwt",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 101,
+    "glyph": "𓐢",
+    "gardinerCode": "Aa20",
+    "transliteration": "ꜥpr",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 102,
+    "glyph": "𓋹",
+    "gardinerCode": "S34",
+    "transliteration": "ꜥnḫ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 103,
+    "glyph": "𓊢",
+    "gardinerCode": "P6",
+    "transliteration": "ꜥḥꜥ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 104,
+    "glyph": "𓆈",
+    "gardinerCode": "I1",
+    "transliteration": "ꜥšꜣ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 105,
+    "glyph": "𓎝",
+    "gardinerCode": "V29",
+    "transliteration": "wꜣḥ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 106,
+    "glyph": "𓌀",
+    "gardinerCode": "S40",
+    "transliteration": "wꜣs",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 107,
+    "glyph": "𓇅",
+    "gardinerCode": "M13",
+    "transliteration": "wꜣḏ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 108,
+    "glyph": "𓃂",
+    "gardinerCode": "D60",
+    "transliteration": "wꜥb",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 109,
+    "glyph": "𓄙",
+    "gardinerCode": "F25",
+    "transliteration": "wḥm",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 110,
+    "glyph": "𓄊",
+    "gardinerCode": "F12",
+    "transliteration": "wsr",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 111,
+    "glyph": "𓐙",
+    "gardinerCode": "Aa11",
+    "transliteration": "m3ꜥ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 112,
+    "glyph": "𓋞",
+    "gardinerCode": "S12",
+    "transliteration": "nbw",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 113,
+    "glyph": "𓄤",
+    "gardinerCode": "F35",
+    "transliteration": "nfr",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 114,
+    "glyph": "𓊹",
+    "gardinerCode": "R8",
+    "transliteration": "nṯr",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 115,
+    "glyph": "𓌗",
+    "gardinerCode": "T12",
+    "transliteration": "rwḏ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 116,
+    "glyph": "𓋾",
+    "gardinerCode": "S38",
+    "transliteration": "ḥqꜣ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 117,
+    "glyph": "𓊵",
+    "gardinerCode": "R4",
+    "transliteration": "ḥtp",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 118,
+    "glyph": "𓆣",
+    "gardinerCode": "L1",
+    "transliteration": "ḫpr",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 119,
+    "glyph": "𓏃",
+    "gardinerCode": "W17",
+    "transliteration": "ḫnt",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 120,
+    "glyph": "𓌂",
+    "gardinerCode": "S42",
+    "transliteration": "ḫrp",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 121,
+    "glyph": "𓊤",
+    "gardinerCode": "P8",
+    "transliteration": "ḫrw",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 122,
+    "glyph": "𓍙",
+    "gardinerCode": "U34",
+    "transliteration": "ḫsf",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 123,
+    "glyph": "𓎸",
+    "gardinerCode": "W9",
+    "transliteration": "ẖnm",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 124,
+    "glyph": "𓇼",
+    "gardinerCode": "N14",
+    "transliteration": "sbꜣ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 125,
+    "glyph": "𓄭",
+    "gardinerCode": "F42",
+    "transliteration": "spr",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 126,
+    "glyph": "𓄥",
+    "gardinerCode": "F36",
+    "transliteration": "zmꜣ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 127,
+    "glyph": "𓋴",
+    "gardinerCode": "S29",
+    "transliteration": "snb",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 128,
+    "glyph": "𓅾",
+    "gardinerCode": "G54",
+    "transliteration": "snḏ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 129,
+    "glyph": "𓌫",
+    "gardinerCode": "T31",
+    "transliteration": "sšm",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 130,
+    "glyph": "𓍉",
+    "gardinerCode": "U21",
+    "transliteration": "stp",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 131,
+    "glyph": "𓄔",
+    "gardinerCode": "F21",
+    "transliteration": "sḏm",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 132,
+    "glyph": "𓀻",
+    "gardinerCode": "A50",
+    "transliteration": "šps",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 133,
+    "glyph": "𓇗",
+    "gardinerCode": "M26",
+    "transliteration": "šmꜥ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 134,
+    "glyph": "𓌞",
+    "gardinerCode": "T18",
+    "transliteration": "šms",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 135,
+    "glyph": "𓍅",
+    "gardinerCode": "U17",
+    "transliteration": "grg",
+    "manuelCotage": null,
+    "type": "triliteral"
+  },
+  {
+    "id": 136,
+    "glyph": "𓌥",
+    "gardinerCode": "T25",
+    "transliteration": "ḏbꜣ",
+    "manuelCotage": null,
+    "type": "triliteral"
+  }
+]

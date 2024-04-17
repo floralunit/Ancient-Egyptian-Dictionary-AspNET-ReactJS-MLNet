@@ -4,6 +4,7 @@ import "../styles/FilterBar.css"
 import ReactLoading from "react-loading";
 import FilterBarPharaoh from "../components/filters/FilterBarPharaoh";
 import {API_URL} from "../global-const.js";
+import data from "../jsons/saqqara.json";
 
 export function SaqqaraCanon() {
     const [error, setError] = useState(null);
@@ -15,23 +16,28 @@ export function SaqqaraCanon() {
     // этот useEffect будет запущен один раз
     // аналогично componentDidMount()
 
+    // useEffect(() => {
+    //     fetch(`${API_URL}/pharaohs/saqqaracanon`)
+    //         .then(res => res.json())
+    //         .then(
+    //             (result) => {
+    //                 setIsLoaded(true);
+    //                 setItems(result);
+    //                 setData(result);
+    //             },
+    //             // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+    //             // чтобы не перехватывать исключения из ошибок в самих компонентах.
+    //             (error) => {
+    //                 setIsLoaded(true);
+    //                 setError(error);
+    //             }
+    //         )
+    // }, [])
     useEffect(() => {
-        fetch(`${API_URL}/pharaohs/saqqaracanon`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result);
-                    setData(result);
-                },
-                // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-                // чтобы не перехватывать исключения из ошибок в самих компонентах.
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
+        setIsLoaded(true);
+        setItems(data);
+        setData(data);
+    })
     const handleFilterName = (name) => {
         const filteredData = items.filter((item) => {
             const fullDesc = `${item.pharaohName} ${item.englishPharaohName} ${item.nameInList}`;
@@ -101,7 +107,7 @@ export function SaqqaraCanon() {
                                     {allData.map(item =>
                                         <tr key={item.id}>
                                             <td>{item.id}</td>
-                                            <td><img src={`https://pharaoh.se/i/sc/${item.id}.png`} height={"25vh"}/></td>
+                                            <td><img src={`https://pharaoh.se/svg/pharaoh/${item.id}-02-03.svg`} height={"25vh"}/></td>
                                             <td>{item.nameInList}</td>
                                             <td>{item.transliteration}</td>
                                             <td><a href={item.wikiLink}>{item.pharaohName}</a></td>

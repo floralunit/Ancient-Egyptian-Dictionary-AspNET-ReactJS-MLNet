@@ -1,0 +1,524 @@
+[
+  {
+    "id": "01",
+    "nameInList": "Усермаатра",
+    "transliteration": "wsr-mꜢꜤt-rꜤ stp.n-rꜤ",
+    "pharaohName": "Рамзес II",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BC%D0%B7%D0%B5%D1%81_II",
+    "englishPharaohName": "Ramesses II",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Ramesses-II"
+  },
+  {
+    "id": "02",
+    "nameInList": "Менмаатра",
+    "transliteration": "mn-mꜢꜤt-rꜤ",
+    "pharaohName": "Сети I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%82%D0%B8_I",
+    "englishPharaohName": "Seti I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Seti-I"
+  },
+  {
+    "id": "03",
+    "nameInList": "Менпехтира",
+    "transliteration": "mn-pḥti-rꜤ",
+    "pharaohName": "Рамзес I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BC%D0%B7%D0%B5%D1%81_I",
+    "englishPharaohName": "Ramesses I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Ramesses-I"
+  },
+  {
+    "id": "04",
+    "nameInList": "Джесерхеперура-Сетепенра",
+    "transliteration": "ḏsr-ḫprw stp-n-rꜤ",
+    "pharaohName": "Хоремхеб",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D1%80%D0%B5%D0%BC%D1%85%D0%B5%D0%B1",
+    "englishPharaohName": "Horemheb",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Horemheb"
+  },
+  {
+    "id": "05",
+    "nameInList": "Нибмаатра",
+    "transliteration": "nb-mꜢꜤt-rꜤ",
+    "pharaohName": "Аменхотеп III",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D1%85%D0%BE%D1%82%D0%B5%D0%BF_III",
+    "englishPharaohName": "Amenhotep III",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Amenhotep-III"
+  },
+  {
+    "id": "06",
+    "nameInList": "Менхеперура",
+    "transliteration": "mn-ḫprw-rꜤ",
+    "pharaohName": "Тутмос IV",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%82%D0%BC%D0%BE%D1%81_IV",
+    "englishPharaohName": "Thutmose IV",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Thutmose-IV"
+  },
+  {
+    "id": "07",
+    "nameInList": "Аахеперура",
+    "transliteration": "ꜤꜢ-ḫprw-rꜤ",
+    "pharaohName": "Аменхотеп II",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D1%85%D0%BE%D1%82%D0%B5%D0%BF_II",
+    "englishPharaohName": "Amenhotep II",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Amenhotep-II"
+  },
+  {
+    "id": "08",
+    "nameInList": "Менхеперра",
+    "transliteration": "mn-ḫpr-rꜤ",
+    "pharaohName": "Тутмос III",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%82%D0%BC%D0%BE%D1%81_III",
+    "englishPharaohName": "Thutmose III",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Thutmose-III"
+  },
+  {
+    "id": "09",
+    "nameInList": "Аахеперенра",
+    "transliteration": "ꜤꜢ-ḫpr-n-rꜤ",
+    "pharaohName": "Тутмос II",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%82%D0%BC%D0%BE%D1%81_II",
+    "englishPharaohName": "Thutmose II",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Thutmose-II"
+  },
+  {
+    "id": "10",
+    "nameInList": "Аахеперкара",
+    "transliteration": "Ꜣ-ḫpr-kꜢ-rꜤ",
+    "pharaohName": "Тутмос I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A2%D1%83%D1%82%D0%BC%D0%BE%D1%81_I",
+    "englishPharaohName": "Thutmose I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Thutmose-I"
+  },
+  {
+    "id": "11",
+    "nameInList": "Джосеркара",
+    "transliteration": "ḏsr-kꜢ-rꜤ",
+    "pharaohName": "Аменхотеп I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D1%85%D0%BE%D1%82%D0%B5%D0%BF_I",
+    "englishPharaohName": "Amenhotep I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Amenhotep-I"
+  },
+  {
+    "id": "12",
+    "nameInList": "Небпехтира",
+    "transliteration": "nb-pḥti-rꜤ",
+    "pharaohName": "Яхмос I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%AF%D1%85%D0%BC%D0%BE%D1%81_I",
+    "englishPharaohName": "Ahmose I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Ahmose-I"
+  },
+  {
+    "id": "13",
+    "nameInList": "Ментухотеп II",
+    "transliteration": "nb-ḥꜢpt-rꜤ",
+    "pharaohName": "Ментухотеп II",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D1%82%D1%83%D1%85%D0%BE%D1%82%D0%B5%D0%BF_II",
+    "englishPharaohName": "Mentuhotep II",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Mentuhotep-II"
+  },
+  {
+    "id": "14",
+    "nameInList": "Ментухотеп III",
+    "transliteration": "s-Ꜥnḫ-kꜢ-rꜤ",
+    "pharaohName": "Ментухотеп III",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D1%82%D1%83%D1%85%D0%BE%D1%82%D0%B5%D0%BF_III",
+    "englishPharaohName": "Mentuhotep III",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Mentuhotep-III"
+  },
+  {
+    "id": "15",
+    "nameInList": "Сехотепибра",
+    "transliteration": "s-ḥtp-ib-rꜤ",
+    "pharaohName": "Аменемхет I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D0%B5%D0%BC%D1%85%D0%B5%D1%82_I",
+    "englishPharaohName": "Amenemhat I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Amenemhat-I"
+  },
+  {
+    "id": "16",
+    "nameInList": "Хеперкара",
+    "transliteration": "ḫpr-kꜢ-rꜤ",
+    "pharaohName": "Сенусерт I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D1%83%D1%81%D0%B5%D1%80%D1%82_I",
+    "englishPharaohName": "Senusret I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Senusret-I"
+  },
+  {
+    "id": "17",
+    "nameInList": "Небкаура",
+    "transliteration": "nbw-kꜢ-rꜤ",
+    "pharaohName": "Аменемхет II",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D0%B5%D0%BC%D1%85%D0%B5%D1%82_II",
+    "englishPharaohName": "Amenemhat II",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Amenemhat-II"
+  },
+  {
+    "id": "18",
+    "nameInList": "Хахеперра",
+    "transliteration": "ḫꜤ-ḫpr-rꜤ",
+    "pharaohName": "Сенусерт II",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D1%83%D1%81%D0%B5%D1%80%D1%82_II",
+    "englishPharaohName": "Senusret II",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Senusret-II"
+  },
+  {
+    "id": "19",
+    "nameInList": "Хакаура",
+    "transliteration": "ḫꜤ-kꜢ-rꜤ",
+    "pharaohName": "Сенусерт III",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D1%83%D1%81%D0%B5%D1%80%D1%82_III",
+    "englishPharaohName": "Senusret III",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Senusret-III"
+  },
+  {
+    "id": "20",
+    "nameInList": "Нимаатра",
+    "transliteration": "ni-mꜢꜤt-rꜤ",
+    "pharaohName": "Аменемхет III",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D0%B5%D0%BC%D1%85%D0%B5%D1%82_III",
+    "englishPharaohName": "Amenemhat III",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Amenemhat-III"
+  },
+  {
+    "id": "21",
+    "nameInList": "Маахерура",
+    "transliteration": "mꜢꜤ-ḫrw-rꜤ",
+    "pharaohName": "Аменемхет IV",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B5%D0%BD%D0%B5%D0%BC%D1%85%D0%B5%D1%82_IV",
+    "englishPharaohName": "Amenemhat IV",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Amenemhat-IV"
+  },
+  {
+    "id": "22",
+    "nameInList": "Собеккара",
+    "transliteration": "sbk-kꜢ-rꜤ",
+    "pharaohName": "Нефрусебек",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%84%D1%80%D1%83%D1%81%D0%B5%D0%B1%D0%B5%D0%BA",
+    "englishPharaohName": "Neferusobek",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Neferusobek"
+  },
+  {
+    "id": "23",
+    "nameInList": "Неферкара",
+    "transliteration": "nfr-kꜢ-rꜤ",
+    "pharaohName": "Пиопи II",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B8%D0%BE%D0%BF%D0%B8_II",
+    "englishPharaohName": "Pepi II",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Pepi-II"
+  },
+  {
+    "id": "24",
+    "nameInList": "Меренра I",
+    "transliteration": "mr-n-rꜤ",
+    "pharaohName": "Меренра I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%80%D0%B5%D0%BD%D1%80%D0%B0_I",
+    "englishPharaohName": "Nemtiemsaf I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Nemtiemsaf-I"
+  },
+  {
+    "id": "25",
+    "nameInList": "Пиопи I",
+    "transliteration": "pipi",
+    "pharaohName": "Пиопи I",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9F%D0%B8%D0%BE%D0%BF%D0%B8_I",
+    "englishPharaohName": "Pepi I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Pepi-I"
+  },
+  {
+    "id": "26",
+    "nameInList": "Тети",
+    "transliteration": "tti",
+    "pharaohName": "Тети",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%82%D0%B8",
+    "englishPharaohName": "Teti",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Teti"
+  },
+  {
+    "id": "27",
+    "nameInList": "Унас",
+    "transliteration": "wnis",
+    "pharaohName": "Унас",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A3%D0%BD%D0%B0%D1%81",
+    "englishPharaohName": "Unas",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Unas"
+  },
+  {
+    "id": "28",
+    "nameInList": "Мааткара",
+    "transliteration": "mꜢꜤt-kꜢ-rꜤ",
+    "pharaohName": "Джедкара Исеси",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%B5%D0%B4%D0%BA%D0%B0%D1%80%D0%B0_%D0%98%D1%81%D0%B5%D1%81%D0%B8",
+    "englishPharaohName": "Djedkara Isesi",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Djedkara-Isesi"
+  },
+  {
+    "id": "29",
+    "nameInList": "Менкахор",
+    "transliteration": "mn-kꜢ-ḥr",
+    "pharaohName": "Менкаухор",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BD%D0%BA%D0%B0%D1%83%D1%85%D0%BE%D1%80",
+    "englishPharaohName": "Menkauhor Kaiu",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Menkauhor-Kaiu"
+  },
+  {
+    "id": "30",
+    "nameInList": "Хаинеферра",
+    "transliteration": "ḫꜤ-nfr-rꜤ",
+    "pharaohName": "Неферефра",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%84%D0%B5%D1%80%D0%B5%D1%84%D1%80%D0%B0",
+    "englishPharaohName": "Neferefra Isi",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Neferefra-Isi"
+  },
+  {
+    "id": "31",
+    "nameInList": "Шепсескара",
+    "transliteration": "špss-kꜢ-rꜤ",
+    "pharaohName": "Шепсескара",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D1%81%D0%B5%D1%81%D0%BA%D0%B0%D1%80%D0%B0",
+    "englishPharaohName": "Shepseskara Netjeruser",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Shepseskara-Netjeruser"
+  },
+  {
+    "id": "32",
+    "nameInList": "Неферикара",
+    "transliteration": "nfr-ir-kꜢ-rꜤ",
+    "pharaohName": "Неферикара Какаи",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%84%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D1%80%D0%B0_%D0%9A%D0%B0%D0%BA%D0%B0%D0%B8",
+    "englishPharaohName": "Neferirkara I Kakai",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Neferirkara-I-Kakai"
+  },
+  {
+    "id": "33",
+    "nameInList": "Сахура",
+    "transliteration": "sꜢḥw-rꜤ",
+    "pharaohName": "Сахура",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D1%85%D1%83%D1%80%D0%B0",
+    "englishPharaohName": "Sahura",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Sahura"
+  },
+  {
+    "id": "34",
+    "nameInList": "Усерка",
+    "transliteration": "wsr-kꜢ-f",
+    "pharaohName": "Усеркаф",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A3%D1%81%D0%B5%D1%80%D0%BA%D0%B0%D1%84",
+    "englishPharaohName": "Userkaf",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Userkaf"
+  },
+  {
+    "id": "35",
+    "nameInList": "Не распознан",
+    "transliteration": null,
+    "pharaohName": null,
+    "wikiLink": null,
+    "englishPharaohName": null,
+    "pharaohSeLink": null
+  },
+  {
+    "id": "36",
+    "nameInList": "Не распознан",
+    "transliteration": null,
+    "pharaohName": "Тамфтис",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D0%BC%D1%84%D1%82%D0%B8%D1%81",
+    "englishPharaohName": null,
+    "pharaohSeLink": null
+  },
+  {
+    "id": "37",
+    "nameInList": "Не распознан",
+    "transliteration": null,
+    "pharaohName": "Шепсескаф",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A8%D0%B5%D0%BF%D1%81%D0%B5%D1%81%D0%BA%D0%B0%D1%84",
+    "englishPharaohName": null,
+    "pharaohSeLink": null
+  },
+  {
+    "id": "38",
+    "nameInList": "Не распознан",
+    "transliteration": null,
+    "pharaohName": "Микерин",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BA%D0%B5%D1%80%D0%B8%D0%BD",
+    "englishPharaohName": null,
+    "pharaohSeLink": null
+  },
+  {
+    "id": "39",
+    "nameInList": "Бихерис",
+    "transliteration": "mn-kꜢ.w-rꜤ",
+    "pharaohName": "Бихерис",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D1%85%D0%B5%D1%80%D0%B8%D1%81",
+    "englishPharaohName": "Menkaura",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Menkaura"
+  },
+  {
+    "id": "40",
+    "nameInList": "Хафра",
+    "transliteration": "ḫꜤ.w-f-rꜤ",
+    "pharaohName": "Хафра",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%84%D1%80%D0%B0",
+    "englishPharaohName": "Khafra",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Khafra"
+  },
+  {
+    "id": "41",
+    "nameInList": "Раджедеф",
+    "transliteration": "ḏd-f-rꜤ",
+    "pharaohName": "Джедефра ",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%B5%D0%B4%D0%B5%D1%84%D1%80%D0%B0",
+    "englishPharaohName": "Radjedef",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Radjedef"
+  },
+  {
+    "id": "42",
+    "nameInList": "Хуфуф",
+    "transliteration": "ḫwfwf",
+    "pharaohName": "Хеопс",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B5%D0%BE%D0%BF%D1%81",
+    "englishPharaohName": "Khufu",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Khufu"
+  },
+  {
+    "id": "43",
+    "nameInList": "Снофру",
+    "transliteration": "s-nfr-w",
+    "pharaohName": "Снофру",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BD%D0%BE%D1%84%D1%80%D1%83",
+    "englishPharaohName": "Sneferu",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Sneferu"
+  },
+  {
+    "id": "44",
+    "nameInList": "Хуни",
+    "transliteration": "ḥw-ni",
+    "pharaohName": "Хуни",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A5%D1%83%D0%BD%D0%B8",
+    "englishPharaohName": "Huni",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Huni"
+  },
+  {
+    "id": "45",
+    "nameInList": "Небкара",
+    "transliteration": "nb-kꜢ-rꜤ",
+    "pharaohName": "Санахт",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B0%D0%BD%D0%B0%D1%85%D1%82",
+    "englishPharaohName": "Nebkara",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Nebkara"
+  },
+  {
+    "id": "46",
+    "nameInList": "Джосертети",
+    "transliteration": null,
+    "pharaohName": "Сехемхет",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%85%D0%B5%D0%BC%D1%85%D0%B5%D1%82",
+    "englishPharaohName": "Sekhemkhet",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Sekhemkhet"
+  },
+  {
+    "id": "47",
+    "nameInList": "Джосер",
+    "transliteration": null,
+    "pharaohName": "Джосер",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D1%81%D0%B5%D1%80",
+    "englishPharaohName": "Djoser",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Djoser"
+  },
+  {
+    "id": "48",
+    "nameInList": "Беби",
+    "transliteration": "bby",
+    "pharaohName": "Хасехемуи",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D1%81%D0%B5%D1%85%D0%B5%D0%BC%D1%83%D0%B8",
+    "englishPharaohName": "Khasekhemwy",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Khasekhemwy"
+  },
+  {
+    "id": "49",
+    "nameInList": "Худжефа",
+    "transliteration": "ḥw-ḏfꜢ",
+    "pharaohName": "Худжефа I",
+    "wikiLink": "https://ru.wikipedia.org/w/index.php?title=%D0%A5%D1%83%D0%B4%D0%B6%D0%B5%D1%84%D0%B0&action=edit&redlink=1",
+    "englishPharaohName": "Hudjefa I",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Hudjefa-I"
+  },
+  {
+    "id": "50",
+    "nameInList": "Неферкасокар",
+    "transliteration": "nfr-kꜢ-skr",
+    "pharaohName": "Неферкасокар",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%84%D0%B5%D1%80%D0%BA%D0%B0%D1%81%D0%BE%D0%BA%D0%B0%D1%80",
+    "englishPharaohName": "Neferkasokar",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Neferkasokar"
+  },
+  {
+    "id": "51",
+    "nameInList": "Неферкара",
+    "transliteration": "nfr-kꜢ-rꜤ",
+    "pharaohName": "Неферкара",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B5%D1%84%D0%B5%D1%80%D0%BA%D0%B0%D1%80%D0%B0",
+    "englishPharaohName": "Sneferka",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Sneferka"
+  },
+  {
+    "id": "52",
+    "nameInList": "Сенед",
+    "transliteration": "snḏ",
+    "pharaohName": "Сенед",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D0%BD%D0%B5%D0%B4",
+    "englishPharaohName": "Senedj",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Senedj"
+  },
+  {
+    "id": "53",
+    "nameInList": "Уадженес",
+    "transliteration": "wꜢḏ-l-s",
+    "pharaohName": "Унег",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A3%D0%BD%D0%B5%D0%B3",
+    "englishPharaohName": "Wadjenes",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Wadjenes"
+  },
+  {
+    "id": "54",
+    "nameInList": "Банетериу",
+    "transliteration": "bꜢ-ntrw",
+    "pharaohName": "Нинечер",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9D%D0%B8%D0%BD%D0%B5%D1%87%D0%B5%D1%80",
+    "englishPharaohName": "Ninetjer",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Ninetjer"
+  },
+  {
+    "id": "55",
+    "nameInList": "Какау",
+    "transliteration": "kꜢ-kꜢw",
+    "pharaohName": "Ранеб",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D0%BD%D0%B5%D0%B1",
+    "englishPharaohName": "Nebra",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Nebra"
+  },
+  {
+    "id": "56",
+    "nameInList": "Бау-нетиер",
+    "transliteration": "bꜢw-nṯr",
+    "pharaohName": "Хотепсехемуи",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%A5%D0%BE%D1%82%D0%B5%D0%BF%D1%81%D0%B5%D1%85%D0%B5%D0%BC%D1%83%D0%B8",
+    "englishPharaohName": "Hotepsekhemwy",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Hotepsekhemwy"
+  },
+  {
+    "id": "57",
+    "nameInList": "Кебеху",
+    "transliteration": "ḳbḥw",
+    "pharaohName": "Каа",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%B0_(%D1%84%D0%B0%D1%80%D0%B0%D0%BE%D0%BD)",
+    "englishPharaohName": "Qaa",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Qaa"
+  },
+  {
+    "id": "58",
+    "nameInList": "Мери-ба-пен",
+    "transliteration": "mri-biꜢ-pn",
+    "pharaohName": "Аджиб",
+    "wikiLink": "https://ru.wikipedia.org/wiki/%D0%90%D0%B4%D0%B6%D0%B8%D0%B1",
+    "englishPharaohName": "Adjib",
+    "pharaohSeLink": "https://pharaoh.se/pharaoh/Adjib"
+  }
+]

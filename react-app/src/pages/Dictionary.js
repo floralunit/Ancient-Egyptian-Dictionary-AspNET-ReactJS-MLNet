@@ -1,10 +1,13 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import "../styles/StickyTableStyle.css";
 import "../styles/FilterBar.css"
 import "../styles/TabsStyle.css"
 import FilterBarDictionary from "../components/filters/FilterBarDictionary";
 import ReactLoading from 'react-loading';
-import {API_URL} from "../global-const.js";
+import { API_URL } from "../global-const.js";
+import categoriumsjson from "../jsons/categoriums.json";
+import glyphs from "../jsons/glyphs.json";
+import { getListItemIconUtilityClass } from "@mui/material";
 
 export function Dictionary() {
     const [error, setError] = useState(null);
@@ -17,53 +20,76 @@ export function Dictionary() {
     // этот useEffect будет запущен один раз
     // аналогично componentDidMount()
 
+    //     useEffect(() => {
+    //         fetch(`${API_URL}/glyphs/all`)
+    //             .then(res => res.json())
+    //             .then(
+    //                 (result) => {
+    //                     setIsLoaded(true);
+    //                     setItems(result);
+    //                     const filteredData = result.filter((item) => {
+    //                         if ((item.categoria||'') === 'A') {
+    //                             return item;
+    //                         }
+    //                     });
+    //                     setData(filteredData);
+    //                 },
+    //                 // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+    //                 // чтобы не перехватывать исключения из ошибок в самих компонентах.
+    //                 (error) => {
+    //                     setIsLoaded(true);
+    //                     setError(error);
+    //                 }
+    //             )
+    //     }, [])
+    //     useEffect(() => {
+    //         fetch(`${API_URL}/categoriums/all`)
+    //             .then(res => res.json())
+    //             .then(
+    //                 (result) => {
+    //                     setIsLoaded(true);
+    // /*                    const convert = JSON.parse(result);*/
+    //                     const convert = [];
+    //                     const keys = Object.keys(result);
+    //                     keys.forEach(function(key){
+    //                         convert.push(result[key]);
+    //                     });
+    //                     setCategoriums(convert);
+    //                 },
+    //                 // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+    //                 // чтобы не перехватывать исключения из ошибок в самих компонентах.
+    //                 (error) => {
+    //                     setIsLoaded(true);
+    //                     setError(error);
+    //                 }
+    //             )
+    //     }, [])
     useEffect(() => {
-        fetch(`${API_URL}/glyphs/all`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-                    setItems(result);
-                    const filteredData = result.filter((item) => {
-                        if ((item.categoria||'') === 'A') {
-                            return item;
-                        }
-                    });
-                    setData(filteredData);
-                },
-                // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-                // чтобы не перехватывать исключения из ошибок в самих компонентах.
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
+        if (allData.length === 0) {
+            setIsLoaded(true);
+            setItems(glyphs);
+            const filteredData = glyphs.filter((item) => {
+                if ((item.categoria || '') === 'A') {
+                    return item;
                 }
-            )
-    }, [])
+            });
+            setData(filteredData);
+        }
+    })
     useEffect(() => {
-        fetch(`${API_URL}/categoriums/all`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setIsLoaded(true);
-/*                    const convert = JSON.parse(result);*/
-                    const convert = [];
-                    const keys = Object.keys(result);
-                    keys.forEach(function(key){
-                        convert.push(result[key]);
-                    });
-                    setCategoriums(convert);
-                },
-                // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-                // чтобы не перехватывать исключения из ошибок в самих компонентах.
-                (error) => {
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
+        if (categoriums.length === 0) {
+            setIsLoaded(true);
+            const convert = [];
+            const keys = Object.keys(categoriumsjson);
+            keys.forEach(function (key) {
+                convert.push(categoriumsjson[key]);
+            });
+            setCategoriums(convert);
+        }
+    })
     const handleFilterGlyph = (glyph) => {
         const filteredData = items.filter((item) => {
-            if ((item.glyphUnicode||'').toLowerCase().includes(glyph.toLowerCase())) {
+            if ((item.glyphUnicode || '').toLowerCase().includes(glyph.toLowerCase())) {
                 return item;
             }
         });
@@ -72,7 +98,7 @@ export function Dictionary() {
     };
     const handleFilterCode = (gardinerCode) => {
         const filteredData = items.filter((item) => {
-            if ((item.gardinerCode||'').toLowerCase().includes(gardinerCode.toLowerCase())) {
+            if ((item.gardinerCode || '').toLowerCase().includes(gardinerCode.toLowerCase())) {
                 return item;
             }
         });
@@ -82,7 +108,7 @@ export function Dictionary() {
     const handleFilterTranslit = (transliteration) => {
         const filteredData = items.filter((item) => {
             const fullTranslit = `${item.transliteration} ${item.phonogram}`;
-            if ((fullTranslit||'').toLowerCase().includes(transliteration.toLowerCase())) {
+            if ((fullTranslit || '').toLowerCase().includes(transliteration.toLowerCase())) {
                 return item;
             }
         });
@@ -91,7 +117,7 @@ export function Dictionary() {
     const handleFilterDesc = (description) => {
         const filteredData = items.filter((item) => {
             const fullDesc = `${item.description} ${item.notes}`;
-            if ((fullDesc||'').toLowerCase().includes(description.toLowerCase())) {
+            if ((fullDesc || '').toLowerCase().includes(description.toLowerCase())) {
                 return item;
             }
         });
@@ -105,7 +131,7 @@ export function Dictionary() {
         setToggleState(categoria);
 
         const filteredData = items.filter((item) => {
-            if ((item.categoria||'') === categoria) {
+            if ((item.categoria || '') === categoria) {
                 return item;
             }
         });
@@ -116,23 +142,23 @@ export function Dictionary() {
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
-        return <div className={"loadingDiv"}><ReactLoading  type={"spinningBubbles"} color={"#673923"} height={'5%'} width={'5%'} className={"loadingBar"}/></div>;
+        return <div className={"loadingDiv"}><ReactLoading type={"spinningBubbles"} color={"#673923"} height={'5%'} width={'5%'} className={"loadingBar"} /></div>;
     } else {
         return (
             <div className={"dictionary"}>
-                <div className={"empty"}/>
+                <div className={"empty"} />
 
                 <div className={"filterbar"}>
                     <h2 align={"center"} className={"black"}>Словарь древнеегипетских иероглифов</h2>
-                    <hr/>
+                    <hr />
                     <table>
-                        <td style={{padding: '0.5vh'}}>
-                                <i>Список знаков Гардинера</i> - это список распространенных египетских иероглифов, составленный Аланом Гардинером. Он считается стандартным справочником при изучении древнеегипетских иероглифов.
-                                <br /><br />Гардинер перечисляет только общие формы египетских иероглифов, но он включает обширные подкатегории, а также вертикальные и горизонтальные формы для многих иероглифов.
-                                Он включает формы изменения размера, чтобы помочь с чтением иероглифов в бегущих блоках текста. В отличие от этого, например, справочник Баджа содержит около 1000 иероглифов, перечисленных на 50 страницах, но без изменений размера.
+                        <td style={{ padding: '0.5vh' }}>
+                            <i>Список знаков Гардинера</i> - это список распространенных египетских иероглифов, составленный Аланом Гардинером. Он считается стандартным справочником при изучении древнеегипетских иероглифов.
+                            <br /><br />Гардинер перечисляет только общие формы египетских иероглифов, но он включает обширные подкатегории, а также вертикальные и горизонтальные формы для многих иероглифов.
+                            Он включает формы изменения размера, чтобы помочь с чтением иероглифов в бегущих блоках текста. В отличие от этого, например, справочник Баджа содержит около 1000 иероглифов, перечисленных на 50 страницах, но без изменений размера.
                         </td>
                         <td width={"40%"}>
-                        <FilterBarDictionary
+                            <FilterBarDictionary
                                 onGlyphFilter={handleFilterGlyph}
                                 onCodeFilter={handleFilterCode}
                                 onTranslitFilter={handleFilterTranslit}
@@ -141,8 +167,8 @@ export function Dictionary() {
                         </td>
                     </table>
                 </div>
-                <div style={{margin: '0 auto'}}>
-                        <h5 className={"headerTab"}>{categoriaName}</h5>
+                <div style={{ margin: '0 auto' }}>
+                    <h5 className={"headerTab"}>{categoriaName}</h5>
                     <div className="bloc-tabs">
                         <button
                             className={toggleState === 'A' ? "tabs active-tabs" : "tabs"}
@@ -249,33 +275,33 @@ export function Dictionary() {
                             onClick={() => toggleTab('Aa')}>Aa
                         </button>
                     </div>
-                    <table className="content-table" style={{minHeight: '40vh'}}>
+                    <table className="content-table" style={{ minHeight: '40vh' }}>
                         <thead>
-                        <tr>
-                            <th>Иероглиф</th>
-                            <th>Юникод</th>
-                            <th>Код Гардинера</th>
-                            <th>Описание</th>
-                            <th>Фонограмма</th>
-                            <th>Транслитерация</th>
-                            <th>Заметки</th>
-                        </tr>
+                            <tr>
+                                <th>Иероглиф</th>
+                                <th>Юникод</th>
+                                <th>Код Гардинера</th>
+                                <th>Описание</th>
+                                <th>Фонограмма</th>
+                                <th>Транслитерация</th>
+                                <th>Заметки</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {allData.map(item =>
-                            <tr key={item.gardinerCode}>
-                                <td style={{fontSize: '4em'}}>{item.glyphUnicode}</td>
-                                <td>{item.unicodeString}</td>
-                                <td>{item.gardinerCode}</td>
-                                <td>{item.description}</td>
-                                <td>{item.phonogram}</td>
-                                <td>{item.transliteration}</td>
-                                <td>{item.notes}</td>
-                            </tr>)}
+                            {allData.map(item =>
+                                <tr key={item.gardinerCode}>
+                                    <td style={{ fontSize: '4em' }}>{item.glyphUnicode}</td>
+                                    <td>{item.unicodeString}</td>
+                                    <td>{item.gardinerCode}</td>
+                                    <td>{item.description}</td>
+                                    <td>{item.phonogram}</td>
+                                    <td>{item.transliteration}</td>
+                                    <td>{item.notes}</td>
+                                </tr>)}
                         </tbody>
 
                     </table>
-                    <div className={"empty"}/>
+                    <div className={"empty"} />
                 </div>
             </div>
         );
