@@ -7,7 +7,6 @@ import ReactLoading from 'react-loading';
 import { API_URL } from "../global-const.js";
 import categoriumsjson from "../jsons/categoriums.json";
 import glyphs from "../jsons/glyphs.json";
-import { getListItemIconUtilityClass } from "@mui/material";
 
 export function Dictionary() {
     const [error, setError] = useState(null);
