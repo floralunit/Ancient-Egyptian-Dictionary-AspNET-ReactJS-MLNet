@@ -9,6 +9,16 @@ using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Swashbuckle.AspNetCore.Filters;
 using Microsoft.OpenApi.Models;
+using EgyptianAPI;
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.ML;
+using Microsoft.OpenApi.Models;
+using Microsoft.ML.Data;
+using System.Drawing;
+using System.IO;
+using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
@@ -24,6 +34,8 @@ builder.Services.AddCors(options =>
                           .AllowCredentials();
                       });
 });
+builder.Services.AddPredictionEnginePool<MLModelEgypt.ModelInput, MLModelEgypt.ModelOutput>()
+    .FromFile("MLModelEgypt.mlnet");
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1",

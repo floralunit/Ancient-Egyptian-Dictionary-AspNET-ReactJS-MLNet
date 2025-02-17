@@ -37,10 +37,10 @@ const QuestionsPage = () => {
 
     const submitAll = () => {
         if (sub && body) {
-            if (sub.length > 30) {
-                setError('Тема должна быть > 30 символов')
-            } else if (body.length > 100) {
-                setError('Описание должно быть больше > 100 символов')
+            if (sub.length < 1) {
+                setError('Тема должна быть > 1 символов')
+            } else if (body.length < 2) {
+                setError('Описание должно быть больше > 2 символов')
             } else {
                 fetch(`${API_URL}/questions/add`, {
                     method: "POST",

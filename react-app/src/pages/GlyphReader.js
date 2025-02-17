@@ -21,7 +21,8 @@ export const GlyphReader = () => {
         const formData = new FormData();
         formData.append("file", fileSelected);
         try {
-            const res = await axios.post(`${API_URL}/glyphreader`, formData);
+            //const res = await axios.post(`${API_URL}/glyphreader`, formData);
+            const res = await axios.post(`https://localhost:7059/api/glyphreader`, formData);
             axios
                 .get(`${API_URL}/glyphs/find/${res.data}`, {
                     responseType: "json",

@@ -16,30 +16,30 @@ export function God() {
     // этот useEffect будет запущен один раз
     // аналогично componentDidMount()
 
-    // useEffect(() => {
-    //     fetch(`${API_URL}/gods/all`)
-    //         .then(res => res.json())
-    //         .then(
-    //             (result) => {
-    //                 setIsLoaded(true);
-    //                 setItems(result);
-    //                 setData(result);
-    //             },
-    //             // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
-    //             // чтобы не перехватывать исключения из ошибок в самих компонентах.
-    //             (error) => {
-    //                 setIsLoaded(true);
-    //                 setError(error);
-    //             }
-    //         )
-    // }, [])
     useEffect(() => {
-        if (allData.length === 0) {
-            setIsLoaded(true);
-            setItems(data);
-            setData(data);
-        };
-    })
+        fetch(`${API_URL}/gods/all`)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setItems(result);
+                    setData(result);
+                },
+                // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+                // чтобы не перехватывать исключения из ошибок в самих компонентах.
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, [])
+    // useEffect(() => {
+    //     if (allData.length === 0) {
+    //         setIsLoaded(true);
+    //         setItems(data);
+    //         setData(data);
+    //     };
+    // })
     const handleFilterName = (name) => {
         const filteredData = items.filter((item) => {
             if (item.name.toLowerCase().includes(name.toLowerCase())) {

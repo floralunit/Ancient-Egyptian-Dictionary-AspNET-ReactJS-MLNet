@@ -17,10 +17,28 @@ export function AbydosCanon() {
     // аналогично componentDidMount()
 
     useEffect(() => {
-        setIsLoaded(true);
-        setItems(data);
-        setData(data);
-    })
+        fetch(`${API_URL}/pharaohs/abydoscanon`)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setIsLoaded(true);
+                    setItems(result);
+                    setData(result);
+                },
+                // Примечание: важно обрабатывать ошибки именно здесь, а не в блоке catch(),
+                // чтобы не перехватывать исключения из ошибок в самих компонентах.
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, [])
+
+    // useEffect(() => {
+    //     setIsLoaded(true);
+    //     setItems(data);
+    //     setData(data);
+    // })
     const handleFilterName = (name) => {
         const filteredData = items.filter((item) => {
             const fullDesc = `${item.pharaohName} ${item.englishPharaohName} ${item.nameInList}`;

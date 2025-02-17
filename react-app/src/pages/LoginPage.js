@@ -71,7 +71,7 @@ export const LoginPage = (props) => {
                             </button>
                             <Row className="py-3">
                                 <Col>
-                                    Нет аккаунта? <NavLink to="signup" style={{color: 'white'}}>Зарегистрируйтесь</NavLink>
+                                    Нет аккаунта? <NavLink to="/signup" style={{color: 'white'}}>Зарегистрируйтесь</NavLink>
                                 </Col>
                             </Row>
                         </form>
@@ -92,7 +92,7 @@ export const LoginPage = (props) => {
                     </div>
                     {message ?
                         <ErrorMessage variant="danger">{message}</ErrorMessage>
-                        :  <ErrorMessage variant="danger">В данной версии сайта не работает!</ErrorMessage>
+                        :  <></>
                     }
                 </div>
             </div>
